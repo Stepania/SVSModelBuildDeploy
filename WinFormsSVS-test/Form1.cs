@@ -15,7 +15,6 @@ namespace WinFormsSVS_test
 
             startButton.BackColor = Color.BlueViolet;
             System.Threading.Thread.Sleep(3000);
-            // technically we need to just run this line
             Test.Main(TestConfigData.configDict);
             
         }
