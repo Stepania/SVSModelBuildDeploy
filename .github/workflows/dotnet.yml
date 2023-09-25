@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: code runner
-      run: /home/runner/work/SVSModelBuildDeploy/SVSModelBuildDeploy/WinFormsSVS-test/WinFormsSVS-test.csproj
+      run: /home/runner/work/SVSModelBuildDeploy/SVSModelBuildDeploy/WinFormsSVS-test/Program.cs
