@@ -27,5 +27,5 @@ jobs:
     - name: List files
       run: ls -a TestModel/testGraph
       
-    #- name: code runner
-    #  run: ./WinFormsSVS-test/WinFormsSVS-test.csproj
+    - name: code runner
+      run: ./TestModel/testGraph/testGraph.sln
