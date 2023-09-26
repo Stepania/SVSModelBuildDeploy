@@ -29,6 +29,6 @@ jobs:
       
       
     - name: Finder
-      run: find /path/to -regex ".*\.\(exe)" > log
+      run: ls | grep ".*.exe$"
     #- name: code runner
     #  run: ./WinFormsSVS-test/WinFormsSVS-test.csproj
