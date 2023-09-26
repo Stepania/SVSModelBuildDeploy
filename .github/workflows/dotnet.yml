@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: code runner
-      run: echo "Hello World"
+      run: /home/runner/work/SVSModelBuildDeploy/SVSModelBuildDeploy/WinFormsSVS-test/bin/Debug/net6.0-windows/WinFormsSVS-test.exe
