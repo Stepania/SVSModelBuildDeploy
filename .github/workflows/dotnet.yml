@@ -28,4 +28,4 @@ jobs:
       run: ls -a TestModel/testGraph
       
     - name: code runner
-      run: ./TestModel/testGraph/testGraph.sln
+      run: ./TestModel/testGraph/testGraph/testGraph.py
