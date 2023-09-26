@@ -26,5 +26,9 @@ jobs:
       run: dotnet build --no-restore
     - name: List files
       run: ls -a WinFormsSVS-test/bin/Debug/net6.0-windows
+      
+      
+    - name: Finder
+      run: find /path/to -regex ".*\.\(exe)" > log
     #- name: code runner
     #  run: ./WinFormsSVS-test/WinFormsSVS-test.csproj
