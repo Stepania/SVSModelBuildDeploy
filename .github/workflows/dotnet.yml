@@ -25,10 +25,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: List files
-      run: ls -a WinFormsSVS-test/bin/Debug/net6.0-windows
+      run: ls -a
       
-      
-    - name: Finder
-      run: ls | grep ".*.exe$"
     #- name: code runner
     #  run: ./WinFormsSVS-test/WinFormsSVS-test.csproj
