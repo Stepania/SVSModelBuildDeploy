@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: List files
-      run: ls -a ConsoleApp1/bin/Debug/net6.0-windows
+      run: ls -a 
 
     #- name: code runner
     #  run: ./TestModel/testGraph/testGraph/testGraph.py
