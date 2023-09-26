@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: List files
-      run: ls -a TestModel
+      run: ls -a TestModel/testGraph
       
     #- name: code runner
     #  run: ./WinFormsSVS-test/WinFormsSVS-test.csproj
