@@ -27,4 +27,4 @@ jobs:
     - name: List files
       run: ls
     - name: code runner
-      run: ./WinFormsSVS-test.exe
+      run: ./WinFormsSVS-test/bin/Debug/net6.0-windows/WinFormsSVS-test.exe
