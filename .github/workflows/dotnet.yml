@@ -39,13 +39,16 @@ jobs:
       
                         
     - name: run dll    
-      run: chmod +x ConsoleApp1/ConsoleApp1.csproj
+      run: chmod +x ConsoleApp1/ConsoleApp1.csproj    
       
     - name: run project
-      run: csc ConsoleApp1/Program.cs
+      run: dotnet publish -c Release -r win10-x64
       
+    - name: run project
+      run: dotnet publish -c Release -r win10-x64
       
-      
+
+     
     #- name: run project
     #  run: dotnet run ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
            
