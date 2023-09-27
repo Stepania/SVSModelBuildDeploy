@@ -36,23 +36,23 @@ jobs:
       run: ls -a ConsoleApp1
       
                         
-    - name: run dll    
+    - name: change permission  
       run: chmod +x ConsoleApp1/ConsoleApp1.csproj    
       
-    - name: run project
+    - name: publish win
       run: dotnet publish -c Release -r win10-x64
       
-    - name: run project
-      run: dotnet publish -c Release -r win10-x64
+    - name: publish ubuntu
+      run: dotnet publish -c Release -r ubuntu.16.10-x64
       
-    - name: find file
+    - name: find exe file
       run: find . -type f -name "*.exe"
       
-    - name: find project path
+    - name: find exe path
       run: readlink -f ConsoleApp1.exe
       
     - name: run exe
-      run: dotnet run ConsoleApp1.csproj
+      run: dotnet run --ConsoleApp1.csproj
       
       
       
