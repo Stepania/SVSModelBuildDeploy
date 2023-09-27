@@ -41,8 +41,8 @@ jobs:
     #- name: run dll    
     #  run: chmod +x ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
       
-    #- name: run project
-    #  run: dotnet run /ConsoleApp1.csproj
+    - name: run project
+      run: ConsoleApp1/ConsoleApp1.csproj
       
       
       
