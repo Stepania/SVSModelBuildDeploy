@@ -52,9 +52,8 @@ jobs:
       run: readlink -f ConsoleApp1.exe
       
     - name: run exe
-      run: ConsoleApp1.exe
+      run: dotnet run ConsoleApp1.exe
       
-
       
       
       
