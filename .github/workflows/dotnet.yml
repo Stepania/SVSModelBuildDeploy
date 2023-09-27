@@ -51,7 +51,10 @@ jobs:
     - name: find project path
       run: readlink -f ConsoleApp1.exe
       
+    - name: run exe
+      run: ConsoleApp1.exe
       
+      ConsoleApp1.exe
       
       
       
