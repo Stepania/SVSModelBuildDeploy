@@ -32,7 +32,7 @@ jobs:
       run: find . -type f -name "*.csproj"
              
     - name: List files
-      run: dotnet run ./ConsoleApp1/ConsoleApp1.csproj        
+      run: dotnet run --project     
            
     #- name: build solution    
     #  run: dotnet build SVSModel.sln
