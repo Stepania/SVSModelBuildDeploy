@@ -30,7 +30,7 @@ jobs:
             
     - name: build solution    
       run: dotnet build SVSModel.sln
-      run: dotnet run ConsoleApp1/ConsoleApp1.csproj
+           dotnet run ConsoleApp1/ConsoleApp1.csproj
       
       
    # - name: build solution    
