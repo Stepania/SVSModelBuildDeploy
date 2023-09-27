@@ -35,7 +35,7 @@ jobs:
       run: readlink -f ConsoleApp1.csproj
       
     -name: list a folder  
-      run: ls -a ConsoleApp1
+     run: ls -a ConsoleApp1
       
                         
     #- name: run dll    
