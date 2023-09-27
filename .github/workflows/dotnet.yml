@@ -50,11 +50,11 @@ jobs:
       run: ls -a 
       
     - name: run exe
-      run: ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.exe  
+      run: ./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
       
 
       
-#./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.exe      
+   
       
 #./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
      
