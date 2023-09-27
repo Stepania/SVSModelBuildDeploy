@@ -32,7 +32,7 @@ jobs:
       run: find . -type f -name "*.csproj"
       
     - name: find project path
-      run: touch ConsoleApp1.csproj
+      run: readlink -f ConsoleApp1.csproj
              
     #- name: run project
     #  run: dotnet run /ConsoleApp1/ConsoleApp1.csproj
