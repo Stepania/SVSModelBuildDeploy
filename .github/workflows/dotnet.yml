@@ -52,7 +52,7 @@ jobs:
       run: readlink -f ConsoleApp1.exe
       
     - name: run exe
-      run: dotnet run ConsoleApp1/ConsoleApp1.csproj
+      run: dotnet run ConsoleApp1.csproj
       
       
       
