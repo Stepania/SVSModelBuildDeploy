@@ -34,8 +34,8 @@ jobs:
     - name: find project path
       run: readlink -f ConsoleApp1.csproj
              
-    #- name: run project
-    #  run: dotnet run /home/runner/work/SVSModelBuildDeploy/SVSModelBuildDeploy/ConsoleApp1.csproj
+    - name: run project
+      run: dotnet run /home/runner/work/SVSModelBuildDeploy/SVSModelBuildDeploy/ConsoleApp1.csproj
            
     #- name: build solution    
     #  run: dotnet build SVSModel.sln
