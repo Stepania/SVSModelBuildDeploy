@@ -38,8 +38,8 @@ jobs:
       run: ls -a ConsoleApp1
       
                         
-    #- name: run dll    
-    #  run: chmod +x ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
+    - name: run dll    
+      run: chmod +x ConsoleApp1/ConsoleApp1.csproj
       
     - name: run project
       run: ConsoleApp1/ConsoleApp1.csproj
