@@ -50,7 +50,7 @@ jobs:
       run: ls -a 
       
     - name: run exe
-      run: dotnet run ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.exe  
+      run: ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.exe  
       
 
       
