@@ -55,7 +55,7 @@ jobs:
      # run: dotnet run --ConsoleApp1.csproj
       
     - name: list a folder  
-      run: ls -a 
+      run: ls -a ConsoleApp1
       
       
       
