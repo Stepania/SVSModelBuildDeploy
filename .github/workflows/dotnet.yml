@@ -26,16 +26,11 @@ jobs:
       run: dotnet build --no-restore
       
     - name: List files
-      run: ls -a 
-      
-      
-    #- name: find project path
-      #run: readlink -f ConsoleApp1.csproj
+      run: ls -a      
       
     - name: list a folder  
       run: ls -a ConsoleApp1
-      
-                        
+                          
     - name: change permission  
       run: chmod +x ConsoleApp1/ConsoleApp1.csproj    
       
@@ -51,13 +46,15 @@ jobs:
     - name: find exe path
       run: readlink -f ConsoleApp1.exe
       
-    #- name: run exe
-     # run: dotnet run --ConsoleApp1.csproj
-      
     - name: list a folder  
-      run: ls -a ConsoleApp1
+      run: ls -a 
       
+    - name: run exe
+      run: dotnet run ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.exe  
       
+
+      
+#./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.exe      
       
 #./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
      
