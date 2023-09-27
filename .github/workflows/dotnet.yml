@@ -27,7 +27,7 @@ jobs:
       
     - name: List files
       run: ls -a 
-          - name: List files    
+    - name: List files    
       run: ls -a home
       
     #- name: code runner
