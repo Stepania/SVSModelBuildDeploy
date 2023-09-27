@@ -27,7 +27,7 @@ namespace TestModel
         private static void runPythonScript()
         {
 
-            string progToRun = @"C:\Users\1989s\source\repos\svs\modelCsharp\TestModel\testGraph\testGraph\testGraph.py";          
+            string progToRun = @"C:\Users\1989s\study\LastYear\CAPSTONE\helpfulInfo\svs2\modelCsharp\TestModel\testGraph\testGraph\testGraph.py";          
             Process proc = new Process();
             proc.StartInfo.FileName = "python.exe";
             proc.StartInfo.RedirectStandardOutput = true;

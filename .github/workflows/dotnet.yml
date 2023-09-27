@@ -27,9 +27,8 @@ jobs:
     - name: List files
       run: ls -a ConsoleApp1
     - name: code runner
-      run: | 
-        cd myAppConsoleApp1/Program.cs
-        dotnet run
+      run: Program.cs
+  
         
       
     #/ConsoleApp1/bin/Debug/net6.0
