@@ -27,7 +27,7 @@ jobs:
     - name: List files
       run: ls -a ConsoleApp1
     - name: code runner
-      run: Program.cs
+      run: find . -type f -name "*.exe"
   
         
       
