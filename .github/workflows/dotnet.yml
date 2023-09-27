@@ -28,8 +28,6 @@ jobs:
     - name: List files
       run: ls -a 
       
-    - name: find file
-      run: find . -type f -name "*.exe"
       
     - name: find project path
       run: readlink -f ConsoleApp1.csproj
@@ -46,6 +44,9 @@ jobs:
       
     - name: run project
       run: dotnet publish -c Release -r win10-x64
+      
+    - name: find file
+      run: find . -type f -name "*.exe"
       
 
      
