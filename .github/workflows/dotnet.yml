@@ -27,7 +27,7 @@ jobs:
     - name: List files
       run: ls -a ConsoleApp1
     - name: code runner
-      run:  dotnet run [ConsoleApp1/ConsoleApp1.csproj]
+      run:  dotnet run ConsoleApp1/ConsoleApp1.csproj
   
         
       
