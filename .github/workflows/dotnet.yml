@@ -42,7 +42,7 @@ jobs:
       run: chmod +x ConsoleApp1/ConsoleApp1.csproj
       
     - name: run project
-      run: ConsoleApp1/ConsoleApp1.csproj
+      run: ConsoleApp1/Program.cs
       
       
       
