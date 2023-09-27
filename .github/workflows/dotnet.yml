@@ -28,11 +28,11 @@ jobs:
     - name: List files
       run: ls -a 
     - name: List files    
-      run: ls -a home
+      run: msbuild SVSModel.sln
       
     #- name: code runner
     #  run:  dotnet run ConsoleApp1/ConsoleApp1.csproj
   
-        
+    #dotnet run [project-name.cblproj]    
       
     #/ConsoleApp1/bin/Debug/net6.0
