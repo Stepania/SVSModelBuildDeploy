@@ -42,7 +42,7 @@ jobs:
       
       
     - name: run project
-      run: ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
+      run: ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
            
       
     #- name: code runner
