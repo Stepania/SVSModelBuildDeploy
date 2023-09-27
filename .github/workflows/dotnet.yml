@@ -54,7 +54,7 @@ jobs:
     - name: run exe
       run: ConsoleApp1.exe
       
-      ConsoleApp1.exe
+
       
       
       
