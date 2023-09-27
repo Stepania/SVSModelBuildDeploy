@@ -37,8 +37,8 @@ jobs:
     #- name: run project
     #  run: dotnet run /ConsoleApp1.csproj
            
-    #- name: build solution    
-    #  run: dotnet build SVSModel.sln
+    - name: run dll    
+      run: ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
       
     #- name: code runner
     #  run:  dotnet run ConsoleApp1/ConsoleApp1.csproj
