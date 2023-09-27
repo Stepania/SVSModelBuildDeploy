@@ -33,16 +33,15 @@ jobs:
       
     - name: find project path
       run: readlink -f ConsoleApp1.csproj
-             
-    #- name: run project
-    #  run: dotnet run /ConsoleApp1.csproj
-           
+                        
     - name: run dll    
       run: chmod +x ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
       
-      
     - name: run project
-      run: dotnet run ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
+      run: dotnet run /ConsoleApp1.csproj
+      
+    #- name: run project
+    #  run: dotnet run ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
            
       
     #- name: code runner
