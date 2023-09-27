@@ -24,8 +24,13 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+      
+    - name: List files    
+      run: ls -a home/runner/work/SVSModelBuildDeploy/SVSModelBuildDeploy
+      
     - name: List files
-      run: ls -a ConsoleApp1
+      run: ls -a 
+      
     - name: code runner
       run:  dotnet run ConsoleApp1/ConsoleApp1.csproj
   
