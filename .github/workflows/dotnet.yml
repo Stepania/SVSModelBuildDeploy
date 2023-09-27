@@ -27,7 +27,7 @@ jobs:
     - name: List files
       run: ls -a ConsoleApp1
     - name: code runner
-      run: csc Program.cs
+      run: csc ConsoleApp1/Program.cs
   
         
       
