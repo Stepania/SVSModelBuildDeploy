@@ -51,9 +51,11 @@ jobs:
     - name: find exe path
       run: readlink -f ConsoleApp1.exe
       
-    - name: run exe
-      run: dotnet run --ConsoleApp1.csproj
+    #- name: run exe
+     # run: dotnet run --ConsoleApp1.csproj
       
+    - name: list a folder  
+      run: ls -a 
       
       
       
