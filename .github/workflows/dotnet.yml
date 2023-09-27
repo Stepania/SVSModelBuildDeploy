@@ -27,8 +27,13 @@ jobs:
       
     - name: List files
       run: ls -a 
-    - name: List files    
-      run: msbuild SVSModel.sln
+            
+    - name: build solution    
+      run: dotnet build SVSModel.sln
+      
+      
+   # - name: build solution    
+    #  run: dotnet SVSModel.sln
       
     #- name: code runner
     #  run:  dotnet run ConsoleApp1/ConsoleApp1.csproj
