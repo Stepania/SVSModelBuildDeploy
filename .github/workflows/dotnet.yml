@@ -29,8 +29,8 @@ jobs:
       run: ls -a 
       
       
-    - name: find project path
-      run: readlink -f ConsoleApp1.csproj
+    #- name: find project path
+      #run: readlink -f ConsoleApp1.csproj
       
     - name: list a folder  
       run: ls -a ConsoleApp1
@@ -48,7 +48,14 @@ jobs:
     - name: find file
       run: find . -type f -name "*.exe"
       
-
+    - name: find project path
+      run: readlink -f ConsoleApp1.exe
+      
+      
+      
+      
+      
+#./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
      
     #- name: run project
     #  run: dotnet run ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
