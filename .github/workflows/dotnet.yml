@@ -48,23 +48,18 @@ jobs:
       
     - name: list a folder  
       run: ls -a 
-      
-    - name: run exe
-      run: ./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
-      
+
+    - name: find exe path
+      run: readlink -f ConsoleApp1.csproj
+
+
+#different error      
+#    - name: run exe
+#      run: ./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
+#Cannot open assembly './ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe': File does not contain a valid CIL image.     
 
       
    
-      
+#an actual path to exe     
 #./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
-     
-    #- name: run project
-    #  run: dotnet run ./ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.dll
-           
-      
-    #- name: code runner
-    #  run:  dotnet run ConsoleApp1/ConsoleApp1.csproj
-  
-    #dotnet run [project-name.cblproj]    
-      
-    #/ConsoleApp1/bin/Debug/net6.0
+          
