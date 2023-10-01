@@ -27,7 +27,11 @@ namespace TestModel
         private static void runPythonScript()
         {
 
-            string progToRun = @"C:\Users\1989s\study\LastYear\CAPSTONE\helpfulInfo\svs2\modelCsharp\TestModel\testGraph\testGraph\testGraph.py";          
+            //string progToRun = @"C:\Users\1989s\study\LastYear\CAPSTONE\helpfulInfo\svs2\modelCsharp\TestModel\testGraph\testGraph\testGraph.py";          
+            string dir = Directory.GetCurrentDirectory();
+            string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
+            string progToRun = newPath + @"TestModel\testGraph\testGraph\testGraph.py";
+
             Process proc = new Process();
             proc.StartInfo.FileName = "python.exe";
             proc.StartInfo.RedirectStandardOutput = true;
@@ -37,7 +41,7 @@ namespace TestModel
             StreamReader sReader = proc.StandardOutput;
             proc.WaitForExit();
             Console.ReadLine();
-
+            // not working because linux does not work with exe
         }
         public static void RunTests(Dictionary<string, object> _configDict)
 
