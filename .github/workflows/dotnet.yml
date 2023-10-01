@@ -53,7 +53,7 @@ jobs:
       run: readlink -f ConsoleApp1.csproj
       
     - name: run project
-      run: dotnet run --project ConsoleApp1.csproj
+      run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
 
 
