@@ -51,6 +51,10 @@ jobs:
 
     - name: find exe path
       run: readlink -f ConsoleApp1.csproj
+      
+    - name: run project
+      run: dotnet run ConsoleApp1.csproj
+      
 
 
 #different error      
