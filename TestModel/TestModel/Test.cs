@@ -105,7 +105,7 @@ namespace TestModel
             runPythonScript();
 
         }      
-
+//
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)
         {
             int testRow = getTestRow(test, allTests);
