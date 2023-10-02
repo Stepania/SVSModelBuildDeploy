@@ -102,6 +102,14 @@ namespace TestModel
                     }
                     newDataframe.Append(nextRow, true);
                 }
+
+                string folderName = "OutputFiles";
+
+                if (!Directory.Exists(folderName))
+                {
+                    System.IO.Directory.CreateDirectory("OutputFiles");
+                }
+
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
                 //DataFrame.SaveCsv(newDataframe, @"C:\Users\1989s\source\repos\svs\modelCsharp\TestModel\testGraph\OutputFiles\" + test + ".csv");
 
