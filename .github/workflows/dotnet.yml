@@ -30,55 +30,18 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-      
-    
-      
 
-      
-      
-      
-    #- name: List files
-     # run: ls -a      
-      
+
     - name: list a folder  
-      run: ls TestModel\testGraph\testGraph
-                          
-   # - name: change permission  
-    #  run: chmod +x ConsoleApp1/ConsoleApp1.csproj    
-      
-    #- name: publish win
-    #  run: dotnet publish -c Release -r win10-x64
-      
-    #- name: publish ubuntu
-   #   run: dotnet publish -c Release -r ubuntu.16.10-x64
-      
-   # - name: find exe file
-    #  run: find . -type f -name "*.exe"
+      run: ls TestModel\testGraph\testGraph                          
       
     - name: find  path
-      run: readlink -f testGraph.py
-      
+      run: readlink -f testGraph.py      
       
     - name: find  path to proj
       run: readlink -f ConsoleApp1.csproj
-    #- name: list a folder  
-     # run: ls -a 
-
-   # - name: find exe path
-   #   run: readlink -f ConsoleApp1.csproj
       
     - name: run project
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
-
-
-#different error      
-#    - name: run exe
-#      run: ./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
-#Cannot open assembly './ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe': File does not contain a valid CIL image.     
-
-      
-   
-#an actual path to exe     
-#./ConsoleApp1/bin/Release/net6.0/win10-x64/publish/ConsoleApp1.exe
           
