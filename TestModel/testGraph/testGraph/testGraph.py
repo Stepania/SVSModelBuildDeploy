@@ -1,10 +1,22 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime as dt
 import numpy as np
 
-data = pd.read_csv(r"C:\Users\1989s\source\repos\svs\modelCsharp\TestModel\testGraph\OutputFiles\test 1.csv",index_col=0)
-observed_data = pd.read_csv(r"C:\Users\1989s\source\repos\svs\modelCsharp\TestModel\testGraph\OutputFiles\observed.csv",index_col=0)
+import glob
+
+path = os.getcwd()
+
+#need this line 100%
+observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
+
+observed_data = pd.read_csv(observed_path,index_col=0)
+
+
+observed_data.sort_index(axis=0,inplace=True)
+
+tests = ['test 1','test 2','test 3']
 
 observed_data.sort_index(axis=0,inplace=True)
 
@@ -12,7 +24,7 @@ tests = ['test 1','test 2','test 3']
 
 Alltests =[]
 for t in tests[:]:
-    Alltests.append(pd.read_csv(r"C:/Users/1989s/source/repos/svs/modelCsharp/TestModel/testGraph/OutputFiles/"+t+".csv",index_col=0))
+    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))
     
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
@@ -66,4 +78,5 @@ for t in tests:
     make_observed(observed_data[datefilter])
     pos+=1
 
+plt.savefig(path+'my_plot.png')
 plt.show()

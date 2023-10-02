@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
 using Microsoft.Scripting;
+using static IronPython.Modules._ast;
 
 namespace TestModel
 {
@@ -26,8 +27,7 @@ namespace TestModel
     {
         private static void runPythonScript()
         {
-
-            //string progToRun = @"C:\Users\1989s\study\LastYear\CAPSTONE\helpfulInfo\svs2\modelCsharp\TestModel\testGraph\testGraph\testGraph.py";          
+        
             string dir = Directory.GetCurrentDirectory();
             string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
             string progToRun = newPath + @"TestModel\testGraph\testGraph\testGraph.py";
@@ -109,9 +109,8 @@ namespace TestModel
                 {
                     System.IO.Directory.CreateDirectory("OutputFiles");
                 }
-                //just checking, delete after
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
-                //DataFrame.SaveCsv(newDataframe, @"C:\Users\1989s\source\repos\svs\modelCsharp\TestModel\testGraph\OutputFiles\" + test + ".csv");
+
 
             }
             runPythonScript();
