@@ -109,7 +109,7 @@ namespace TestModel
                 {
                     System.IO.Directory.CreateDirectory("OutputFiles");
                 }
-
+                //just checking, delete after
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
                 //DataFrame.SaveCsv(newDataframe, @"C:\Users\1989s\source\repos\svs\modelCsharp\TestModel\testGraph\OutputFiles\" + test + ".csv");
 
