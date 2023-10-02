@@ -30,6 +30,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+      
+    -name: copy file
+      run: 
 
 
     - name: list a folder  
@@ -38,10 +41,11 @@ jobs:
     - name: find  path
       run: readlink -f testGraph.py      
       
-    - name: find  path to proj
-      run: readlink -f ConsoleApp1.csproj
+    #- name: find  path to proj
+    #  run: readlink -f ConsoleApp1.csproj
       
     - name: run project
-      run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+      run: Run readlink -f testGraph.py
+           dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
           

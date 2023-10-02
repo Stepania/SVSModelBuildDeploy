@@ -29,7 +29,13 @@ namespace TestModel
         {      
             string dir = Directory.GetCurrentDirectory();
             string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
-            string progToRun = newPath + @"TestModel/testGraph/testGraph/testGraph.py";
+
+/*        C: \Users\1989s\study\LastYear\CAPSTONE\helpfulInfo\svs2\modelCsharp\
+        C: \Users\1989s\study\LastYear\CAPSTONE\helpfulInfo\svs2\modelCsharp\ConsoleApp1\bin\Debug\net6.0*/
+
+            Trace.WriteLine(newPath);
+            Trace.WriteLine(dir);
+            string progToRun = newPath + @"TestModel\testGraph\testGraph\testGraph.py";
             Process proc = new Process();
             proc.StartInfo.FileName = "python.exe";
             proc.StartInfo.RedirectStandardOutput = true;
@@ -114,7 +120,7 @@ namespace TestModel
             runPythonScript();
 
         }      
-//
+
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)
         {
             int testRow = getTestRow(test, allTests);
