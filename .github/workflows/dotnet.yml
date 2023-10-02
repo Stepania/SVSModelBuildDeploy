@@ -41,7 +41,7 @@ jobs:
      # run: ls -a      
       
     - name: list a folder  
-      run: ls TestModel
+      run: ls TestModel\testGraph\testGraph
                           
    # - name: change permission  
     #  run: chmod +x ConsoleApp1/ConsoleApp1.csproj    
@@ -58,8 +58,8 @@ jobs:
    # - name: find exe path
      # run: readlink -f ConsoleApp1.exe
       
-    - name: list a folder  
-      run: ls -a 
+    #- name: list a folder  
+     # run: ls -a 
 
    # - name: find exe path
    #   run: readlink -f ConsoleApp1.csproj
