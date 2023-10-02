@@ -58,6 +58,9 @@ jobs:
     - name: find  path
       run: readlink -f testGraph.py
       
+      
+    - name: find  path to proj
+      run: readlink -f ConsoleApp1.csproj
     #- name: list a folder  
      # run: ls -a 
 
