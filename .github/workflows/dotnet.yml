@@ -40,8 +40,8 @@ jobs:
     #- name: List files
      # run: ls -a      
       
-   # - name: list a folder  
-     # run: ls -a ConsoleApp1
+    - name: list a folder  
+      run: ls -a TestModel
                           
    # - name: change permission  
     #  run: chmod +x ConsoleApp1/ConsoleApp1.csproj    
@@ -58,14 +58,14 @@ jobs:
    # - name: find exe path
      # run: readlink -f ConsoleApp1.exe
       
-   # - name: list a folder  
-   #   run: ls -a 
+    - name: list a folder  
+      run: ls -a 
 
    # - name: find exe path
    #   run: readlink -f ConsoleApp1.csproj
       
-    - name: run project
-      run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+    #- name: run project
+     # run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
 
 
