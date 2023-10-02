@@ -31,9 +31,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
       
-    -name: copy file
-      run: 
-
 
     - name: list a folder  
       run: ls TestModel\testGraph\testGraph                          
