@@ -46,9 +46,9 @@ namespace TestModel
         public static void RunTests(Dictionary<string, object> _configDict)
 
         {
-            
-            //DataFrame testConfigs = Crop.LoadCoefficients("SVSModel.Data.TestConfig.csv");
 
+            //DataFrame testConfigs = Crop.LoadCoefficients("SVSModel.Data.TestConfig.csv");
+            string dir = Directory.GetCurrentDirectory();
             string resourceName = "TestModel.TestConfig.csv";
             var assembly = Assembly.GetExecutingAssembly();
             Stream csv = assembly.GetManifestResourceStream(resourceName);
@@ -101,9 +101,9 @@ namespace TestModel
                         nextRow.Add(new KeyValuePair<string, object>(OutPutHeaders[c], output[r, c]));
                     }
                     newDataframe.Append(nextRow, true);
-                }               
-
-                DataFrame.SaveCsv(newDataframe, @"C:\Users\1989s\source\repos\svs\modelCsharp\TestModel\testGraph\OutputFiles\" + test + ".csv");
+                }
+                DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
+                //DataFrame.SaveCsv(newDataframe, @"C:\Users\1989s\source\repos\svs\modelCsharp\TestModel\testGraph\OutputFiles\" + test + ".csv");
 
             }
             runPythonScript();
