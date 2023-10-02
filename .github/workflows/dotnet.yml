@@ -41,7 +41,7 @@ jobs:
     - name: copy file
       uses: canastro/copy-file-action@master
       with:
-        source: "D:\a\SVSModelBuildDeploy\SVSModelBuildDeploy\TestModel\testGraph\testGraph\testGraph.py"
+        source: "D:\\a\SVSModelBuildDeploy\\SVSModelBuildDeploy\\TestModel\\testGraph\\testGraph\\testGraph.py"
         target: "D:\\TestModel\\testGraph\\testGraph\\testGraph.py"      
       
 
