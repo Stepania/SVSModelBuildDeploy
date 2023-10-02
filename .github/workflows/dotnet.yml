@@ -36,13 +36,17 @@ jobs:
       run: ls TestModel\testGraph\testGraph                          
       
     - name: find  path
-      run: readlink -f testGraph.py      
+      run: readlink -f testGraph.py
+
+    - name: copy file
+      uses: canastro/copy-file-action@master
+      with:
+        source: "D:\a\SVSModelBuildDeploy\SVSModelBuildDeploy\TestModel\testGraph\testGraph\testGraph.py"
+        target: "D:\\TestModel\\testGraph\\testGraph\\testGraph.py"      
       
-    #- name: find  path to proj
-    #  run: readlink -f ConsoleApp1.csproj
+
       
     - name: run project
-      run: readlink -f testGraph.py
-           dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+      run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
           
