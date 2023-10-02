@@ -41,7 +41,7 @@ namespace TestModel
             StreamReader sReader = proc.StandardOutput;
             proc.WaitForExit();
             Console.ReadLine();
-            // not working because linux does not work with exe
+
         }
         public static void RunTests(Dictionary<string, object> _configDict)
 

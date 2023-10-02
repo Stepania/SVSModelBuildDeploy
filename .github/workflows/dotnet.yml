@@ -55,8 +55,8 @@ jobs:
    # - name: find exe file
     #  run: find . -type f -name "*.exe"
       
-   # - name: find exe path
-     # run: readlink -f ConsoleApp1.exe
+    - name: find  path
+      run: readlink -f testGraph.py
       
     #- name: list a folder  
      # run: ls -a 
