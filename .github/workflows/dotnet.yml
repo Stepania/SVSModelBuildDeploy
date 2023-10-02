@@ -42,7 +42,7 @@ jobs:
     #  run: readlink -f ConsoleApp1.csproj
       
     - name: run project
-      run: Run readlink -f testGraph.py
+      run: readlink -f testGraph.py
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
           
