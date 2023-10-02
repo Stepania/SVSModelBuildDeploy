@@ -41,7 +41,7 @@ jobs:
      # run: ls -a      
       
     - name: list a folder  
-      run: ls -a TestModel
+      run: ls TestModel
                           
    # - name: change permission  
     #  run: chmod +x ConsoleApp1/ConsoleApp1.csproj    
