@@ -34,6 +34,9 @@ jobs:
       
     - name: Install Python dependencies
       run: python -m pip install --upgrade pip pathlib  
+
+    - name: Install Python dependencies
+      run: python -m pip install --upgrade pip os  
              
     - name: Restore dependencies
       run: dotnet restore
