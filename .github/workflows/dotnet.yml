@@ -31,11 +31,10 @@ jobs:
       
     - name: Install Python dependencies
       run: python -m pip install --upgrade pip matplotlib  
-      
-
-         
+             
     - name: Restore dependencies
       run: dotnet restore
+      
     - name: Build
       run: dotnet build --no-restore             
 
@@ -44,15 +43,19 @@ jobs:
       run: |
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
            python testGraph.py
+                    
+    - name: find graph parent
+      run: ls TestModel   
            
-    - name: find  graph parent
-      run: ls ConsoleApp1
+           
+    # - name: find graph parent
+      # run: ls ConsoleApp1
       
-    - name: find  graph bin
-      run: ls ConsoleApp1\bin
+    # - name: find  graph bin
+      # run: ls ConsoleApp1\bin
       
-    - name: find  graph debug
-      run: ls ConsoleApp1\bin\Debug
+    # - name: find  graph debug
+      # run: ls ConsoleApp1\bin\Debug
            
 
 
