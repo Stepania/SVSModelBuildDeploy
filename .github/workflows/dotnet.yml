@@ -33,15 +33,19 @@ jobs:
       
     - name: list a folder
       run: |
-           cp ${{ github.workspace }}\TestModel\testGraph\testGraph\testGraph.py
+           cp ${{ github.workspace }}\TestModel\testGraph\testGraph\testGraph.py 
            ls TestModel\testGraph\testGraph
              
       
     - name: find  path
       run: readlink -f testGraph.py
 
-   # - name: find  path
-    #  run: python.exe
+    - name: find  path
+      run: testGraph.py
+    - name: find  path
+      run: python.exe
+    
+    
     
     - name: run project
       run: |
