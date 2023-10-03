@@ -37,7 +37,7 @@ jobs:
       
       
     - name: list specsific folder  
-      run: ls TestModel\testGraph\testGraph                          
+      run: ls -Al              
       
     - name: find  path
       run: readlink -f testGraph.py
