@@ -49,7 +49,7 @@ jobs:
            
       
     - name: find  testgraph 
-      run: find / -iname testGraph.py
+      run: find . -name "*testGraph.py*"
       
     # - name: find  graph debug
       # run: ls ConsoleApp1\bin\Debug
