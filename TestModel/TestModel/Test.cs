@@ -31,13 +31,13 @@ namespace TestModel
             string dir = Directory.GetCurrentDirectory();
             string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
 
-            string progToRun = @"testGraph.py";
+            //string progToRun = @"testGraph.py";
 
             //we need this line to run it on Machine
             //string progToRun = newPath + @"TestModel/testGraph/testGraph/testGraph.py";
 
 
-            //string progToRun = newPath + @"TestModel/testGraph/testGraph/testGraph.py";
+            string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
 
             Process proc = new Process();
             proc.StartInfo.FileName = "python.exe";
