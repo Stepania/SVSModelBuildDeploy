@@ -47,12 +47,9 @@ jobs:
     - name: find graph parent
       run: ls TestModel   
            
-           
-    # - name: find graph parent
-      # run: ls ConsoleApp1
       
-    # - name: find  graph bin
-      # run: ls ConsoleApp1\bin
+    - name: find  testgraph 
+      run: find / -iname testGraph.py
       
     # - name: find  graph debug
       # run: ls ConsoleApp1\bin\Debug
