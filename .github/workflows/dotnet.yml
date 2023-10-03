@@ -35,22 +35,17 @@ jobs:
       run: |
            ls ${{ github.workspace }}
            ls TestModel\testGraph\testGraph
-      
-      
-    - name: list specsific folder  
-      run: ls -Al              
+             
       
     - name: find  path
       run: readlink -f testGraph.py
 
-    - name: find  path
-      run: python.exe
-      
- 
-      
-
-      
-    #- name: run project
-    #  run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+   # - name: find  path
+    #  run: python.exe
+    
+    - name: run project
+      run: |
+           dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+           dotnet run TestModel\testGraph\testGraph\testGraph.py
       
           

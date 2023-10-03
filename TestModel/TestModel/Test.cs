@@ -31,12 +31,9 @@ namespace TestModel
             string dir = Directory.GetCurrentDirectory();
             string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
 
-            /*     new path    C: \Users\1989s\study\LastYear\CAPSTONE\helpfulInfo\svs2\modelCsharp\
-                  path -  C: \Users\1989s\study\LastYear\CAPSTONE\helpfulInfo\svs2\modelCsharp\ConsoleApp1\bin\Debug\net6.0*/
-
             Trace.WriteLine(newPath);
             Trace.WriteLine(dir);
-            string progToRun = newPath + @"testGraph\testGraph\testGraph.py";
+            string progToRun = newPath + @"TestModel\testGraph\testGraph\testGraph.py";
             Process proc = new Process();
             proc.StartInfo.FileName = "python.exe";
             proc.StartInfo.RedirectStandardOutput = true;
