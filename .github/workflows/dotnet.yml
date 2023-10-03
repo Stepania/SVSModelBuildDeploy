@@ -39,8 +39,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
       
-    - name: copy file
-      run: |
+    #- name: copy file
+     # run: |
            cp ${{ github.workspace }}\TestModel\testGraph\testGraph\testGraph.py 
            ls TestModel\testGraph\testGraph
              
@@ -56,5 +56,6 @@ jobs:
     - name: find  path
       run: ls ${{ github.workspace }}
            
-      
+    - name: find  png
+      run: find . -type f -name "*.png"     
           
