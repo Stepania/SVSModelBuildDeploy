@@ -31,7 +31,7 @@ new_file.write_text('Hello file')
 
 
 
-observed_path = os.path("TestModel/Observed/observed.csv")
+observed_path = "TestModel/Observed/observed.csv"
 
 
 middle = pathlib.Path(path, "middle")
