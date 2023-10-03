@@ -40,16 +40,18 @@ jobs:
     - name: find  path
       run: readlink -f testGraph.py
 
-    - name: find  path
-      run: testGraph.py
-    - name: find  path
-      run: python.exe
+    #- name: find  path
+    #  run: testGraph.py
+      
+      
+    #- name: find  path
+    #  run: python.exe
     
     
     
     - name: run project
       run: |
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
-           #dotnet run TestModel\testGraph\testGraph\testGraph.py
+           dotnet run testGraph.py
       
           
