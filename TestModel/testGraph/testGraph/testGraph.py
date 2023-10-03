@@ -7,38 +7,17 @@ import pathlib
 
 import glob
 
-
-
-
-
 path = os.getcwd()
 
 save_path = path
 
-begining = pathlib.Path(path, "begining")
-begining.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
-new_file = begining / 'myfile.txt'
-new_file.write_text('Hello file')
-
-
 #need this line to run on machine
 #observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
-
-#this line is to run simulation
-#observed_path= os.path("observed.csv")
-
-
-
 
 observed_path = "TestModel/Observed/observed.csv"
 
 
-middle = pathlib.Path(path, "middle")
-middle.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
-new_file = middle / 'myfile.txt'
-new_file.write_text('Hello file')
+#that's a middle here and i can get to this position
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
@@ -46,19 +25,66 @@ observed_data.sort_index(axis=0,inplace=True)
 
 tests = ['test 1','test 2','test 3']
 
+
+afterTests = pathlib.Path(path, "afterTests")
+afterTests.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = afterTests / 'myfile.txt'
+new_file.write_text('Hello file')
+
+
 Alltests =[]
 for t in tests[:]:
     Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))
     
+
+afterAllTests = pathlib.Path(path, "afterAllTests")
+afterAllTests.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = afterAllTests / 'myfile.txt'
+new_file.write_text('Hello file')
+    
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
+
+afterAllData = pathlib.Path(path, "afterAllData")
+afterAllData.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = afterAllData / 'myfile.txt'
+new_file.write_text('Hello file')
+
+
+
+
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
+
+
+afterobsrved = pathlib.Path(path, "afterobsrved")
+afterobsrved.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = afterobsrved / 'myfile.txt'
+new_file.write_text('Hello file')
+
 
 observed_test = observed_data.columns.get_level_values(0).drop_duplicates()
 AllData.sort_index(axis=0,inplace=True)
 
+
+beforeData = pathlib.Path(path, "beforeData")
+beforeData.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = beforeData / 'myfile.txt'
+new_file.write_text('Hello file')
+
+
 AllData.index = pd.to_datetime(AllData.index)
+
+afterData = pathlib.Path(path, "afterData")
+afterData.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = afterData / 'myfile.txt'
+new_file.write_text('Hello file')
 
 tests = AllData.columns.get_level_values(0).drop_duplicates()
 colors = pd.Series(['r','b','g'])
