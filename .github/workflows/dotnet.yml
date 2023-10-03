@@ -46,7 +46,7 @@ jobs:
              
       
     - name: find  path
-      run: readlink -f observed.csv
+      run: readlink -f net6.0my_plot.png
 
     
     - name: run project
