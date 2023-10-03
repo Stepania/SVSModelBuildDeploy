@@ -3,10 +3,24 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import datetime as dt
 import numpy as np
+import pathlib
 
 import glob
 
+
+
+
+
 path = os.getcwd()
+
+save_path = path
+
+new_dir = pathlib.Path(path, "textDoc")
+new_dir.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = new_dir / 'myfile.txt'
+new_file.write_text('Hello file')
+
 
 #need this line to run on machine
 #observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
