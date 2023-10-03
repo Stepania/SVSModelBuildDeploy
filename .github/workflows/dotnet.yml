@@ -32,7 +32,8 @@ jobs:
       run: dotnet build --no-restore
       
     - name: list a folder
-      run: ls -a
+      run: |
+           ls ${{ github.workspace }}
       
       
     - name: list specsific folder  
