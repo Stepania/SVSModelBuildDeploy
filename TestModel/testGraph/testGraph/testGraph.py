@@ -26,7 +26,12 @@ new_file.write_text('Hello file')
 #observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
 #this line is to run simulation
-observed_path= os.path("observed.csv")
+#observed_path= os.path("observed.csv")
+
+
+
+
+observed_path = os.path("TestModel/Observed/observed.csv")
 
 
 middle = pathlib.Path(path, "middle")
@@ -112,7 +117,7 @@ new_file = endFile / 'myfile.txt'
 new_file.write_text('Hello file')
 
 
-
+#plt.savefig('subfolder/filename.png')
 
 plt.savefig('plot.png')
 plt.show()

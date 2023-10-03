@@ -47,20 +47,15 @@ jobs:
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
            #python testGraph.py                       
       
-
-      
-    - name: find  graph debug
-      run: ls ConsoleApp1\bin\Debug
       
     - name: find  graph bin
-      run: ls ConsoleApp1\bin        
+      run: ls TestModel\Observed        
 
     - name: find  graph folder
-      run: ls ConsoleApp1
+      run: ls TestModel
       
     - name: find graph 
       run: ls 
       
-    - name: find graph 
-      run: ls      
+     
       
