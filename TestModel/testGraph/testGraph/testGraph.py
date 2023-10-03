@@ -17,7 +17,7 @@ save_path = path
 observed_path = "TestModel/Observed/observed.csv"
 
 
-#that's a middle here and i can get to this position
+
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
@@ -26,25 +26,22 @@ observed_data.sort_index(axis=0,inplace=True)
 tests = ['test 1','test 2','test 3']
 
 
-afterTests = pathlib.Path(path, "afterTests")
-afterTests.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
-new_file = afterTests / 'myfile.txt'
-new_file.write_text('Hello file')
-
 
 Alltests =[]
 for t in tests[:]:
     Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))
     
 
-afterAllTests = pathlib.Path(path, "afterAllTests")
-afterAllTests.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
-new_file = afterAllTests / 'myfile.txt'
-new_file.write_text('Hello file')
+#that's a middle here and i can get to this position
     
 AllData = pd.concat(Alltests,axis=1,keys=tests)
+
+afterConcat = pathlib.Path(path, "afterConcat")
+afterConcat.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = afterConcat / 'myfile.txt'
+new_file.write_text('Hello file')
+
 AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
 
