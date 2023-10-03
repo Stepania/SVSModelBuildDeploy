@@ -48,8 +48,8 @@ jobs:
       run: ls TestModel\testGraph\testGraph
            
       
-    - name: find  testgraph 
-      run: find . -name "*testGraph.py*"
+    # - name: find  testgraph 
+      # run: find . -name "*testGraph.py*"
       
     # - name: find  graph debug
       # run: ls ConsoleApp1\bin\Debug
