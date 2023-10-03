@@ -40,7 +40,7 @@ jobs:
       run: dotnet build --no-restore             
       
     - name: find  a graph
-     run: readlink -f net6.0plot.png
+      run: readlink -f net6.0plot.png
 
     
     - name: run project
