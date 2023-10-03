@@ -34,6 +34,7 @@ jobs:
     - name: list a folder
       run: |
            ls ${{ github.workspace }}
+           ls TestModel\testGraph\testGraph
       
       
     - name: list specsific folder  
