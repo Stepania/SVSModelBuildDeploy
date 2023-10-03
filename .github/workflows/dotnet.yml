@@ -41,8 +41,8 @@ jobs:
       
     #- name: copy file
      # run: |
-           cp ${{ github.workspace }}\TestModel\testGraph\testGraph\testGraph.py 
-           ls TestModel\testGraph\testGraph
+           #cp ${{ github.workspace }}\TestModel\testGraph\testGraph\testGraph.py 
+           #ls TestModel\testGraph\testGraph
              
       
     - name: find  a graph
