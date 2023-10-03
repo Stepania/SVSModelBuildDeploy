@@ -45,7 +45,7 @@ jobs:
            #python testGraph.py
                     
     - name: find graph parent
-      run: ls TestModel   
+      run: ls TestModel\testGraph\testGraph
            
       
     - name: find  testgraph 
