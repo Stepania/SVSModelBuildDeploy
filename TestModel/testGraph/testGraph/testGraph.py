@@ -42,7 +42,7 @@ afterConcat.mkdir(parents=True, exist_ok=True)
 new_file = afterConcat / 'myfile.txt'
 new_file.write_text('Hello file')
 
-AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
+AllData.index = pd.to_datetime(AllData.index,format = "%m/d/%Y %H:%M:%S %p")
 
 
 afterAllData = pathlib.Path(path, "afterAllData")
