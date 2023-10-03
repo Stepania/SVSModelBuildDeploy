@@ -33,7 +33,7 @@ jobs:
       
     - name: list a folder
       run: |
-           ls ${{ github.workspace }}
+           cp ${{ github.workspace\TestModel\testGraph\testGraph\testGraph.py}}
            ls TestModel\testGraph\testGraph
              
       
