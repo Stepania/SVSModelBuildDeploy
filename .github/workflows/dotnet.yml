@@ -30,11 +30,7 @@ jobs:
       run: python -m pip install --upgrade pip pandas
       
     - name: Install Python dependencies
-      run: python -m pip install --upgrade pip matplotlib
-      
-      
-      
-      
+      run: python -m pip install --upgrade pip matplotlib  
       
 
          
@@ -52,18 +48,10 @@ jobs:
     - name: find  path
       run: readlink -f testGraph.py
 
-    #- name: find  path
-    #  run: testGraph.py
-      
-      
-    #- name: find  path
-    #  run: python.exe
-    
-    
     
     - name: run project
       run: |
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
-           dotnet run testGraph.py
+           
       
           
