@@ -38,14 +38,12 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore             
-      
-    - name: find  a graph
-      run: readlink -f net6.0peyjejyeytjheyrtgbfvlot.png
 
     
     - name: run project
       run: |
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+           python testGraph.py
            
     - name: find  graph parent
       run: ls ConsoleApp1
