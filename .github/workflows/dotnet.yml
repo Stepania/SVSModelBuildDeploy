@@ -47,15 +47,16 @@ jobs:
       run: |
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
            
-    - name: find  path
+    - name: find  graph parent
       run: ls ConsoleApp1
       
-    - name: find  path
+    - name: find  graph bin
       run: ls ConsoleApp1\bin
       
-    - name: find  path
+    - name: find  graph debug
       run: ls ConsoleApp1\bin\Debug
            
-    # - name: find  png
-      # run: find . -type f -name "*plot.png"     
-          
+    - name: find  png
+      run: find . -type f -name net6.0plot.png
+
+    
