@@ -59,4 +59,8 @@ jobs:
       run: ls ConsoleApp1
       
     - name: find graph 
-      run: ls GraphFolder
+      run: ls 
+      
+    - name: find graph 
+      run: ls      
+      

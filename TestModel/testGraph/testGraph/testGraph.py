@@ -15,7 +15,11 @@ path = os.getcwd()
 
 save_path = path
 
-
+begining = pathlib.Path(path, "begining")
+begining.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = begining / 'myfile.txt'
+new_file.write_text('Hello file')
 
 
 #need this line to run on machine
@@ -24,6 +28,12 @@ save_path = path
 #this line is to run simulation
 observed_path= os.path("observed.csv")
 
+
+middle = pathlib.Path(path, "middle")
+middle.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = middle / 'myfile.txt'
+new_file.write_text('Hello file')
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
@@ -50,6 +60,13 @@ colors = pd.Series(['r','b','g'])
 
 start = dt.datetime.date(AllData['test 1'].dropna().index.min())
 end = dt.datetime.date(AllData['test 1'].dropna().index.max())
+
+
+insideLoop = pathlib.Path(path, "insideLoop")
+insideLoop.mkdir(parents=True, exist_ok=True)
+# You have to make a file inside the new directory
+new_file = insideLoop / 'myfile.txt'
+new_file.write_text('Hello file')
 
 def makeplot(Data,color):
     plt.plot(Data,color=color)
@@ -88,10 +105,10 @@ for t in tests:
     pos+=1
 
 
-new_dir = pathlib.Path(path, "GraphFolder")
-new_dir.mkdir(parents=True, exist_ok=True)
+endFile = pathlib.Path(path, "GraphFolder")
+endFile.mkdir(parents=True, exist_ok=True)
 # You have to make a file inside the new directory
-new_file = new_dir / 'myfile.txt'
+new_file = endFile / 'myfile.txt'
 new_file.write_text('Hello file')
 
 
