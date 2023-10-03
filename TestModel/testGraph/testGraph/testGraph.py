@@ -76,5 +76,5 @@ for t in tests:
     make_observed(observed_data[datefilter])
     pos+=1
 
-plt.savefig(path+'my_plot.png')
+plt.savefig(path+'my_plotik.png')
 plt.show()
