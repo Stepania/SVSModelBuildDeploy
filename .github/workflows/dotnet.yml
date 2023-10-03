@@ -54,7 +54,7 @@ jobs:
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
            
     - name: find  path
-      run: ls ConsoleApp1/bin/Debug/net6.0
+      run: ls ConsoleApp1/bin/Debug
            
       
           
