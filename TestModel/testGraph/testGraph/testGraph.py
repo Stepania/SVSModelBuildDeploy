@@ -16,9 +16,6 @@ save_path = path
 
 observed_path = "TestModel/Observed/observed.csv"
 
-
-
-
 observed_data = pd.read_csv(observed_path,index_col=0)
 
 observed_data.sort_index(axis=0,inplace=True)
@@ -34,16 +31,12 @@ AllData = pd.concat(Alltests,axis=1,keys=tests)
 
 
 #problem is here! i have changed to m/d/y now, from d/m/y
-AllData.index = pd.to_datetime(AllData.index,format = "%m/d/%Y %H:%M:%S %p")
-
+AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
 afterAllData = pathlib.Path(path, "afterAllData")
 afterAllData.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
 new_file = afterAllData / 'myfile.txt'
 new_file.write_text('Hello file')
-
-
 
 
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
@@ -51,7 +44,6 @@ observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
 afterobsrved = pathlib.Path(path, "afterobsrved")
 afterobsrved.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
 new_file = afterobsrved / 'myfile.txt'
 new_file.write_text('Hello file')
 
@@ -62,7 +54,6 @@ AllData.sort_index(axis=0,inplace=True)
 
 beforeData = pathlib.Path(path, "beforeData")
 beforeData.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
 new_file = beforeData / 'myfile.txt'
 new_file.write_text('Hello file')
 
@@ -71,7 +62,6 @@ AllData.index = pd.to_datetime(AllData.index)
 
 afterData = pathlib.Path(path, "afterData")
 afterData.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
 new_file = afterData / 'myfile.txt'
 new_file.write_text('Hello file')
 
@@ -84,7 +74,6 @@ end = dt.datetime.date(AllData['test 1'].dropna().index.max())
 
 insideLoop = pathlib.Path(path, "insideLoop")
 insideLoop.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
 new_file = insideLoop / 'myfile.txt'
 new_file.write_text('Hello file')
 
@@ -127,7 +116,6 @@ for t in tests:
 
 endFile = pathlib.Path(path, "GraphFolder")
 endFile.mkdir(parents=True, exist_ok=True)
-# You have to make a file inside the new directory
 new_file = endFile / 'myfile.txt'
 new_file.write_text('Hello file')
 

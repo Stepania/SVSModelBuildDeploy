@@ -34,7 +34,6 @@ namespace TestModel
             //we need this line to run it on Machine
             //string progToRun = newPath + @"TestModel/testGraph/testGraph/testGraph.py";
 
-
             string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
 
             Process proc = new Process();
