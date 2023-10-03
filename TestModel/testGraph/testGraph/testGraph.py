@@ -8,9 +8,10 @@ import glob
 
 path = os.getcwd()
 
-#need this line 
+#need this line to run on machine
 #observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
+#this line is to run simulation
 observed_path= os.path("observed.csv")
 
 
