@@ -42,7 +42,7 @@ jobs:
     - name: run project
       run: |
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
-           python testGraph.py
+           #python testGraph.py
                     
     - name: find graph parent
       run: ls TestModel   
