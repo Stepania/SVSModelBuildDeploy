@@ -33,6 +33,7 @@ namespace TestModel
 
             Trace.WriteLine(newPath);
             Trace.WriteLine(dir);
+
             string progToRun = newPath + @"TestModel\testGraph\testGraph\testGraph.py";
             Process proc = new Process();
             proc.StartInfo.FileName = "python.exe";
