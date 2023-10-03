@@ -46,7 +46,7 @@ jobs:
              
       
     - name: find  path
-      run: readlink -f net6.0my_plot.png
+      run: readlink -f net6.0my_plotik.png
 
     
     - name: run project
