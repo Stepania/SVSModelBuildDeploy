@@ -37,16 +37,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore             
       
-    #- name: copy file
-     # run: |
-           #cp ${{ github.workspace }}\TestModel\testGraph\testGraph\testGraph.py 
-           #ls TestModel\testGraph\testGraph
-             
-      
-    - name: find  a graph
-      run: readlink -f net6.0my_plotik.png
+    #- name: find  a graph
+    #  run: readlink -f net6.0my_plotik.png
 
     
     - name: run project
@@ -54,8 +48,14 @@ jobs:
            dotnet run --project ConsoleApp1/ConsoleApp1.csproj
            
     - name: find  path
-      run: ls ${{ github.workspace }}
+      run: ls ConsoleApp1
+      
+    - name: find  path
+      run: ls ConsoleApp1\bin
+      
+    - name: find  path
+      run: ls ConsoleApp1\bin\Debug
            
-    - name: find  png
-      run: find . -type f -name "*.png"     
+    # - name: find  png
+      # run: find . -type f -name "*plot.png"     
           
