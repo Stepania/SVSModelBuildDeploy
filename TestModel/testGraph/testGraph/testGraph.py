@@ -11,15 +11,10 @@ path = os.getcwd()
 #need this line 
 #observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
-observed_path= "observed.csv"
+observed_path= os.path("observed.csv")
 
 
 observed_data = pd.read_csv(observed_path,index_col=0)
-
-
-observed_data.sort_index(axis=0,inplace=True)
-
-tests = ['test 1','test 2','test 3']
 
 observed_data.sort_index(axis=0,inplace=True)
 
