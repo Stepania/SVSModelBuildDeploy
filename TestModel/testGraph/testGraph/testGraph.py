@@ -9,7 +9,10 @@ import glob
 path = os.getcwd()
 
 #need this line 100%
-observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
+#observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
+
+observed_path= "observed.csv"
+
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
