@@ -28,7 +28,8 @@ for t in tests[:]:
     
     #Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
     
-    #dateparse = lambda x: dt.datetime.strptime(x, '%d/%m/%Y %H:%M:%S %p')    
+    #dateparse = lambda x: dt.datetime.strptime(x, '%d/%m/%Y %H:%M:%S %p')  
+ 
     testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['Date'],dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
     testframe.set_index('Date',inplace=True)
@@ -36,7 +37,6 @@ for t in tests[:]:
 
 
 AllData = pd.concat(Alltests,axis=1,keys=tests)
-#that's a middle here and i can get to this position
 
 #problem is here!
 #AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
