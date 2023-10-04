@@ -30,7 +30,7 @@ for t in tests[:]:
     
     #dateparse = lambda x: dt.datetime.strptime(x, '%d/%m/%Y %H:%M:%S %p')  
  
-    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['Date'],dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
+    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,parse_dates=['Date'],dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
     testframe.set_index('Date',inplace=True)
     Alltests.append(testframe)   
