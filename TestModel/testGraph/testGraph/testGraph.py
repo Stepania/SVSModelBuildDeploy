@@ -26,11 +26,11 @@ tests = ['test 1','test 2','test 3']
 Alltests =[]
 for t in tests[:]:
     
-    #Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))
+    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))
     
-    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['Date'],dayfirst=True)
-    testframe.set_index('Date',inplace=True)
-    Alltests.append(testframe)
+    #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['Date'],dayfirst=True)
+    #testframe.set_index('Date',inplace=True)
+    #Alltests.append(testframe)
         
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 #that's a middle here and i can get to this position
