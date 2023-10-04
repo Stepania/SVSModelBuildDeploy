@@ -49,7 +49,7 @@ jobs:
            # dotnet run --project ConsoleApp1/ConsoleApp1.csproj
            
     - name: run python script
-      run: python TestModel\testGraph\testGraph\testGraph.py            
+      run: python TestModel\Observed\testGraph.py            
            
                        
     - name: find  graph bin
