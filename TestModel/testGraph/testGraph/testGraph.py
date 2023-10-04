@@ -29,8 +29,9 @@ for t in tests[:]:
     #Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))    
     
     dateparse = lambda x: dt.datetime.strptime(x, '%Y-%m-%d %H:%M:%S')    
-    #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['datetime'],dayfirst=True,date_parser=dateparse)
-    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",dayfirst=True,date_parser=dateparse)
+    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=True,dayfirst=True,date_parser=dateparse)
+    
+    #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",dayfirst=True,date_parser=dateparse)
     testframe.set_index('Date',inplace=True)
     Alltests.append(testframe)
         
