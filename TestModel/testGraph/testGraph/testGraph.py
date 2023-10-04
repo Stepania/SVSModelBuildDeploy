@@ -12,10 +12,10 @@ path = os.getcwd()
 save_path = path
 
 #need this line to run on machine
-observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
+#observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
 #run this code for an action
-#observed_path = "TestModel/Observed/observed.csv"
+observed_path = "TestModel/Observed/observed.csv"
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
