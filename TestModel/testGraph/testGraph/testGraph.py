@@ -14,6 +14,7 @@ save_path = path
 #need this line to run on machine
 #observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
+#run this code for an action
 observed_path = "TestModel/Observed/observed.csv"
 
 observed_data = pd.read_csv(observed_path,index_col=0)
@@ -27,7 +28,7 @@ for t in tests[:]:
     
     #Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))
     
-    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['Date'],infer_datetime_format=True)
+    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['Date'],dayfirst=True)
     testframe.set_index('Date',inplace=True)
     Alltests.append(testframe)
         
