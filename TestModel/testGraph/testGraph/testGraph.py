@@ -29,7 +29,6 @@ for t in tests[:]:
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 #that's a middle here and i can get to this position
 
-
 #problem is here!
 AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
