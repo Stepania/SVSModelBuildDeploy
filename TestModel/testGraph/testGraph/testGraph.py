@@ -23,6 +23,13 @@ observed_data.sort_index(axis=0,inplace=True)
 
 tests = ['test 1','test 2','test 3']
 
+#debugging
+afterAllData = pathlib.Path(path, "beforeAllTests")
+afterAllData.mkdir(parents=True, exist_ok=True)
+new_file = afterAllData / 'myfile.txt'
+new_file.write_text('Hello file')
+
+
 Alltests =[]
 for t in tests[:]:
     
@@ -30,7 +37,7 @@ for t in tests[:]:
     #
     #dateparse = lambda x: dt.datetime.strptime(x, '%d/%m/%Y %H:%M:%S %p')  
  
-    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,parse_dates=['Date'],dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
+    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
     testframe.set_index('Date',inplace=True)
     Alltests.append(testframe)   
