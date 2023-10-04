@@ -26,18 +26,21 @@ tests = ['test 1','test 2','test 3']
 Alltests =[]
 for t in tests[:]:
     
-    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))    
+    #Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))    
     
-    #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['Date'],dayfirst=True)
-    #testframe.set_index('Date',inplace=True)
-    #Alltests.append(testframe)
+    dateparse = lambda x: dt.datetime.strptime(x, '%Y-%m-%d %H:%M:%S')    
+    #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['datetime'],dayfirst=True,date_parser=dateparse)
+    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",dayfirst=True,date_parser=dateparse)
+    testframe.set_index('Date',inplace=True)
+    Alltests.append(testframe)
         
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 #that's a middle here and i can get to this position
 
 #problem is here!
-AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
+#AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
+#debugging
 afterAllData = pathlib.Path(path, "afterAllData")
 afterAllData.mkdir(parents=True, exist_ok=True)
 new_file = afterAllData / 'myfile.txt'
@@ -46,7 +49,7 @@ new_file.write_text('Hello file')
 
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
-
+#debugging
 afterobsrved = pathlib.Path(path, "afterobsrved")
 afterobsrved.mkdir(parents=True, exist_ok=True)
 new_file = afterobsrved / 'myfile.txt'
@@ -56,7 +59,7 @@ new_file.write_text('Hello file')
 observed_test = observed_data.columns.get_level_values(0).drop_duplicates()
 AllData.sort_index(axis=0,inplace=True)
 
-
+#debugging
 beforeData = pathlib.Path(path, "beforeData")
 beforeData.mkdir(parents=True, exist_ok=True)
 new_file = beforeData / 'myfile.txt'
@@ -64,7 +67,7 @@ new_file.write_text('Hello file')
 
 
 AllData.index = pd.to_datetime(AllData.index)
-
+#debugging
 afterData = pathlib.Path(path, "afterData")
 afterData.mkdir(parents=True, exist_ok=True)
 new_file = afterData / 'myfile.txt'
@@ -76,7 +79,7 @@ colors = pd.Series(['r','b','g'])
 start = dt.datetime.date(AllData['test 1'].dropna().index.min())
 end = dt.datetime.date(AllData['test 1'].dropna().index.max())
 
-
+#debugging
 insideLoop = pathlib.Path(path, "insideLoop")
 insideLoop.mkdir(parents=True, exist_ok=True)
 new_file = insideLoop / 'myfile.txt'
@@ -118,7 +121,7 @@ for t in tests:
     make_observed(observed_data[datefilter])
     pos+=1
 
-
+#debugging
 endFile = pathlib.Path(path, "GraphFolder")
 endFile.mkdir(parents=True, exist_ok=True)
 new_file = endFile / 'myfile.txt'
