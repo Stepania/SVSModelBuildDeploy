@@ -12,9 +12,9 @@ path = os.getcwd()
 save_path = path
 
 #need this line to run on machine
-#observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
+observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
-observed_path = "TestModel/Observed/observed.csv"
+#observed_path = "TestModel/Observed/observed.csv"
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
@@ -31,7 +31,7 @@ AllData = pd.concat(Alltests,axis=1,keys=tests)
 
 
 #problem is here! i have changed to m/d/y now, from d/m/y
-AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
+AllData.index = pd.to_datetime(AllData.index,format = "%y/%m/%d %H:%M:%S %p")
 
 afterAllData = pathlib.Path(path, "afterAllData")
 afterAllData.mkdir(parents=True, exist_ok=True)

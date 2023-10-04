@@ -32,9 +32,9 @@ namespace TestModel
             string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
 
             //we need this line to run it on Machine
-            //string progToRun = newPath + @"TestModel/testGraph/testGraph/testGraph.py";
+            string progToRun = newPath + @"TestModel/testGraph/testGraph/testGraph.py";
 
-            string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
+            //string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
 
             Process proc = new Process();
             proc.StartInfo.FileName = "python.exe";
