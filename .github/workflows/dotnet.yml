@@ -45,10 +45,10 @@ jobs:
       run: dotnet build --no-restore             
 
     
-    # - name: run project
-      # run: |
-           # dotnet run --project ConsoleApp1/ConsoleApp1.csproj
-           #python testGraph.py                       
+    - name: run project
+      run: |
+           dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+                  
       
       
     - name: find  graph bin

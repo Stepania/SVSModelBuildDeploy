@@ -31,7 +31,8 @@ AllData = pd.concat(Alltests,axis=1,keys=tests)
 
 
 #problem is here! i have changed to m/d/y now, from d/m/y
-AllData.index = pd.to_datetime(AllData.index,format = "%y/%m/%d %H:%M:%S %p")
+
+AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
 afterAllData = pathlib.Path(path, "afterAllData")
 afterAllData.mkdir(parents=True, exist_ok=True)
