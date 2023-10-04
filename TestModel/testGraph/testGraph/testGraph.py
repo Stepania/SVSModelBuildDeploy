@@ -26,7 +26,7 @@ tests = ['test 1','test 2','test 3']
 Alltests =[]
 for t in tests[:]:
     
-    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))    
+    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
     
     #dateparse = lambda x: dt.datetime.strptime(x, '%Y-%m-%d %H:%M:%S')    
     #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",parse_dates=['Date'],dayfirst=True)    
