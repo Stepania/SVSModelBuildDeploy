@@ -27,16 +27,17 @@ tests = ['test 1','test 2','test 3']
 Alltests =[]
 for t in tests[:]:
     
-    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
+    #Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
    
-    #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,delim_whitespace=True,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
+    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,delim_whitespace=True,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
-    #testframe.set_index('Date',inplace=True)
-    #Alltests.append(testframe)   
+    testframe.set_index('Date',inplace=True)
+    Alltests.append(testframe)   
 
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 
-AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
+#
+#AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
