@@ -12,15 +12,13 @@ using System.Data;
 using System;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text.Json.Serialization;
-//using ServiceStack;
-//using ServiceStack.Text;
 using System.Collections.Generic;
-//using Nancy.Routing.Constraints;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
 using Microsoft.Scripting;
 using static IronPython.Modules._ast;
 using System.IO;
+using CommandLine;
 
 namespace TestModel
 {
@@ -29,10 +27,12 @@ namespace TestModel
         private static void runPythonScript()
         {      
             string dir = Directory.GetCurrentDirectory();
-            string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
-
-            //we need this line to run it on Machine
-            //string progToRun = newPath + @"TestModel/testGraph/testGraph/testGraph.py";
+            //legacy below
+            //string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
+            //string progToRun = newPath+ @"TestModel\testGraph\testGraph\testGraph.py";
+          
+            //that is new with james
+            //string progToRun = dir + @"/../TestModel/testGraph/testGraph/testGraph.py";
 
             // run this code for an action
             string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
@@ -46,8 +46,7 @@ namespace TestModel
             StreamReader sReader = proc.StandardOutput;
             proc.WaitForExit();
             Console.ReadLine();
-
-        }
+        }        
         public static void RunTests(Dictionary<string, object> _configDict)
 
         {
