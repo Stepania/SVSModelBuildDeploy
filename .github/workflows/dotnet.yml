@@ -56,6 +56,6 @@ jobs:
     - name: find folder
       run: ls OutputFiles
       
-    - name: find graph 
-      run: ls    
+    - name: look in console app folder 
+      run: ls ConsoleApp1
       
