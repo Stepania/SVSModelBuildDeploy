@@ -28,14 +28,14 @@ namespace TestModel
         {      
             string dir = Directory.GetCurrentDirectory();
             //legacy below
-            string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
-            string progToRun = newPath+ @"TestModel\testGraph\testGraph\testGraph.py";
+            //string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
+            //string progToRun = newPath+ @"TestModel\testGraph\testGraph\testGraph.py";
           
             //that is new with james
             //string progToRun = dir + @"/../TestModel/testGraph/testGraph/testGraph.py";
 
             // run this code for an action
-            //string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
+            string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
 
             Process proc = new Process();
             proc.StartInfo.FileName = "python.exe";
