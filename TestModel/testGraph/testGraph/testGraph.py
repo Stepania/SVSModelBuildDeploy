@@ -10,13 +10,13 @@ import glob
 path = os.getcwd()
 
 #this one is a new wit James
-observed_path = os.path.join("../TestModel/Observed/observed.csv")
+#observed_path = os.path.join("../TestModel/Observed/observed.csv")
 
 #legacy bellow
-#observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
+observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
 #run this code for an action
-observed_path = "TestModel/Observed/observed.csv"
+#observed_path = "TestModel/Observed/observed.csv"
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
@@ -26,18 +26,18 @@ tests = ['test 1','test 2','test 3']
 
 Alltests =[]
 for t in tests[:]:
-    
-    #Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
+    #legacy
+    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
    
-    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,delim_whitespace=True,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
+    #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,delim_whitespace=True,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
     #testframe.set_index('Date',inplace=True)
-    Alltests.append(testframe)   
+    #Alltests.append(testframe)   
 
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 
-#
-#AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
+#legacy
+AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
