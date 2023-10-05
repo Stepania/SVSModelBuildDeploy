@@ -37,15 +37,17 @@ for t in tests[:]:
     #
     #dateparse = lambda x: dt.datetime.strptime(x, '%d/%m/%Y %H:%M:%S %p')  
  
-    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,date_format='%d/%m/%Y %H:%M:%S %p')    
+    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,delim_whitespace=True,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
     #testframe.set_index('Date',inplace=True)
     Alltests.append(testframe)   
-
+#
+#
 
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 
-
+#problem is here!
+#AllData.index = pd.to_datetime(AllData.index,format = "%d/%m/%Y %H:%M:%S %p")
 
 #debugging
 afterAllData = pathlib.Path(path, "afterAllData")
