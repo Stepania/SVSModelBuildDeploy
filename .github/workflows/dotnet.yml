@@ -50,12 +50,12 @@ jobs:
     - name: run project
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
                                
-    - name: fopen file for formating
-      run: Get-ChildItem OutputFiles 
+    # - name: fopen file for formating
+      # run: Get-ChildItem OutputFiles 
 
     - name: find folder
       run: ls OutputFiles
       
     - name: look in console app folder 
-      run: ls ConsoleApp1\OutputFiles
+      run: cat ConsoleApp1\OutputFiles\test 1.csv
       
