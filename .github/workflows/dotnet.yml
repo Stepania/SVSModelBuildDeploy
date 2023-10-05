@@ -51,7 +51,7 @@ jobs:
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
                                
     - name: fopen file for formating
-      run: cat test 1.csv    
+      run: cat OutputFiles 
 
     - name: find folder
       run: ls OutputFiles
