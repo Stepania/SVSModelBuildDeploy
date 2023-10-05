@@ -31,7 +31,7 @@ for t in tests[:]:
    
     testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,delim_whitespace=True,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
-    testframe.set_index('Date',inplace=True)
+    #testframe.set_index('Date',inplace=True)
     Alltests.append(testframe)   
 
 AllData = pd.concat(Alltests,axis=1,keys=tests)
