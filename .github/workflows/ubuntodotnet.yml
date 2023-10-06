@@ -34,7 +34,7 @@ jobs:
     - name: Install Python pathlib
       run: python -m pip install --upgrade pip pathlib       
       
-    - name: Install Python datetime
+    - name: Install Python pyinstaller
       run: python -m pip install --upgrade pip datetime
 
     - name: Install Python datetime
@@ -46,7 +46,11 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-      
+
+    - name: publish ubuntu
+      run: dotnet publish -c Release -r ubuntu.16.10-x64
+
+     
     - name: show folder 
       run: ls
       
