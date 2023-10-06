@@ -40,7 +40,7 @@ namespace TestModel
             Process proc = new Process();
             //proc.StartInfo.FileName = "python.exe";
             proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.UseShellExecute = false;  
+            proc.StartInfo.UseShellExecute = true;  
             proc.StartInfo.Arguments =progToRun;
             proc.Start();
             StreamReader sReader = proc.StandardOutput;
