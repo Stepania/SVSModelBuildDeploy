@@ -47,8 +47,13 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
 
-    - name: publish ubuntu
-      run: dotnet publish -c Release -r ubuntu.16.10-x64
+    # - name: publish ubuntu
+      # run: dotnet publish -c Release -r ubuntu.16.10-x64
+      
+    - name: create exec 
+      run: pyinstaller --onefile TestModel/testGraph/testGraph/testGraph.py 
+      
+    
 
      
     - name: show folder 
