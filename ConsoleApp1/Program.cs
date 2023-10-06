@@ -21,8 +21,7 @@ namespace ConsoleApp1
         protected static void RunSimulation(CommandLineOptions opts)
         {
 
-            Console.WriteLine(opts.baseDir + "/../Config/SoilParams.yaml");
-            Console.WriteLine("Starting soil simulation.");
+            Console.WriteLine(opts.baseDir);
 
         }
 
