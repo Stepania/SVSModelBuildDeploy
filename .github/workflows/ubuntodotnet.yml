@@ -52,15 +52,12 @@ jobs:
       
     - name: create exec 
       run: pyinstaller --onefile TestModel/testGraph/testGraph/testGraph.py 
-      
-    
-
-     
+        
     - name: show folder 
       run: ls
       
-    - name: show folder testmodel
-      run: ls TestModel     
+    - name: show folder dist
+      run: ls dist     
       
     - name: show testgraph 
       run: ls TestModel/testGraph
