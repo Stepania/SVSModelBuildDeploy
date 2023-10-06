@@ -38,9 +38,9 @@ namespace TestModel
             string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
 
             Process proc = new Process();
-            //proc.StartInfo.FileName = "python.exe";
+            proc.StartInfo.FileName = "testGraph.py";
             proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.UseShellExecute = true;  
+            proc.StartInfo.UseShellExecute = false;  
             proc.StartInfo.Arguments =progToRun;
             proc.Start();
             StreamReader sReader = proc.StandardOutput;
