@@ -62,5 +62,5 @@ jobs:
     # - name: give permission 
       # run: chmod +x TestModel/testGraph/testGraph/testGraph.py        
       
-    # - name: run
-      # run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+    - name: run
+      run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
