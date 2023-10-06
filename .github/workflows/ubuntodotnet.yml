@@ -47,8 +47,20 @@ jobs:
     - name: show folder 
       run: ls
       
-    - name: give permission 
-      run: chmod +x TestModel/testGraph/testGraph/testGraph.py        
+    - name: show folder testmodel
+      run: ls TestModel     
       
-    - name: run
-      run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+    - name: show testgraph 
+      run: ls TestModel/testGraph
+
+    - name: find file 
+      run: find . -name '*.exe'
+
+      
+      
+      
+    # - name: give permission 
+      # run: chmod +x TestModel/testGraph/testGraph/testGraph.py        
+      
+    # - name: run
+      # run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
