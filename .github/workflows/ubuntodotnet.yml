@@ -43,5 +43,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: run
-      run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+      
+    - name: show folder 
+      run: ls         
+      
+      
+    # - name: run
+      # run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
