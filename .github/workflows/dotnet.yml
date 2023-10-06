@@ -54,6 +54,6 @@ jobs:
     - name: find folder
       run: ls OutputFiles
       
-    - name: look in console app folder 
-      run: cat OutputFiles\test1.csv
+    # - name: look in console app folder 
+      # run: cat OutputFiles\test1.csv
   
