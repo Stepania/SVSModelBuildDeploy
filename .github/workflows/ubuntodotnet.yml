@@ -35,7 +35,10 @@ jobs:
       run: python -m pip install --upgrade pip pathlib       
       
     - name: Install Python datetime
-      run: python -m pip install --upgrade pip datetime         
+      run: python -m pip install --upgrade pip datetime
+
+    - name: Install Python datetime
+      run: pip install pyinstaller      
         
         
         
@@ -54,10 +57,7 @@ jobs:
       run: ls TestModel/testGraph
 
     - name: find file 
-      run: find . -name '*.exe'
-
-      
-      
+      run: find . -name '*.exe'            
       
     - name: give permission 
       run: chmod +x TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe       
