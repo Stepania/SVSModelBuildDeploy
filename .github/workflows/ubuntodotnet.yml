@@ -45,8 +45,10 @@ jobs:
       run: dotnet build --no-restore
       
     - name: show folder 
-      run: ls         
+      run: ls
       
+    - name: give permission 
+      run: chmod +x TestModel/testGraph/testGraph/testGraph.py        
       
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
