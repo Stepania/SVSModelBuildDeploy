@@ -48,5 +48,5 @@ jobs:
       run: ls         
       
       
-    # - name: run
-      # run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+    - name: run
+      run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
