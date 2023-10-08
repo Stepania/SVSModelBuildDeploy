@@ -74,7 +74,7 @@ jobs:
       run: find . -name '*.png' 
            
     - name: open png
-      run: fim isitrealplot.png 
+      run: fim -a isitrealplot.png 
       
       
  
