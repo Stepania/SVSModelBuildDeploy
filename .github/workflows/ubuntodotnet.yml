@@ -72,9 +72,14 @@ jobs:
       
     - name: find png file 
       run: find . -name '*.png' 
-           
+      
+    - name: xdg help
+      run: xdg-open --help  
+      
     - name: open png
-      run: xdg-open isitrealplot.png --debug=1
+      run: xdg-open isitrealplot.png
+      
+      
       
       
  
