@@ -28,7 +28,7 @@ tests = ['test1','test2','test3']
 Alltests =[]
 for t in tests[:]:
     #legacy
-    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))    
+    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
    
     #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,delim_whitespace=True,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
@@ -38,7 +38,7 @@ for t in tests[:]:
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 
 #legacy
-AllData.index = pd.to_datetime(AllData.index,format = "%m/%d/%Y %H:%M:%S %p")
+AllData.index = pd.to_datetime(AllData.index,format='ISO8601')
 
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
