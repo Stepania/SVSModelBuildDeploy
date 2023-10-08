@@ -40,10 +40,10 @@ namespace TestModel
             Process proc = new Process();
 
             // for ubuntu action
-            //proc.StartInfo.FileName = @"TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe";
+            proc.StartInfo.FileName = @"TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe";
 
             // original  file 
-            proc.StartInfo.FileName = "python.exe";
+            //proc.StartInfo.FileName = "python.exe";
 
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.UseShellExecute = false;  
