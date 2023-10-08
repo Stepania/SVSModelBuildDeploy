@@ -66,7 +66,8 @@ jobs:
       
     #- name: give permission 
     #  run: chmod +x TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe       
-    - name: find graph 
+    
+    - name: list folder 
       run: ls
       
     - name: run
@@ -87,11 +88,9 @@ jobs:
     - name: run python 
       run: python TestModel/testGraph/testGraph/testGraph.py
       
- 
       
-      
-
-
+    - name: find dll file 
+      run: find . -name '*.png' 
     
     # - name: execute python script
       # run: python TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe
