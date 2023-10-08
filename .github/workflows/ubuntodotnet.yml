@@ -57,8 +57,8 @@ jobs:
     - name: show folder 
       run: ls         
 
-    - name: find exe file 
-      run: find . -name '*.exe'
+    # - name: find exe file 
+      # run: find . -name '*.exe'
       
       
     #- name: find dll file 
@@ -78,7 +78,7 @@ jobs:
     - name: list folders
       run: ls OutputFiles
 
-    - name: find dll file 
+    - name: find csv file 
       run: find . -name '*.csv'  
       
     # - name: look in console app folder 
