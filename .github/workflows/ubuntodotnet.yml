@@ -69,9 +69,16 @@ jobs:
       
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
+
+    - name: list folders
+      run: ls
+
+    - name: list folders
+      run: ls OutputFiles
+
       
-    - name: look in console app folder 
-      run: cat OutputFiles\test1.csv      
+    # - name: look in console app folder 
+      # run: cat OutputFiles\test1.csv    
       
     - name: run python 
       run: python TestModel/testGraph/testGraph/testGraph.py
