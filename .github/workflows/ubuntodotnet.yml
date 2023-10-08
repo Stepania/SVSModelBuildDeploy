@@ -61,7 +61,7 @@ jobs:
       run: ls dist     
       
     - name: show testgraph 
-      run: ls a dist/testGraph
+      run: ls -a dist/testGraph
 
     - name: find exe file 
       run: find . -name '*.exe'
