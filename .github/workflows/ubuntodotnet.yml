@@ -74,7 +74,7 @@ jobs:
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
     - name: find a 
-      run: run TestModel/testGraph/testGraph/testGraph.py
+      run: python  TestModel/testGraph/testGraph/testGraph.py
       
       
       
