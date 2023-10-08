@@ -26,7 +26,7 @@ jobs:
         python-version: 3.11.5 
         
     - name: Install imagemagick
-      run: sudo apt-get update && sudo apt-get install terminology        
+      run: sudo apt-get update && sudo apt-get install xdg        
                        
     - name: Install Python pandas
       run: python -m pip install --upgrade pip pandas
@@ -74,7 +74,7 @@ jobs:
       run: find . -name '*.png' 
            
     - name: open png
-      run: tycat isitrealplot.png 
+      run: xdg-open isitrealplot.png --debug=1
       
       
  
