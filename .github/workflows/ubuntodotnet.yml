@@ -51,8 +51,8 @@ jobs:
     # - name: publish ubuntu
       # run: dotnet publish -c Release -r ubuntu.16.10-x64
       
-    - name: create exec 
-      run: pyinstaller --onefile TestModel/testGraph/testGraph/testGraph.py 
+    #- name: create exec 
+    #  run: pyinstaller --onefile TestModel/testGraph/testGraph/testGraph.py 
         
     - name: show folder 
       run: ls
@@ -64,17 +64,17 @@ jobs:
       run: find . -name '*.exe'
       
       
-    - name: find dll file 
-      run: find . -name '*.dll'    
+    #- name: find dll file 
+    #  run: find . -name '*.dll'    
       
-    - name: give permission 
-      run: chmod +x TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe       
+    #- name: give permission 
+    #  run: chmod +x TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe       
       
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
     - name: look in console app folder 
-      run: cat OutputFiles\test1.csv      
+      run: cat OutputFiles\test 1.csv      
       
     - name: run python 
       run: python TestModel/testGraph/testGraph/testGraph.py
