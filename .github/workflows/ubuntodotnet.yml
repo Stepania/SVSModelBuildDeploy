@@ -39,33 +39,15 @@ jobs:
       run: python -m pip install --upgrade pip datetime
 
     - name: Install Python datetime
-      run: pip install pyinstaller      
-        
+      run: pip install pyinstaller            
                
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-      
-    #probably will not need it in the end, but leave it for a moment
-    # - name: publish ubuntu
-      # run: dotnet publish -c Release -r ubuntu.16.10-x64
-      
-    #- name: create exec 
-    #  run: pyinstaller --onefile TestModel/testGraph/testGraph/testGraph.py 
         
     - name: show folder 
-      run: ls         
-
-    # - name: find exe file 
-      # run: find . -name '*.exe'
-      
-      
-    #- name: find dll file 
-    #  run: find . -name '*.dll'    
-      
-    #- name: give permission 
-    #  run: chmod +x TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe       
+      run: ls            
     
     - name: list folder 
       run: ls
@@ -80,17 +62,17 @@ jobs:
       run: ls OutputFiles
 
     - name: find csv file 
-      run: find . -name '*.csv'  
-      
-    # - name: look in console app folder 
-      # run: cat OutputFiles\test1.csv    
+      run: find . -name '*.csv'   
       
     - name: run python 
-      run: python TestModel/testGraph/testGraph/testGraph.py
+      run: python TestModel/testGraph/testGraph/testGraph.py     
       
-      
-    - name: find dll file 
+    - name: find png file 
       run: find . -name '*.png' 
+      
+      
+    - name: open png
+      run: xdg-open $isitrealplot.png  
+      
+ 
     
-    # - name: execute python script
-      # run: python TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe
