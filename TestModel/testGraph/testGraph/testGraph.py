@@ -38,7 +38,7 @@ for t in tests[:]:
 AllData = pd.concat(Alltests,axis=1,keys=tests)
 
 #legacy
-AllData.index = pd.to_datetime(AllData.index,format='mixed')
+AllData.index = pd.to_datetime(AllData.index,format='mixed',dayfirst=True)
 
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
