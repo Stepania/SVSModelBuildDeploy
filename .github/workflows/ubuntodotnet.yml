@@ -65,8 +65,8 @@ jobs:
     - name: find file 
       run: find . -name '*.exe'            
       
-    # - name: give permission 
-      # run: chmod +x TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe       
+    - name: give permission 
+      run: chmod +x TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe       
       
     # - name: run
       # run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj

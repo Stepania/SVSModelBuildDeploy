@@ -38,10 +38,12 @@ namespace TestModel
             string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
 
             Process proc = new Process();
-            proc.StartInfo.FileName = @"TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe";
+
+            // for ubuntu action
+            //proc.StartInfo.FileName = @"TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe";
 
             // original  file 
-            //proc.StartInfo.FileName = "python.exe";
+            proc.StartInfo.FileName = "python.exe";
 
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.UseShellExecute = false;  
