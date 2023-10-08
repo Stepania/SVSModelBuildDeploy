@@ -72,7 +72,7 @@ jobs:
       
       
     - name: open png
-      run: xdg-open $isitrealplot.png  
+      run: cat isitrealplot.png  
       
  
     
