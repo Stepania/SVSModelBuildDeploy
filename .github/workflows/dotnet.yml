@@ -56,5 +56,7 @@ jobs:
       
     - name: look in console app folder 
       run: cat OutputFiles\test1.csv
-  
+
+    - name: run python 
+      run: python TestModel/testGraph/testGraph/testGraph.py 
   
