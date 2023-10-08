@@ -24,7 +24,7 @@ namespace TestModel
 {
     public class Test
     {
-        private static void runPythonScript()
+/*        private static void runPythonScript()
         {      
             string dir = Directory.GetCurrentDirectory();
             //legacy below
@@ -52,7 +52,7 @@ namespace TestModel
             StreamReader sReader = proc.StandardOutput;
             proc.WaitForExit();
             Console.ReadLine();
-        }        
+        }  */      
         public static void RunTests(Dictionary<string, object> _configDict)
 
         {
@@ -124,7 +124,7 @@ namespace TestModel
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
 
             }
-            runPythonScript();
+            //runPythonScript();
 
         }      
 

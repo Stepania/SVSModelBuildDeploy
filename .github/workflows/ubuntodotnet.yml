@@ -59,9 +59,6 @@ jobs:
       
     - name: show folder dist
       run: ls dist     
-      
-    - name: show testgraph 
-      run: ls -a dist/testGraph
 
     - name: find exe file 
       run: find . -name '*.exe'
@@ -76,5 +73,16 @@ jobs:
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
+    - name: find a 
+      run: ls TestModel/testGraph/testGraph
+      
+      
+      
+      
+      
+    # - name: run
+      # run: python
+
+    
     # - name: execute python script
       # run: python TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe
