@@ -74,7 +74,7 @@ jobs:
       run: find . -name '*.png' 
            
     - name: open png
-      run: xdg-open isitrealplot.png 
+      run: display isitrealplot.png 
       
       
  
