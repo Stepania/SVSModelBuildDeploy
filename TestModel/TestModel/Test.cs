@@ -121,7 +121,8 @@ namespace TestModel
                 }
 
                 // replaced space with nothing test.Replace(" ", "")
-                DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
+                DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test.Replace(" ", "") + ".csv");
+                //DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
 
             }
             //runPythonScript();

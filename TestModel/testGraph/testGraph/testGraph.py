@@ -22,7 +22,8 @@ observed_data = pd.read_csv(observed_path,index_col=0)
 
 observed_data.sort_index(axis=0,inplace=True)
 
-tests = ['test 1','test 2','test 3']
+#tests = ['test 1','test 2','test 3']
+tests = ['test1','test2','test3']
 
 Alltests =[]
 for t in tests[:]:
@@ -49,8 +50,10 @@ AllData.index = pd.to_datetime(AllData.index)
 tests = AllData.columns.get_level_values(0).drop_duplicates()
 colors = pd.Series(['r','b','g'])
 
-start = dt.datetime.date(AllData['test 1'].dropna().index.min())
-end = dt.datetime.date(AllData['test 1'].dropna().index.max())
+#start = dt.datetime.date(AllData['test 1'].dropna().index.min())
+start = dt.datetime.date(AllData['test1'].dropna().index.min())
+#end = dt.datetime.date(AllData['test 1'].dropna().index.max())
+end = dt.datetime.date(AllData['test1'].dropna().index.max())
 
 def makeplot(Data,color):
     plt.plot(Data,color=color)

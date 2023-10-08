@@ -55,6 +55,6 @@ jobs:
       run: ls OutputFiles
       
     - name: look in console app folder 
-      run: cat OutputFiles\test1 .csv
+      run: cat OutputFiles\test1.csv
   
   
