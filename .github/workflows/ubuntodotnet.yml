@@ -73,11 +73,13 @@ jobs:
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
-    - name: find a 
-      run: python TestModel/testGraph/testGraph/testGraph.py
-      
     - name: look in console app folder 
       run: cat OutputFiles\test1.csv      
+      
+    - name: run python 
+      run: python TestModel/testGraph/testGraph/testGraph.py
+      
+ 
       
       
 
