@@ -78,6 +78,8 @@ jobs:
     - name: list folders
       run: ls OutputFiles
 
+    - name: find dll file 
+      run: find . -name '*.csv'  
       
     # - name: look in console app folder 
       # run: cat OutputFiles\test1.csv    
