@@ -66,6 +66,8 @@ jobs:
       
     #- name: give permission 
     #  run: chmod +x TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe       
+    - name: find graph 
+      run: ls
       
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
