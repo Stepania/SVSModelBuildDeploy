@@ -55,10 +55,7 @@ jobs:
     #  run: pyinstaller --onefile TestModel/testGraph/testGraph/testGraph.py 
         
     - name: show folder 
-      run: ls
-      
-    - name: show folder dist
-      run: ls dist     
+      run: ls         
 
     - name: find exe file 
       run: find . -name '*.exe'
