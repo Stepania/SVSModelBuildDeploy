@@ -28,7 +28,7 @@ tests = ['test1','test2','test3']
 Alltests =[]
 for t in tests[:]:
     #legacy
-    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
+    Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0))    
    
     #testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,delim_whitespace=True,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
     
