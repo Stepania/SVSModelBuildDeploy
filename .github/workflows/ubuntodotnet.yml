@@ -45,7 +45,13 @@ jobs:
       
     - name: send email
       run: echo "Message Body" | mail -s "Message Subject" 1989stepania@gmail.com    
-      
+
+    - name: send email
+      run: echo "Message Body" | mail -s "Message Subject" super.kydryavuy2011@yandex.ru    
+
+
+
+ 
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
