@@ -47,9 +47,10 @@ jobs:
       run: echo "Message Body" | mail -s "Message Subject" 1989stepania@gmail.com    
 
     - name: send email
-      run: echo "Message Body" | mail -s "Message Subject" super.kydryavuy2011@yandex.ru    
+      run: echo "yeeeeeeaaaaaah" | mail -s "Next try" super.kydryavuy2011@yandex.ru    
 
-
+    - name: send email
+      run: echo "It is meeeeeeeee" | mail -s "Message Subject" als0885@arastudent.acnz 
 
  
     - name: Restore dependencies
