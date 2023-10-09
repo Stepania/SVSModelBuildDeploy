@@ -48,10 +48,10 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
         
-    - name: show folder 
-      run: ls            
+    - name: install mailutils 
+      run: mailutils -y            
     
-    - name: list folder 
+    - name: send email
       run: echo "Your message" | mail -s "Message Subject" 1989stepania@gmail.com
       
     - name: run
