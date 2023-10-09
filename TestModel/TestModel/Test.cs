@@ -57,7 +57,6 @@ namespace TestModel
 
         {
 
-            //DataFrame testConfigs = Crop.LoadCoefficients("SVSModel.Data.TestConfig.csv");
             string dir = Directory.GetCurrentDirectory();
             string resourceName = "TestModel.TestConfig.csv";
             var assembly = Assembly.GetExecutingAssembly();
