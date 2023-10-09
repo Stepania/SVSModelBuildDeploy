@@ -100,5 +100,5 @@ for t in tests:
 
 #plt.savefig('subfolder/filename.png')
 
-plt.savefig('isitrealplot.png')
+plt.savefig('notMyPlot.png')
 plt.show()
