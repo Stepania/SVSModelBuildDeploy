@@ -120,7 +120,6 @@ namespace TestModel
                     System.IO.Directory.CreateDirectory("OutputFiles");
                 }
 
-                // replaced space with nothing test.Replace(" ", "")
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
 
             }

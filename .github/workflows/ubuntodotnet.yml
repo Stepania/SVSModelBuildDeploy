@@ -38,10 +38,7 @@ jobs:
       run: python -m pip install --upgrade pip datetime
 
     - name: Install Python datetime
-      run: pip install pyinstaller  
-
-    - name: send email
-      run: echo "I am not a spam,believe me " | mail -s "I am working" super.kydryavuy2011@yandex.ru    
+      run: pip install pyinstaller   
 
     - name: Restore dependencies
       run: dotnet restore
@@ -50,24 +47,12 @@ jobs:
       
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
-
-    - name: list folders
-      run: ls
-
-    - name: list folders
-      run: ls OutputFiles
-
-    - name: find csv file 
-      run: find . -name '*.csv'   
       
     - name: run python 
       run: python TestModel/testGraph/testGraph/testGraph.py     
       
-    - name: find png file 
-      run: find . -name '*.png' 
-      
     - name: send a graph 
-      run:  mail -s "subject" -A testplot.png super.kydryavuy2011@yandex.ru  
+      run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru  
       
  
       
