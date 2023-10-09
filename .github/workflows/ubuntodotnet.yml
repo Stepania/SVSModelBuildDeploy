@@ -41,15 +41,17 @@ jobs:
       run: python -m pip install --upgrade pip datetime
 
     - name: Install Python datetime
-      run: pip install pyinstaller            
-               
+      run: pip install pyinstaller 
+      
+    - name: send email
+      run: echo "Message Body" | mail -s "Message Subject" 1989stepania@gmail.com    
+      
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore        
     
-    - name: send email
-      run: mail -s "Message Subject" 1989stepania@gmail.com
+
       
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
