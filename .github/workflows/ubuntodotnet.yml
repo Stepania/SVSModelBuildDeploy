@@ -52,7 +52,7 @@ jobs:
       run: mailutils -y            
     
     - name: send email
-      run: echo "Your message" | mail -s "Message Subject" 1989stepania@gmail.com
+      run: mail -s "Message Subject" 1989stepania@gmail.com
       
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
