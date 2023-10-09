@@ -46,10 +46,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
-        
-    - name: install mailutils 
-      run: mailutils -y            
+      run: dotnet build --no-restore        
     
     - name: send email
       run: mail -s "Message Subject" 1989stepania@gmail.com
