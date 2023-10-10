@@ -54,6 +54,8 @@ jobs:
     - name: send a graph 
       run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
 
+    - name: browser
+      run: xdg-open --help
 
 
     # - name: HTML Preview

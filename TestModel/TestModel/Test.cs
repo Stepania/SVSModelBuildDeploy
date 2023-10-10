@@ -24,12 +24,12 @@ namespace TestModel
 {
     public class Test
     {
-/*        private static void runPythonScript()
+ /*       private static void runPythonScript()
         {
             string dir = Directory.GetCurrentDirectory();
             //legacy below
             string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
-            string progToRun = newPath+ @"TestModel\testGraph\testGraph\testGraph.py";
+            string progToRun = newPath + @"TestModel\testGraph\testGraph\testGraph.py";
 
             //that is new with james
             //string progToRun = dir + @"/../TestModel/testGraph/testGraph/testGraph.py";
@@ -123,7 +123,6 @@ namespace TestModel
 
             }
             //runPythonScript();
-            //
         }      
 
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)
