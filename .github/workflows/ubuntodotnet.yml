@@ -36,15 +36,11 @@ jobs:
       
     - name: Install
       run: sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable     
-          
-
-    # - name: run google
-      # run: google-chrome-stable TestModel/index.html 
-           
+                     
     - name: goggle
       run: |
-        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:0 
-        google-chrome TestModel/index.html   
+        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99 
+        google-chrome  
 
     # - name: open
       # run: firefox TestModel/index.html
