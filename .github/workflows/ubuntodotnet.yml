@@ -56,13 +56,9 @@ jobs:
 
     # - name: browser
       # run: google-chrome TestModel/index.html
-           
-    - name: browser
-      run: pushd TestModel/index.html
-      
-      
-    - name: browser
-      run: python3 -m http.server 9999
 
-    - name: browser
-      run: popd
+    - name: HTML Preview
+      id: html_preview
+      uses: pavi2410/html-preview-action@v2
+      with:
+        html_file: 'TestModel/index.html'
