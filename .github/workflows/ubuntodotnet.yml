@@ -25,7 +25,6 @@ jobs:
       with:
         python-version: 3.11.5  
 
-
     - name: browser
       run: sudo apt-get install xauth
 
@@ -38,13 +37,14 @@ jobs:
       
     - name: install lynx
       run: sudo apt install lynx
-     
-
-
+      
+      
     - name: Install Python pandas
-      run: lynx index.html      
-      
-      
+      run: lynx index.html   
+
+    - name: find exe
+      run: find . -type f -name "*.exe"    
+           
     # - name: goggle
       # run: |
         # export DISPLAY=paxbox1.paxco.com:0.0 
