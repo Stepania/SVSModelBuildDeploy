@@ -32,16 +32,16 @@ jobs:
     - name: browser
       run: sudo update-alternatives --config x-www-browser
 
-    # - name: goggle
-      # run: |
-        # export DISPLAY=localhost:0 
-        # google-chrome-stable TestModel/index.html   
+    - name: goggle
+      run: |
+        export DISPLAY=paxbox1.paxco.com:0.0 
+        google-chrome-stable TestModel/index.html   
 
-    - name: permission
-      run: chmod -R 777 TestModel
+    # - name: permission
+      # run: chmod -R 777 TestModel
 
-    - name: open
-      run: firefox TestModel/index.html
+    # - name: open
+      # run: firefox TestModel/index.html
    
     # - name: browser
       # run: xdg-settings set default-web-browser google-chrome-stable
