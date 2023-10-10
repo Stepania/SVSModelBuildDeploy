@@ -43,7 +43,7 @@ jobs:
       run: |
         export DISPLAY=${DISPLAY:-:0}
         google-chrome TestModel/index.html   
-
+#
     # - name: Install
       # run: sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
       
