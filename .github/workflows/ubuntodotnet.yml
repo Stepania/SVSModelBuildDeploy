@@ -35,15 +35,15 @@ jobs:
       # run: webbrowser.open_new_tab(index.html)
       
       
-    - name: install lynx
-      run: sudo apt install lynx
+    # - name: install lynx
+      # run: sudo apt install lynx
       
       
-    - name: Install Python pandas
-      run: lynx index.html   
+    # - name: Install Python pandas
+      # run: lynx index.html   
 
     - name: find exe
-      run: find . -type f -name "*.exe"    
+      run: DOTNET_ROOT google-chrome-stable TestModel/index.html 
            
     # - name: goggle
       # run: |
