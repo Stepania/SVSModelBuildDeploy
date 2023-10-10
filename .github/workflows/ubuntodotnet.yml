@@ -25,16 +25,17 @@ jobs:
       with:
         python-version: 3.11.5  
 
-    - name: browser
+    - name: install -y xvfb
       run: sudo apt-get install -y xvfb
 
     - name: browser
       run: sudo update-alternatives --config x-www-browser
 
-    # - name: Install Python pandas
-      # run: webbrowser.open_new_tab(index.html)
+    - name: Install
+      run: sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
       
-      
+    - name: Install
+      run: sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable     
     # - name: install lynx
       # run: sudo apt install lynx
       
@@ -42,8 +43,8 @@ jobs:
     # - name: Install Python pandas
       # run: lynx index.html   
 
-    - name: run google
-      run: google-chrome-stable TestModel/index.html 
+    # - name: run google
+      # run: google-chrome-stable TestModel/index.html 
            
     # - name: goggle
       # run: |
