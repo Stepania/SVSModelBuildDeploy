@@ -33,7 +33,7 @@ jobs:
       run: sudo update-alternatives --config x-www-browser
 
     - name: Install Python pandas
-      run: python -m pip install --upgrade pip webbrowser
+      run: webbrowser.open_new_tab('index.html ')
       
       
       
