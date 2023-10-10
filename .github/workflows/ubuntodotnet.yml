@@ -37,8 +37,6 @@ jobs:
     - name: Install
       run: sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable     
           
-    - name: google
-      run: google-chrome   
 
     # - name: run google
       # run: google-chrome-stable TestModel/index.html 
