@@ -29,8 +29,8 @@ jobs:
     - name: browser
       run: sudo apt-get install xauth      
 
-
-
+    - name: browser
+      run: export DISPLAY=:0
       
     - name: firefox
       run: firefox TestModel/index.html       
