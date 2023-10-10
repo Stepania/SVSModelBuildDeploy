@@ -38,7 +38,7 @@ jobs:
         # google-chrome-stable TestModel/index.html   
 
     - name: permission
-      run: chmod -R 777 backup TestModel
+      run: chmod -R 777 TestModel
 
     - name: open
       run: TestModel/index.html
