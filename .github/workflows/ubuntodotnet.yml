@@ -30,6 +30,9 @@ jobs:
       run: sudo apt-get install xauth
 
 
+    - name: printenv DISPLAY
+      run: printenv DISPLAY
+
     - name: goggle
       run: |
         export DISPLAY=$(echo $DISPLAY)
