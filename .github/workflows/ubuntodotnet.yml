@@ -32,8 +32,8 @@ jobs:
     - name: browser
       run: sudo update-alternatives --config x-www-browser
 
-    - name: chromium index.html
-      run: chromium index.html
+    - name: Install Python pandas
+      run: webbrowser.open_new_tab('index.html')
       
       
       
