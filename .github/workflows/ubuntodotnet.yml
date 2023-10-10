@@ -41,7 +41,7 @@ jobs:
       run: chmod -R 777 TestModel
 
     - name: open
-      run: google-chrome-stable TestModel/index.html
+      run: firefox TestModel/index.html
    
     # - name: browser
       # run: xdg-settings set default-web-browser google-chrome-stable
