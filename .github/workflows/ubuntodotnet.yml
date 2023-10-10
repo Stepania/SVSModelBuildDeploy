@@ -26,20 +26,15 @@ jobs:
         python-version: 3.11.5  
 
 
-    # - name: browser
-      # run: sudo apt-get install xauth
-      
-    - name: echo DISPLAY 
-      run: echo $DISPLAY
+    - name: browser
+      run: sudo apt-get install xauth
 
-      
-    - name: ssh -X
-      run:  ssh -X username@remote-server  
-   
-    - name: firefox
-      run: |
-        export DISPLAY=:0
-        firefox TestModel/index.html       
+    - name: user
+      run: w -h $USER | awk '$2 ~ /:[0-9.]*/{print $2}' 
+    # - name: firefox
+      # run: |
+        # export DISPLAY=:0
+        # firefox TestModel/index.html       
   
 
 
