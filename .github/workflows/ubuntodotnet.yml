@@ -33,7 +33,7 @@ jobs:
       run: sudo update-alternatives --config x-www-browser
 
     - name: browser
-      run: webbrowser.open(TestModel/index.html)
+      run: webbrowser.open('TestModel/index.html')
     # - name: goggle
       # run: |
         # export DISPLAY=paxbox1.paxco.com:0.0 
