@@ -29,8 +29,6 @@ jobs:
     - name: browser
       run: sudo apt-get install xauth      
 
-    - name: firefox
-      run: ssh -X user@host  
 
 
       
