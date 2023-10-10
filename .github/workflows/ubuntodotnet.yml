@@ -26,7 +26,7 @@ jobs:
         python-version: 3.11.5  
  
     - name: browser
-      run: sudo update-alternatives --config x-www-browser
+      run: xdg-settings get default-web-browser
 
 
  
