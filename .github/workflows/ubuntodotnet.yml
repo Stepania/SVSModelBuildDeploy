@@ -29,8 +29,8 @@ jobs:
     - name: browser
       run: sudo apt-get install xauth
 
-    - name: user
-      run: w -h $USER | awk '$2 ~ /:[0-9.]*/{print $2}' 
+    - name: export
+      run: export DISPLAY=$(echo $DISPLAY) 
     # - name: firefox
       # run: |
         # export DISPLAY=:0
