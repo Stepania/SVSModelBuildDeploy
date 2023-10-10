@@ -35,10 +35,14 @@ jobs:
     - name: Install
       run: sudo apt-get install x11vnc xvfb fluxbox
 
-
     - name: Install
       run: export DISPLAY=${DISPLAY:-:0}
 
+
+    - name: goggle
+      run: |
+        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=${DISPLAY:-:0}
+        google-chrome TestModel/index.html   
 
     # - name: Install
       # run: sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
