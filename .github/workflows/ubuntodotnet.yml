@@ -28,6 +28,11 @@ jobs:
 
     - name: browser
       run: sudo apt-get install xauth      
+
+    - name: firefox
+      run: ssh -X user@host  
+
+
       
     - name: firefox
       run: firefox TestModel/index.html       
@@ -36,7 +41,7 @@ jobs:
 
 
 
- ssh -X user@host
+
     # - name: browser
       # run: sudo update-alternatives --config x-www-browser
  
