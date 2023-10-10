@@ -65,9 +65,12 @@ jobs:
       
     - name: send a graph 
       run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
-
+      
+      
+    - name: export DISPLAY=:0
+      run: export DISPLAY=:0
     - name: firefox
-      run: firefox TestModel/index.html
+      run: proxychains firefox TestModel/index.html
       
 
 
