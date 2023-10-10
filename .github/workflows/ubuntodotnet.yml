@@ -63,8 +63,8 @@ jobs:
         # html_file: 'TestModel/index.html'
         # url: steps.html_preview.outputs.url
 
-    - name: Install Python pandas
-      run: open TestModel/index.html
+    # - name: Install Python pandas
+      # run: open TestModel/index.html
       
     - name: browser
       run: open google-chrome TestModel/index.html
