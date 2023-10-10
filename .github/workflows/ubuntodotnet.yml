@@ -32,18 +32,23 @@ jobs:
     - name: browser
       run: sudo update-alternatives --config x-www-browser
 
-    - name: Install Python pandas
-      run: webbrowser.open_new_tab(index.html)
+    # - name: Install Python pandas
+      # run: webbrowser.open_new_tab(index.html)
       
+      
+    - name: install lynx
+      run: sudo apt install lynx
+     
+
+
+    - name: Install Python pandas
+      run: lynx index.html      
       
       
     # - name: goggle
       # run: |
         # export DISPLAY=paxbox1.paxco.com:0.0 
         # google-chrome-stable TestModel/index.html   
-
-    # - name: permission
-      # run: chmod -R 777 TestModel
 
     # - name: open
       # run: firefox TestModel/index.html
