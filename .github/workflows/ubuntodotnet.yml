@@ -26,8 +26,10 @@ jobs:
         python-version: 3.11.5  
  
     - name: browser
+      run: xdg-settings set default-web-browser chromium_chromium.desktop
+          
+    - name: browser
       run: xdg-settings get default-web-browser
-
 
  
     # - name: Install Python pandas
