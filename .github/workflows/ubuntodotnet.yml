@@ -29,12 +29,13 @@ jobs:
     - name: browser
       run: sudo apt-get install xauth
       
-    - name: browser
-      run: echo DISPLAY 
+    - name: echo DISPLAY 
+      run: echo $DISPLAY
 
-
-     
       
+    - name: ssh -X
+      run:  ssh -X username@remote-server  
+   
     - name: firefox
       run: |
         export DISPLAY=:0
