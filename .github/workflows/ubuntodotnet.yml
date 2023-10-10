@@ -36,8 +36,6 @@ jobs:
       # run: |
         # export DISPLAY=localhost:0 
         # google-chrome-stable TestModel/index.html   
-    - name: ssh
-      run: X11Forwarding yes
       
     - name: browser
       run: ssh -X user@hostname chromium
