@@ -36,13 +36,16 @@ jobs:
       # run: |
         # export DISPLAY=localhost:0 
         # google-chrome-stable TestModel/index.html   
-      
+
+    - name: permission
+      run: chmod -R 777 backup TestModel
+
     - name: open
-      run: TestModel/index.html 
-      
+      run: TestModel/index.html
+   
     # - name: browser
       # run: xdg-settings set default-web-browser google-chrome-stable
-      
+    
       
     # - name: browser
       # run: xdg-settings get default-web-browser
