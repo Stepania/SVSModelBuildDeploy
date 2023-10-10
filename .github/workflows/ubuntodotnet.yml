@@ -24,9 +24,15 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.11.5  
- 
+        
+        
     - name: browser
-      run: xdg-settings set default-web-browser google-chrome-stable
+      run: xdg-settings --help
+ 
+    # - name: browser
+      # run: xdg-settings set default-web-browser google-chrome-stable
+      
+      
     - name: browser
       run: xdg-settings get default-web-browser
 
