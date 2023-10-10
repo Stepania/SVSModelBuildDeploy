@@ -30,10 +30,10 @@ jobs:
       run: sudo apt-get install xauth
 
 
-    - name: firefox
+    - name: goggle
       run: |
         export DISPLAY=$(echo $DISPLAY)
-        firefox TestModel/index.html       
+        google-chrome-stable TestModel/index.html       
   
 
 
