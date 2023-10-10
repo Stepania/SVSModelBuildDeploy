@@ -31,7 +31,7 @@ jobs:
       run: export DISPLAY=localhost:0.0     
       
     - name: firefox
-      run: proxychains firefox TestModel/index.html       
+      run: firefox TestModel/index.html       
         
     # - name: browser
       # run: sudo update-alternatives --config x-www-browser
