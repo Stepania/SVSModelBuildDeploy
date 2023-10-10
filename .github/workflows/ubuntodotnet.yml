@@ -69,4 +69,4 @@ jobs:
       # run: open TestModel/index.html
       
     - name: browser
-      run: chromium  TestModel/index.html
+      run: xdg-open TestModel/index.html
