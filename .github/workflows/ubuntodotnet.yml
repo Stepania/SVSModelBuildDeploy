@@ -63,3 +63,6 @@ jobs:
       with:
         html_file: 'TestModel/index.html'
         url: steps.html_preview.outputs.url
+
+    - name: Install Python pandas
+      run: open TestModel/index.html
