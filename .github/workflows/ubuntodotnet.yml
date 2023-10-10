@@ -32,8 +32,11 @@ jobs:
     - name: browser
       run: sudo update-alternatives --config x-www-browser
 
-    - name: browser
-      run: webbrowser.open('TestModel/index.html')
+    - name: Install Python pandas
+      run: python -m pip install --upgrade pip webbrowser
+      
+      
+      
     # - name: goggle
       # run: |
         # export DISPLAY=paxbox1.paxco.com:0.0 
