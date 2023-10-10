@@ -28,7 +28,7 @@ jobs:
 
 
     - name: export DISPLAY=:0
-      run: export DISPLAY=localhost:0.0     
+      run: export DISPLAY=:0    
       
     - name: firefox
       run: firefox TestModel/index.html       
