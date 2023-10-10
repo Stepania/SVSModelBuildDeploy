@@ -34,7 +34,7 @@ jobs:
 
     - name: goggle
       run: |
-        export DISPLAY=localhost:0 
+        export DISPLAY=$HOST_IP:10.0
         google-chrome-stable TestModel/index.html   
         
         
