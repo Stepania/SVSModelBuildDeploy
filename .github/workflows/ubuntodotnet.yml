@@ -37,8 +37,8 @@ jobs:
         # export DISPLAY=localhost:0 
         # google-chrome-stable TestModel/index.html   
       
-    - name: ssh -X
-      run: ssh -X google-chrome-stable TestModel/index.html 
+    - name: open
+      run: TestModel/index.html 
       
     # - name: browser
       # run: xdg-settings set default-web-browser google-chrome-stable
