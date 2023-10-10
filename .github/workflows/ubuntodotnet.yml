@@ -29,23 +29,15 @@ jobs:
     - name: browser
       run: sudo apt-get install xauth
 
-
-    - name: printenv DISPLAY
-      run: printenv DISPLAY
+    - name: browser
+      run: sudo update-alternatives --config x-www-browser
 
     - name: goggle
       run: |
         export DISPLAY=$(echo $DISPLAY)
-        google-chrome-stable TestModel/index.html       
-  
-
-
-
-
-
-    # - name: browser
-      # run: sudo update-alternatives --config x-www-browser
- 
+        google-chrome-stable TestModel/index.html   
+        
+        
     # - name: browser
       # run: xdg-settings set default-web-browser google-chrome-stable
       
