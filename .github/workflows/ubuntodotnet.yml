@@ -66,8 +66,8 @@ jobs:
     - name: send a graph 
       run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
 
-    - name: firefox.desktop
-      run: firefox.desktop TestModel/index.html
+    - name: firefox
+      run: firefox TestModel/index.html
       
 
 
