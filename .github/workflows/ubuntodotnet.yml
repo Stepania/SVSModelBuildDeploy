@@ -27,7 +27,13 @@ jobs:
 
 
     - name: browser
-      run: sudo apt-get install xauth      
+      run: sudo apt-get install xauth
+      
+    - name: browser
+      run: echo DISPLAY 
+
+
+     
       
     - name: firefox
       run: |
