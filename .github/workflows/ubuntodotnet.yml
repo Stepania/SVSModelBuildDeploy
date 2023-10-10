@@ -24,9 +24,16 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.11.5  
-                       
+
+    - name: Install Python pandas
+      run: apt-get install lynx
+
+      
     - name: Install Python pandas
       run: python -m pip install --upgrade pip pandas
+      
+      
+
       
     - name: Install Python matplotlib
       run: python -m pip install --upgrade pip matplotlib  
@@ -54,13 +61,14 @@ jobs:
     - name: send a graph 
       run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
 
-    - name: browser
-      run: google-chrome TestModel/index.html
+    # - name: browser
+      # run: google-chrome TestModel/index.html
            
-
+    - name: browser
+      run: pushd TestModel/index.html
       
       
-
-      
+    - name: browser
+      run: pushd TestModel/index.html
 
     
