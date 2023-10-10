@@ -32,7 +32,13 @@ jobs:
       
     - name: firefox
       run: firefox TestModel/index.html       
-        
+  
+
+    - name: browser
+      run: sudo apt-get install xauth    
+
+
+ 
     # - name: browser
       # run: sudo update-alternatives --config x-www-browser
  
