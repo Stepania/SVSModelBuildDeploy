@@ -26,19 +26,17 @@ jobs:
         python-version: 3.11.5  
 
 
-
-    - name: export DISPLAY=:0
-      run: export DISPLAY=:0    
+    - name: browser
+      run: sudo apt-get install xauth      
       
     - name: firefox
       run: firefox TestModel/index.html       
   
 
-    - name: browser
-      run: sudo apt-get install xauth    
 
 
- 
+
+ ssh -X user@host
     # - name: browser
       # run: sudo update-alternatives --config x-www-browser
  
