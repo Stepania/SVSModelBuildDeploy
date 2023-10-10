@@ -54,8 +54,8 @@ jobs:
     # - name: send a graph 
       # run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
 
-    # - name: browser
-      # run: google-chrome <filename>.html  
+    - name: browser
+      run: google-chrome <filename>.html  
            
 
       
