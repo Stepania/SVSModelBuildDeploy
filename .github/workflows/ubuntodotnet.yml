@@ -34,7 +34,7 @@ jobs:
 
     - name: goggle
       run: |
-        export DISPLAY=$(echo $DISPLAY)
+        $DISPLAY = export DISPLAY=localhost:0 
         google-chrome-stable TestModel/index.html   
         
         
