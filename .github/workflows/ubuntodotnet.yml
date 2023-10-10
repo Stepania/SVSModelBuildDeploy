@@ -26,8 +26,8 @@ jobs:
         python-version: 3.11.5  
 
 
-    - name: browser
-      run: sudo apt-get install xauth
+    # - name: browser
+      # run: sudo apt-get install xauth
       
     - name: echo DISPLAY 
       run: echo $DISPLAY
