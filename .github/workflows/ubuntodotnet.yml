@@ -29,24 +29,8 @@ jobs:
       run: sudo apt-get install -y xvfb
 
     - name: browser
-      run: sudo update-alternatives --config x-www-browser
-
-
-    - name: Install
-      run: sudo apt-get install x11vnc xvfb fluxbox
-
-    # - name: export
-      # run: export DISPLAY=:0
+      run: sudo update-alternatives --config x-www-browser     
       
-      
-    - name: snap remove firefox
-      run: sudo apt-get install firefox
-
-    - name: ssh -tt
-      run: ssh -tt
-
-    - name: ssh -X remotebox
-      run: ssh -X remotebox
     # - name: firefox
       # run: |
         # Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
@@ -103,21 +87,13 @@ jobs:
     # - name: send a graph 
       # run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
       
-      
-
-      
-
-
-
     # - name: browser
       # run: xdg-open TestModel/index.html
-      
-      
-      
-      
-    # - name: HTML Preview
-      # id: html_preview
-      # uses: pavi2410/html-preview-action@v2
-      # with:
-        # html_file: 'TestModel/index.html'
-        # url: steps.html_preview.outputs.url
+            
+           
+    - name: HTML Preview
+      id: html_preview
+      uses: pavi2410/html-preview-action@v2
+      with:
+        html_file: 'TestModel/index.html'
+        url: steps.html_preview.outputs.url
