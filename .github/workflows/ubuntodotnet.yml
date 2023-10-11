@@ -37,7 +37,7 @@ jobs:
       
       
     - name: run html
-      run: ghp-import -n -p -f _build/html
+      run: ghp-import -n -p -f TestModel
 
 
 
