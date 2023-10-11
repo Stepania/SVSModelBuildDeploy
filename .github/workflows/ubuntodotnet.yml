@@ -31,9 +31,13 @@ jobs:
     - name: browser
       run: sudo update-alternatives --config x-www-browser     
 
-    - name: Install Python pyinstaller
+    - name: Install ghp
       run: python -m pip install --upgrade pip ghp-import
-
+      
+      
+      
+    - name: run html
+      run: ghp-import -n -p -f _build/html
 
 
 
