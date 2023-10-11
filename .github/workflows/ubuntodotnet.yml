@@ -40,9 +40,10 @@ jobs:
       
       
     - name: snap remove firefox
-      run: docker-compose exec -u root selenium-chrome bash -c 'echo "${DISPLAY}"'
+      run: sudo apt-get install firefox
 
-
+    - name: snap remove firefox
+      run: sudo apt-get install firefox-geckodriver
 
     - name: goggle
       run: |
