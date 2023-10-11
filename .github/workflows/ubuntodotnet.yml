@@ -39,8 +39,8 @@ jobs:
       run: export DISPLAY=:0
       
       
-    - name: echo DISPLAY
-      run: echo DISPLA
+    - name: snap remove firefox
+      run: snap remove firefox
 
 
 
