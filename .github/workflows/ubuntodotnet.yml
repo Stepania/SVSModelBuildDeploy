@@ -32,6 +32,7 @@ jobs:
       run: sudo update-alternatives --config x-www-browser   
       
     - name: firefox
+        run: |
         Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=127.0.0.1:10.0
         microsoft-edge TestModel/index.html    
  
