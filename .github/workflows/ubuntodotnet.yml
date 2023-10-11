@@ -40,7 +40,7 @@ jobs:
       
       
     - name: snap remove firefox
-      run: snap remove firefox
+      run: sudo snap remove firefox
 
 
 
