@@ -42,10 +42,11 @@ jobs:
     - name: snap remove firefox
       run: sudo apt-get install firefox
 
+    - name: ssh -tt
+      run: ssh -tt
+
     - name: ssh -X remotebox
-      run: ssh -tt -X remotebox
-
-
+      run: ssh -X remotebox
     # - name: firefox
       # run: |
         # Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
