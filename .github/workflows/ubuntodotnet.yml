@@ -43,7 +43,7 @@ jobs:
       run: sudo apt-get install firefox
 
     - name: ssh -X remotebox
-      run: ssh -X remotebox
+      run: ssh -tt -X remotebox
 
 
     # - name: firefox
