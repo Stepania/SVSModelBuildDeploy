@@ -41,9 +41,9 @@ jobs:
 
     - name: goggle
       run: |
-        export DISPLAY=${DISPLAY:-:0}
-        google-chrome TestModel/index.html   
-#
+        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=127.0.0.1:10.0
+        firefox TestModel/index.html   
+
     # - name: Install
       # run: sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
       
