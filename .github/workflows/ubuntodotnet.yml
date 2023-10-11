@@ -40,7 +40,7 @@ jobs:
       
       
     - name: echo DISPLAY
-      run: echo DISPLAY
+      run: echo DISPLA
 
 
 
