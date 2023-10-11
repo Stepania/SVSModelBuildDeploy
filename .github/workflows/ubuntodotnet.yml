@@ -35,13 +35,18 @@ jobs:
     - name: Install
       run: sudo apt-get install x11vnc xvfb fluxbox
 
-    # - name: Install
-      # run: export DISPLAY=${DISPLAY:-:0}
+    - name: export
+      run: export DISPLAY=:0
+      
+      
+    - name: echo DISPLAY
+      run: echo DISPLAY
+
 
 
     - name: goggle
       run: |
-        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99:0
+        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
         firefox TestModel/index.html   
 
     # - name: Install
