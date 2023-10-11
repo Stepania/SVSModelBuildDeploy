@@ -42,9 +42,9 @@ jobs:
     - name: snap remove firefox
       run: sudo apt-get install firefox
 
-    - name: goggle
+    - name: firefox
       run: |
-        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
+        Xvfb -ac :99 -screen 0 1280x1024x16
         firefox TestModel/index.html   
 
     # - name: Install
