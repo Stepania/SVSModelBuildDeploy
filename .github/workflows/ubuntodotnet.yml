@@ -35,17 +35,21 @@ jobs:
     - name: Install
       run: sudo apt-get install x11vnc xvfb fluxbox
 
-    - name: export
-      run: export DISPLAY=:0
+    # - name: export
+      # run: export DISPLAY=:0
       
       
     - name: snap remove firefox
       run: sudo apt-get install firefox
 
-    - name: firefox
-      run: |
-        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:0
-        firefox TestModel/index.html   
+    - name: ssh -X remotebox
+      run: ssh -X remotebox
+
+
+    # - name: firefox
+      # run: |
+        # Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
+        # firefox TestModel/index.html   
 
     # - name: Install
       # run: sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
