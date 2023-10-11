@@ -43,7 +43,7 @@ jobs:
       run: sudo apt-get install firefox
 
     - name: firefox
-        firefox TestModel/index.html   
+      run: firefox TestModel/index.html   
 
     # - name: Install
       # run: sudo apt-get -y install xorg xvfb gtk2-engines-pixbuf
