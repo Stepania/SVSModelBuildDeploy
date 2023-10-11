@@ -40,7 +40,7 @@ jobs:
       
       
     - name: snap remove firefox
-      run: sudo snap remove firefox
+      run: docker-compose exec -u root selenium-chrome bash -c 'echo "${DISPLAY}"'
 
 
 
