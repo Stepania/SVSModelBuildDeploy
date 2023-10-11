@@ -42,9 +42,6 @@ jobs:
     - name: snap remove firefox
       run: sudo apt-get install firefox
 
-    - name: snap remove firefox
-      run: sudo apt-get install firefox-geckodriver
-
     - name: goggle
       run: |
         Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
