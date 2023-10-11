@@ -35,8 +35,8 @@ jobs:
     - name: Install
       run: sudo apt-get install x11vnc xvfb fluxbox
 
-    - name: Install
-      run: export DISPLAY=${DISPLAY:-:0}
+    # - name: Install
+      # run: export DISPLAY=${DISPLAY:-:0}
 
 
     - name: goggle
