@@ -96,4 +96,4 @@ jobs:
       uses: pavi2410/html-preview-action@v2
       with:
         html_file: 'TestModel/index.html'
-        url: steps.html_preview.outputs.url
+        url: steps.html_preview.outputs.index.html
