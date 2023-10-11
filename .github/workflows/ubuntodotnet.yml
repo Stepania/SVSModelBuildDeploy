@@ -30,7 +30,14 @@ jobs:
 
     - name: browser
       run: sudo update-alternatives --config x-www-browser     
-      
+
+    - name: Install Python pyinstaller
+      run: python -m pip install --upgrade pip ghp-import
+
+
+
+
+    
     # - name: firefox
       # run: |
         # Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=:99
@@ -91,9 +98,9 @@ jobs:
       # run: xdg-open TestModel/index.html
             
            
-    - name: HTML Preview
-      id: html_preview
-      uses: pavi2410/html-preview-action@v2
-      with:
-        html_file: 'index.html'
+    # - name: HTML Preview
+      # id: html_preview
+      # uses: pavi2410/html-preview-action@v2
+      # with:
+        # html_file: 'index.html'
         # url: steps.html_preview.outputs.index.html
