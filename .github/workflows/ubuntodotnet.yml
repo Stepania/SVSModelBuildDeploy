@@ -25,8 +25,8 @@ jobs:
       with:
         python-version: 3.11.5  
 
-      - name: Step 1 - Create a temporary artifact downloads folder
-        run: mkdir downloads
+    - name: Step 1 - Create a temporary artifact downloads folder
+      run: mkdir downloads
         
     - name: step 2 - Add artifacts to publish to the temp folder
       run: |
