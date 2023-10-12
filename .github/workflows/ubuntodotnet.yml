@@ -26,9 +26,7 @@ jobs:
         python-version: 3.11.5  
 
     - name: Create a temporary artifact downloads folder for graphs
-      run: mkdir graphs
-        
-
+      run: mkdir graphs       
 
     - name: Install Python pandas
       run: python -m pip install --upgrade pip pandas
@@ -68,3 +66,8 @@ jobs:
       with: 
         name: folder for graphs
         path: graphs
+        steps:
+        
+                   
+    - name: Adding markdown
+      run:  graphs/testplot.png>> $GITHUB_STEP_SUMMARY
