@@ -61,9 +61,9 @@ jobs:
       
     - name: step 2 - Add artifacts to publish to the temp folder
       run: |
-        cd graphs
-        testplot.png > testplot.html
-        cd ..            
+        #cd graphs
+        mv testplot.png graphs
+        #cd ..            
            
     - name: Step 3 - Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
