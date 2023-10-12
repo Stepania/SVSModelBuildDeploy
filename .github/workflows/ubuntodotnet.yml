@@ -56,6 +56,9 @@ jobs:
       
     - name: send a graph 
       run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
+
+    - name: Adding markdown
+      run: testplot.png>> $GITHUB_STEP_SUMMARY
       
     - name: moving artfact to temp folder
       run: |
