@@ -25,6 +25,25 @@ jobs:
       with:
         python-version: 3.11.5  
 
+      - name: Step 1 - Create a temporary artifact downloads folder
+        run: mkdir downloads
+        
+    - name: step 2 - Add artifacts to publish to the temp folder
+      run: |
+        cd downloads
+        echo 'alpha'    > alpha.html
+        cd ..
+
+
+    - name: Step 3 - Use the Upload Artifact GitHub Action
+      uses: actions/upload-artifact@v2
+      with: 
+        name: assets-for-download
+        path: downloads
+
+
+
+
     # - name: install -y xvfb
       # run: sudo apt-get install -y xvfb
 
@@ -42,10 +61,10 @@ jobs:
     # - name: Install
       # run: sudo apt-get -y install dbus-x11 xfonts-base xfonts-100dpi xfonts-75dpi xfonts-cyrillic xfonts-scalable     
                      
-    - name: goggle
-      run: |
-        Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=localhost:0.0
-        google-chrome TestModel/index.html   
+    # - name: goggle
+      # run: |
+        # Xvfb -ac :99 -screen 0 1280x1024x16 & export DISPLAY=localhost:0.0
+        # google-chrome TestModel/index.html   
 ##
     # - name: open
       # run: firefox TestModel/index.html
