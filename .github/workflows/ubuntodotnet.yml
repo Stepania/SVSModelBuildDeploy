@@ -59,14 +59,12 @@ jobs:
     - name: send a graph 
       run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
       
-    - name: step 2 - Add artifacts to publish to the temp folder
+    - name: moving artfact to temp folder
       run: |
-        #cd graphs
-        mv testplot.png graphs
-        #cd ..            
+        mv testplot.png graphs         
            
     - name: Step 3 - Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
       with: 
-        name: assets-for-download
+        name: folder for graphs
         path: graphs
