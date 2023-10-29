@@ -69,7 +69,7 @@ jobs:
         path: graphs/testplot.png
         env-url: FOOBAR
     - name: Use URL for something
-      run: echo "${{ env.FOOBAR }}" >> $GITHUB_STEP_SUMMARY
+      run: echo "${{ env.FOOBAR }}" >> $GITHUB_OUTPUT
 
 
 
