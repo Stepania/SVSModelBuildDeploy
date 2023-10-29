@@ -67,10 +67,7 @@ jobs:
       with: 
         name: folder for graphs
         path: graphs
-
         
-    - name: Checkout
-      uses: actions/checkout@v1
     - name: Generate Image
       uses: BoyWithSilverWings/generate-og-image@1.0.3
       env:
