@@ -61,11 +61,18 @@ jobs:
       run: |
         mv testplot.png graphs         
            
-    - name: Step 3 - Use the Upload Artifact GitHub Action
-      uses: actions/upload-artifact@v3
-      with:
-        title: my-artifacts
-          - files: graphs/testplot.png
+    - name: Step 3 - Use the Upload Artifact GitHub Action   
+      run: |
+        echo "![alt text](https://kgo.googleusercontent.com/profile_vrt_raw_bytes_1587515358_10512.png)" >> $GITHUB_STEP_SUMMARY
+
+    
+    
+    
+    
+      # uses: actions/upload-artifact@v3
+      # with:
+        # title: my-artifacts
+          # - files: graphs/testplot.png
 
 
 
