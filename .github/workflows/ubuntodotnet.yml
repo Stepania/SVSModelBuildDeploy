@@ -75,8 +75,8 @@ jobs:
         path: graphs # The folder the action should deploy.
         
         
-  deploy:
-    needs: build
+    deploy:
+      needs: build
                      
         
     - name: Step 3 - Use the Upload Artifact GitHub Action   
