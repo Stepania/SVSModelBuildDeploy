@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import datetime as dt
 import numpy as np
 import pathlib
-
+#import aspose.words as aw
 import glob
 
 path = os.getcwd()
@@ -87,5 +87,10 @@ for t in tests:
     make_observed(observed_data[datefilter])
     pos+=1
 
-plt.savefig('testplots.webp')
+plt.savefig('testplots.png')
+
+#doc = aw.Document()
+#builder = aw.DocumentBuilder(doc)
+#builder.insert_image("testplots.png")
+#doc.save("testplots.html")
 plt.show()
