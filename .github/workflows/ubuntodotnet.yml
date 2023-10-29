@@ -63,7 +63,7 @@ jobs:
            
     - name: Step 3 - Use the Upload Artifact GitHub Action   
       run: |
-        echo "![alt text](https://kgo.googleusercontent.com/profile_vrt_raw_bytes_1587515358_10512.png)" >> $GITHUB_STEP_SUMMARY
+        echo "![alt text](graphs/testplot.png)" >> $GITHUB_STEP_SUMMARY
 
     
     
