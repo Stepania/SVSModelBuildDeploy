@@ -15,7 +15,8 @@ jobs:
   
     permissions:
       pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source      
+      id-token: write   # to verify the deployment originates from an appropriate source   
+      
     environment:
       name: github-pages
       url: ${{ steps.change-page-url.outputs.new_page_url }}   
@@ -87,8 +88,11 @@ jobs:
       
     - name: Override page_url
       id: change-page-url
-      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}graphs/" >> $GITHUB_OUTPUT         
-                     
+      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}graphs/" >> $GITHUB_OUTPUT    
+
+      
+    - name: find index
+      run: find . -type f -name "*.html"                       
 
 
 
