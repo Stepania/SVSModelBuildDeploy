@@ -19,7 +19,7 @@ jobs:
       
     environment:
       name: github-pages
-      url: ${{ steps.change-page-url.outputs.new_page_url }}   
+      url: ${{ https://svs-tool.kanbantool.com }}   
       
     runs-on: ubuntu-latest
 
