@@ -56,11 +56,11 @@ jobs:
       run: python TestModel/testGraph/testGraph/testGraph.py     
       
     - name: send a graph 
-      run:  mail -s "Graph" -A testplots.png super.kydryavuy2011@yandex.ru
+      run:  mail -s "Graph" -A testplots.webp super.kydryavuy2011@yandex.ru
       
     - name: moving artfact to temp folder
       run: |
-        mv testplots.png graphs         
+        mv testplots.webp graphs         
            
     - name: Step 3 - Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
@@ -96,7 +96,7 @@ jobs:
       # uses: actions/upload-artifact@master
       # with:
         # name: tesplotopener
-        # path: graphs/testplots.png
+        # path: graphs/testplots.webp
         # env-url: FOOBAR
     # - name: Use URL for something
       # run: echo "${{ env.FOOBAR }}" >> $GITHUB_STEP_SUMMARY
