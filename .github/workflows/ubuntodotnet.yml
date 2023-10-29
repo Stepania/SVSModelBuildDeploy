@@ -56,14 +56,17 @@ jobs:
       
     - name: send a graph 
       run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
-      
-    - name: moving artfact to temp folder
-      run: |
-        mv testplot.png graphs         
+     
+
+    - name: artifact      
       uses: actions/upload-artifact@v3
       with:
         title: my-artifacts
           - files: graphs/testplot.png
+          
+    - name: moving artfact to temp folder
+      run: |
+        mv testplot.png graphs   
 
     # - name: Upload build
       # uses: actions/upload-artifact@master
