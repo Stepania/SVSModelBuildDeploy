@@ -65,7 +65,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         title: my-artifacts
-          - files: [ graphs/testplot.png ]
+          - files: graphs/testplot.png
 
 
 
