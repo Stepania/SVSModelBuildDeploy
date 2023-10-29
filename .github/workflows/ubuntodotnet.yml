@@ -66,10 +66,7 @@ jobs:
 
       with:
         title: my-artifacts
-          - files: [ graphs/testplot.png ]
-
-
-
+        - files: [ graphs/testplot.png ]
 
 
 
