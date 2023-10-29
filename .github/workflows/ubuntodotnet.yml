@@ -67,12 +67,18 @@ jobs:
       with: 
         name: folder for graphs
         path: graphs
+
         #steps:
     - name: Step 3 - Use the Upload Artifact GitHub Action   
       run: |
         echo "![alt text]($graphs/testplots.webp)" >> $GITHUB_STEP_SUMMARY
-        echo "$HOME" >> $GITHUB_STEP_SUMMARY
-        ls $HOME
+        echo "$HOME" >> $GITHUB_OUTPUT
+        
+        
+    - name: ls $HOME
+      run:  ls $HOME      
+        
+        
 
 
 
