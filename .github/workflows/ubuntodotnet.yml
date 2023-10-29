@@ -65,6 +65,7 @@ jobs:
       run: |
         echo "![alt text]($HOME/graphs/testplot.png)" >> $GITHUB_STEP_SUMMARY
         echo "$HOME" >> $GITHUB_STEP_SUMMARY
+        ls $HOME
      
     
     
