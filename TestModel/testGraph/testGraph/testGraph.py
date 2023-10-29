@@ -87,5 +87,5 @@ for t in tests:
     make_observed(observed_data[datefilter])
     pos+=1
 
-plt.savefig('testplots.png')
+plt.savefig('testplots.webp')
 plt.show()
