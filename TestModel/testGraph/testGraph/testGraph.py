@@ -87,7 +87,7 @@ for t in tests:
     make_observed(observed_data[datefilter])
     pos+=1
 
-plt.savefig('testplots.png')
+plt.savefig('testplots.webp')
 
 #doc = aw.Document()
 #builder = aw.DocumentBuilder(doc)

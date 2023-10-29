@@ -67,14 +67,14 @@ jobs:
       with: 
         name: folder for graphs
         path: graphs
-        
-    - name: Generate Image
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_CONTEXT: ${{ toJson(github) }}
+
+
+    - name: Deploy 🚀
+      uses: actions/upload-pages-artifact@v2
       with:
-        path: graphs/       
-              
+        folder: graphs # The folder the action should deploy.
+
+                     
         
     - name: Step 3 - Use the Upload Artifact GitHub Action   
       run: |
