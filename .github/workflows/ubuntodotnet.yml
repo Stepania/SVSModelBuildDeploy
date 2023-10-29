@@ -13,13 +13,7 @@ on:
 jobs:
   build:
   
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-      
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}   
+
       
     runs-on: ubuntu-latest
 
@@ -83,11 +77,18 @@ jobs:
       with:
         path: graphs # The folder the action should deploy.
 
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+      
+    environment:
+      name: github-pages
+      path: graphs 
+
+      
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v2
-              
-                     
+      uses: actions/deploy-pages@v2                     
         
     - name: Step 3 - Use the Upload Artifact GitHub Action   
       run: |
