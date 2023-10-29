@@ -92,7 +92,7 @@ jobs:
 
       
     - name: find index
-      run: find . -type f -name "*.html"                       
+      run: find . -type f -name "*.webp"                       
     
     - name: Step 3 - Use the Upload Artifact GitHub Action   
       run: |
