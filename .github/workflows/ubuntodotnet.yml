@@ -63,11 +63,16 @@ jobs:
            
     - name: Step 3 - Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v3
-      with: 
-        name: folder for graphs
-        path: graphs/testplot.png
 
-          
+      with:
+          title: my-artifacts
+            - files: [ graphs/testplot.png ]
+
+
+
+
+
+
 
 
  
