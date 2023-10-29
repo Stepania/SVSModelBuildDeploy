@@ -60,7 +60,10 @@ jobs:
     - name: moving artfact to temp folder
       run: |
         mv testplot.png graphs         
-
+      uses: actions/upload-artifact@v3
+      with:
+        title: my-artifacts
+          - files: graphs/testplot.png
 
     # - name: Upload build
       # uses: actions/upload-artifact@master
@@ -85,7 +88,3 @@ jobs:
         # ls $HOME
      
     
-      uses: actions/upload-artifact@v3
-      with:
-        title: my-artifacts
-          - files: graphs/testplot.png
