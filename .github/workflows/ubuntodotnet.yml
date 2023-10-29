@@ -63,9 +63,9 @@ jobs:
            
     - name: Step 3 - Use the Upload Artifact GitHub Action   
       run: |
-        graphs/testplot.png >> $GITHUB_STEP_SUMMARY
-
-    
+        echo "![alt text]($HOME/graphs/testplot.png)" >> $GITHUB_STEP_SUMMARY
+        echo "$HOME" >> $GITHUB_STEP_SUMMARY
+     
     
     
     
