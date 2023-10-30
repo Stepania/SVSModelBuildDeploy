@@ -101,10 +101,10 @@ jobs:
     - name: find index
       run: find . -type f -name "*.html"                       
     
-    # - name: Step 3 - Use the Upload Artifact GitHub Action   
-      # run: |
-        # echo "![alt text](../../graphs/testplots.webp)" >> $GITHUB_STEP_SUMMARY
-        # echo "$HOME" >> $GITHUB_STEP_SUMMARY
+    - name: Step 3 - Use the Upload Artifact GitHub Action   
+      run: |
+        echo "![alt text](../../graphs/index.html)" >> $GITHUB_STEP_SUMMARY
+        echo "$HOME" >> $GITHUB_STEP_SUMMARY
                
-     #
+     
     
