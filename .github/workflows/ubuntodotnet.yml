@@ -84,8 +84,7 @@ jobs:
       uses: actions/upload-pages-artifact@v2
       with:
         path: graphs # The folder the action should deploy.
-        
-        
+                
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2       
@@ -93,14 +92,12 @@ jobs:
     - name: Override page_url
       id: change-page-url
       run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}graphs/index.html" >> $GITHUB_OUTPUT  
-
-         
-      
+              
     - name: find index file
       run: find . -type f -name "*.html"                       
     
-    - name: Display in Summary 
-      run: |
-        echo "![alt text](graphs/index.html)" >> $GITHUB_STEP_SUMMARY
-        echo "$HOME" >> $GITHUB_STEP_SUMMARY
-               ###
+    # - name: Display in Summary 
+      # run: |
+        # echo "![alt text](graphs/index.html)" >> $GITHUB_STEP_SUMMARY
+        # echo "$HOME" >> $GITHUB_STEP_SUMMARY
+               ##
