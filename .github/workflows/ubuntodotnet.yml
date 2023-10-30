@@ -86,14 +86,18 @@ jobs:
       uses: actions/upload-pages-artifact@v2
       with:
         path: graphs # The folder the action should deploy.
+        
+        
+    # - name: Override page_url
+      # id: change-page-url
+      # run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}index.html" >> $GITHUB_OUTPUT  
 
+      
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2
       
-    - name: Override page_url
-      id: change-page-url
-      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}graphs/index.html" >> $GITHUB_OUTPUT    
+
 
       
     - name: find index
