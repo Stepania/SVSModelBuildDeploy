@@ -19,7 +19,7 @@ jobs:
       
     environment:
       name: github-pages
-      url: ${{ steps.change-page-url.outputs.new_page_url }}   
+      url: ${{ steps.change-page-url.outputs.new_page_url }}      
       
     runs-on: ubuntu-latest
 
@@ -74,11 +74,11 @@ jobs:
       run: |
         mv index.html graphs         
            
-    - name: Step 3 - Use the Upload Artifact GitHub Action
-      uses: actions/upload-artifact@v2
-      with: 
-        name: folder for graphs
-        path: graphs
+    # - name: Step 3 - Use the Upload Artifact GitHub Action
+      # uses: actions/upload-artifact@v2
+      # with: 
+        # name: folder for graphs
+        # path: graphs
 
     - name: Deploy 🚀
       uses: actions/upload-pages-artifact@v2
@@ -86,14 +86,16 @@ jobs:
         path: graphs # The folder the action should deploy.
         
         
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2       
+        
     - name: Override page_url
       id: change-page-url
       run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}graphs/index.html" >> $GITHUB_OUTPUT  
 
       
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v2
+
       
       
     - name: find index file
