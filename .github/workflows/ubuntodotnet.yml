@@ -77,10 +77,10 @@ jobs:
         # name: folder for graphs
         # path: graphs
 
-    # - name: Deploy 🚀
-      # uses: actions/upload-pages-artifact@v2
-      # with:
-        # path: graphs # The folder the action should deploy.
+    - name: Deploy 🚀
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: TestModel # The folder the action should deploy.
 
     - name: Deploy to GitHub Pages
       id: deployment
