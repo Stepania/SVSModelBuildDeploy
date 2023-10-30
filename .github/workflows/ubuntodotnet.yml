@@ -96,8 +96,8 @@ jobs:
       run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}index.html" >> $GITHUB_OUTPUT    
 
       
-    # - name: find index
-      # run: find . -type f -name "*.webp"                       
+    - name: find index
+      run: find . -type f -name "*.html"                       
     
     # - name: Step 3 - Use the Upload Artifact GitHub Action   
       # run: |
