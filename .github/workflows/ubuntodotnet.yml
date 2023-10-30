@@ -72,9 +72,9 @@ jobs:
     # - name: send a graph 
       # run:  mail -s "Graph" -A testplots.webp super.kydryavuy2011@yandex.ru
       
-    - name: moving artfact to temp folder
-      run: |
-        mv index.html graphs         
+    # - name: moving artfact to temp folder
+      # run: |
+        # mv index.html graphs         
            
     # - name: Step 3 - Use the Upload Artifact GitHub Action
       # uses: actions/upload-artifact@v2
@@ -88,17 +88,15 @@ jobs:
         path: graphs # The folder the action should deploy.
         
         
-    # - name: Override page_url
-      # id: change-page-url
-      # run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}index.html" >> $GITHUB_OUTPUT  
+    - name: Override page_url
+      id: change-page-url
+      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}index.html" >> $GITHUB_OUTPUT  
 
       
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2
       
-
-
       
     - name: find index
       run: find . -type f -name "*.html"                       
