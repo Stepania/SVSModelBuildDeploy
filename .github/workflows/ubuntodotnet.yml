@@ -39,7 +39,12 @@ jobs:
       run: mkdir graphs       
 
     - name: Install Python pandas
-      run: python -m pip install --upgrade pip pandas
+      run: python -m pip install --upgrade pip pandas        
+      
+    - name: Install Python aspose
+      run: python -m pip install --upgrade pip aspose      
+      
+      
           
     - name: Install Python matplotlib
       run: python -m pip install --upgrade pip matplotlib  
