@@ -88,7 +88,7 @@ jobs:
       
     - name: Override page_url
       id: change-page-url
-      run: echo "new_page_url=${{ https://svs-tool.kanbantool.com }}" >> $GITHUB_OUTPUT    
+      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}TestModel/index.html" >> $GITHUB_OUTPUT    
 
       
     - name: find index
