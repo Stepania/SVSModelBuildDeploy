@@ -13,10 +13,14 @@ on:
 jobs:
   build:
   
-    permissions: write-all
-      # pages: write      
-      # id-token: write     
-      
+    permissions:
+      pages: write      
+      id-token: write   
+            
+    concurrency:
+      group: "pages"
+      cancel-in-progress: true      
+     
     environment:
       name: github-pages
       url: ${{ steps.change-page-url.outputs.new_page_url }}      
