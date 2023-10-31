@@ -12,7 +12,9 @@ on:
 
 jobs:
   build:
-  
+       
+    runs-on: ubuntu-latest
+    
     permissions:
       pages: write      
       id-token: write   
@@ -23,9 +25,7 @@ jobs:
      
     environment:
       name: github-pages
-      url: ${{ steps.change-page-url.outputs.new_page_url }}      
-      
-    runs-on: ubuntu-latest
+      url: ${{ steps.change-page-url.outputs.new_page_url }}    
 
     steps:
     - uses: actions/checkout@v3
