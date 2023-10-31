@@ -15,7 +15,7 @@ jobs:
   
     permissions:
       pages: write      
-      id-token: write     
+      #id-token: write     
       
     environment:
       name: github-pages
@@ -100,4 +100,3 @@ jobs:
         # branch: gh-pages
         # folder: html
         
-        ##
