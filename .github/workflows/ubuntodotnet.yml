@@ -68,7 +68,7 @@ jobs:
       run: python TestModel/testGraph/testGraph/testGraph.py     
       
     # - name: send a graph 
-      # run:  mail -s "Graph" -A testplots.webp super.kydryavuy2011@yandex.ru
+      # run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
       
     - name: moving artfact to temp folder
       run: |

@@ -1,3 +1,4 @@
+from io import BytesIO
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,12 +8,14 @@ import pathlib
 import aspose.words as aw
 import glob
 
+
+
 path = os.getcwd()
 
 #this one is a new wit James
 #observed_path = os.path.join("../TestModel/Observed/observed.csv")
 
-#legacy bellow
+#run this on machine
 #observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
 #run this code for an action
@@ -87,10 +90,11 @@ for t in tests:
     make_observed(observed_data[datefilter])
     pos+=1
 
-plt.savefig('testplots.png')
+plt.savefig('testplot.png')
 
 doc = aw.Document()
 builder = aw.DocumentBuilder(doc)
-builder.insert_image("testplots.png")
+builder.insert_image("testplot.png")
 doc.save("index.html")
+
 plt.show()
