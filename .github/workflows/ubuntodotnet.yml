@@ -72,7 +72,7 @@ jobs:
       
     - name: moving artfact to temp folder
       run: |
-        mv index.mht graphs         
+        mv index.html graphs         
            
     - name: Step 3 - Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
@@ -91,15 +91,15 @@ jobs:
         
     - name: Override page_url
       id: change-page-url
-      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}index.mht" >> $GITHUB_OUTPUT  
+      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}index.html" >> $GITHUB_OUTPUT  
   
     
     - name: find index file
-      run: find . -type f -name "*.mht"                       
+      run: find . -type f -name "*.html"                       
 
     - name: find index file
       run: find . -type f -name "*.png"      
     # - name: Display in Summary 
       # run: |
-        # echo "![alt text](graphs/index.mht)" >> $GITHUB_STEP_SUMMARY
+        # echo "![alt text](graphs/index.html)" >> $GITHUB_STEP_SUMMARY
         # echo "$HOME" >> $GITHUB_STEP_SUMMARY

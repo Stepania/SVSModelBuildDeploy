@@ -95,6 +95,6 @@ plt.savefig('testplot.png')
 doc = aw.Document()
 builder = aw.DocumentBuilder(doc)
 builder.insert_image("testplot.png")
-doc.save("index.mht")
+doc.save("index.html")
 
 plt.show()
