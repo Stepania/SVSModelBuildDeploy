@@ -70,9 +70,10 @@ jobs:
     # - name: send a graph 
       # run:  mail -s "Graph" -A testplot.png super.kydryavuy2011@yandex.ru
       
-    - name: moving artfact to temp folder
+    - name: moving artfact to folder
       run: |
-        mv index.html graphs         
+        mv index.html graphs
+        mv index.001.png graphs        
            
     - name: Step 3 - Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
@@ -91,15 +92,16 @@ jobs:
         
     - name: Override page_url
       id: change-page-url
-      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}index.html" >> $GITHUB_OUTPUT  
-  
+      run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}index.html" >> $GITHUB_OUTPUT # redirect to our folder 
     
     - name: find index file
       run: find . -type f -name "*.html"                       
+    
 
-    - name: find index file
-      run: find . -type f -name "*.png"      
-    # - name: Display in Summary 
-      # run: |
-        # echo "![alt text](graphs/index.html)" >> $GITHUB_STEP_SUMMARY
-        # echo "$HOME" >> $GITHUB_STEP_SUMMARY
+    # - name: Deploy to GitHub pages 🚀
+      # if: github.event_name != 'pull_request'
+      # uses: JamesIves/github-pages-deploy-action@v4.4.1
+      # with:
+        # clean: false
+        # branch: gh-pages
+        # folder: html
