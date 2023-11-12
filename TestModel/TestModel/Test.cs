@@ -24,23 +24,17 @@ namespace TestModel
 {
     public class Test
     {
-        private static void runPythonScript()
+/*        private static void runPythonScript()
         {
             string dir = Directory.GetCurrentDirectory();
             //legacy below
             string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
             string progToRun = newPath + @"TestModel\testGraph\testGraph\testGraph.py";
 
-            //that is new with james
-            //string progToRun = dir + @"/../TestModel/testGraph/testGraph/testGraph.py";
-
             // run this code for an action
             //string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
 
             Process proc = new Process();
-
-            // for ubuntu action
-            //proc.StartInfo.FileName = @"TestModel/testGraph/testGraph/testEnvironment/Scripts/python.exe";
 
             // original  file 
             proc.StartInfo.FileName = "python.exe";
@@ -52,7 +46,7 @@ namespace TestModel
             StreamReader sReader = proc.StandardOutput;
             proc.WaitForExit();
             Console.ReadLine();
-        }
+        }*/
         public static void RunTests(Dictionary<string, object> _configDict)
 
         {
@@ -126,7 +120,7 @@ namespace TestModel
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
 
             }
-            runPythonScript();
+            //runPythonScript();
         }      
 
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)
