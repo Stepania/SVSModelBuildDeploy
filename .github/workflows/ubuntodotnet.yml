@@ -34,8 +34,9 @@ jobs:
       with:
         dotnet-version: 6.0.x
         
-    - name: get time 
-      run: Get-TimeZone -ListAvailable          
+    - name: set release date
+      run: |
+        echo "RELEASE_DATE=$(date --rfc-3339=date)" >> ${GITHUB_ENV}          
       
         
         
