@@ -38,11 +38,10 @@ jobs:
       run: |
         echo "RELEASE_DATE=$(date --rfc-3339=date)" >> ${GITHUB_ENV}   
         
-    - name: set release date
+    - name: set NOW
       run: |
-        echo GITHUB_ENV       
-        
-        
+        echo "::set-env name=NOW::$(date +'%Y-%m-%dT%H:%M:%S')"   
+                
     # - name: Install Python 3
       # uses: actions/setup-python@v1
       # with:
