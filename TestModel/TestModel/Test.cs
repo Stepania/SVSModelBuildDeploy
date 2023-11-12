@@ -24,7 +24,7 @@ namespace TestModel
 {
     public class Test
     {
- /*       private static void runPythonScript()
+        private static void runPythonScript()
         {
             string dir = Directory.GetCurrentDirectory();
             //legacy below
@@ -52,15 +52,19 @@ namespace TestModel
             StreamReader sReader = proc.StandardOutput;
             proc.WaitForExit();
             Console.ReadLine();
-        }*/
+        }
         public static void RunTests(Dictionary<string, object> _configDict)
 
         {
 
             string dir = Directory.GetCurrentDirectory();
             string resourceName = "TestModel.TestConfig.csv";
+
+            //string resourceName = "TestModel.actualDataConfig.csv";
+
             var assembly = Assembly.GetExecutingAssembly();
             Stream csv = assembly.GetManifestResourceStream(resourceName);
+
             DataFrame allTests = DataFrame.LoadCsv(csv);
 
             List<string> Tests = new List<string>();
@@ -122,7 +126,7 @@ namespace TestModel
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
 
             }
-            //runPythonScript();
+            runPythonScript();
         }      
 
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)

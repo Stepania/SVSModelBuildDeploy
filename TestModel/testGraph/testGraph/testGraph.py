@@ -8,38 +8,34 @@ import pathlib
 import aspose.words as aw
 import glob
 
-
-
 path = os.getcwd()
 
 #this one is a new wit James
 #observed_path = os.path.join("../TestModel/Observed/observed.csv")
 
 #run this on machine
-#observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
+observed_path = os.path.join(path, "../../../../TestModel/Observed/observed.csv")
 
 #run this code for an action
-observed_path = "TestModel/Observed/observed.csv"
+#observed_path = "TestModel/Observed/observed.csv"
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
 observed_data.sort_index(axis=0,inplace=True)
 
-tests = ['test 1','test 2','test 3']
+#needs to be fixed
+tests = ['8Oat','8Peas','8Wheat']
+
+
 
 Alltests =[]
-for t in tests[:]:
-    #legacy
-    #Alltests.append(pd.read_csv( path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True))    
+for t in tests[:]:   
    
     testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
-    
-    #testframe.set_index('Date',inplace=True)
+
     Alltests.append(testframe)   
 
 AllData = pd.concat(Alltests,axis=1,keys=tests)
-#legacy
-#AllData.index = pd.to_datetime(AllData.index,format='mixed',dayfirst=True)
 
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
@@ -51,8 +47,8 @@ AllData.index = pd.to_datetime(AllData.index)
 tests = AllData.columns.get_level_values(0).drop_duplicates()
 colors = pd.Series(['r','b','g'])
 
-start = dt.datetime.date(AllData['test 1'].dropna().index.min())
-end = dt.datetime.date(AllData['test 1'].dropna().index.max())
+start = dt.datetime.date(AllData['8Wheat'].dropna().index.min())
+end = dt.datetime.date(AllData['8Wheat'].dropna().index.max())
 
 def makeplot(Data,color):
     plt.plot(Data,color=color)
