@@ -34,14 +34,12 @@ jobs:
       with:
         dotnet-version: 6.0.x
         
-    - name: set release date
-      run: |
-        echo "RELEASE_DATE=$(date --rfc-3339=date)" >> ${GITHUB_ENV}   
+    - name: set env
+      run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV  
         
-    - name: set NOW
-      run: |
-        echo "::set-env name=NOW::v$(date +'%Y%m%d.%H%M%S')"
-                
+     
+        
+        
     # - name: Install Python 3
       # uses: actions/setup-python@v1
       # with:
