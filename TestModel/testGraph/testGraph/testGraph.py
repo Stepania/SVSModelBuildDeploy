@@ -24,7 +24,7 @@ observed_data = pd.read_csv(observed_path,index_col=0)
 observed_data.sort_index(axis=0,inplace=True)
 
 #needs to be fixed
-tests = ['8Oat','8Peas','8Wheat']
+tests = ['test 1','test 2','test 3']
 
 
 
