@@ -47,8 +47,8 @@ AllData.index = pd.to_datetime(AllData.index)
 tests = AllData.columns.get_level_values(0).drop_duplicates()
 colors = pd.Series(['r','b','g'])
 
-start = dt.datetime.date(AllData['8Wheat'].dropna().index.min())
-end = dt.datetime.date(AllData['8Wheat'].dropna().index.max())
+start = dt.datetime.date(AllData['test 1'].dropna().index.min())
+end = dt.datetime.date(AllData['test 1'].dropna().index.max())
 
 def makeplot(Data,color):
     plt.plot(Data,color=color)
