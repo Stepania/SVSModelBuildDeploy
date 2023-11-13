@@ -105,7 +105,9 @@ jobs:
     
     - name: find index file
       run: find . -type f -name "*.html"                       
-    
+
+    - name: find CSV file
+      run: find . -type f -name "*.csv"     
 
     # - name: Deploy to GitHub pages 🚀
       # if: github.event_name != 'pull_request'
