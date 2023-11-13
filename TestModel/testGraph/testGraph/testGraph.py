@@ -19,6 +19,8 @@ path = os.getcwd()
 #run this code for an action
 observed_path = "TestModel/Observed/observed.csv"
 
+given_data="OutputFiles/"
+
 observed_data = pd.read_csv(observed_path,index_col=0)
 
 observed_data.sort_index(axis=0,inplace=True)
@@ -30,7 +32,7 @@ observed_data.sort_index(axis=0,inplace=True)
 tests = []
 test_name = []
 
-for file in os.listdir("OutputFiles"):
+for file in os.listdir("given_data"):
     
     if file.endswith('.csv'):
         tests.append(file)       
