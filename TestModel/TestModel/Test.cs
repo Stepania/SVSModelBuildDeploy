@@ -52,9 +52,10 @@ namespace TestModel
         {
 
             string dir = Directory.GetCurrentDirectory();
-            string resourceName = "TestModel.TestConfig.csv";
+            //string resourceName = "TestModel.TestConfig.csv";
 
-            //string resourceName = "TestModel.actualDataConfig.csv";
+            string resourceName = "TestModel.actualDataConfig.csv";
+
 
             var assembly = Assembly.GetExecutingAssembly();
             Stream csv = assembly.GetManifestResourceStream(resourceName);
@@ -118,6 +119,7 @@ namespace TestModel
                 }
 
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
+
 
             }
             //runPythonScript();
