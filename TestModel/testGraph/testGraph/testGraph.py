@@ -32,7 +32,7 @@ observed_data.sort_index(axis=0,inplace=True)
 tests = []
 test_name = []
 
-for file in os.listdir("given_data"):
+for file in os.listdir(given_data):
     
     if file.endswith('.csv'):
         tests.append(file)       
