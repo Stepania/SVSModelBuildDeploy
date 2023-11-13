@@ -75,7 +75,17 @@ jobs:
 
     - name: ls
       run: ls
-            
+      
+    - name: ls
+      run: ls ConsoleApp1/bin/Debug/net6.0
+
+      
+    - name: ls
+      run: ls -a ConsoleApp1/bin/Debug/net6.0
+      
+    - name: ls
+      run: ls OutputFiles
+      
     - name: ls
       run: ls OutputFiles
       
