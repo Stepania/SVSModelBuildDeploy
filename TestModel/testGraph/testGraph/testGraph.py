@@ -25,16 +25,27 @@ observed_data.sort_index(axis=0,inplace=True)
 
 #needs to be fixed
 #tests = ['test 1','test 2','test 3']
-tests = ['8Oat','8Peas','8Wheat']
+#tests = ['8Oat','8Peas','8Wheat']
+
+tests = []
+test_name = []
+
+for file in os.listdir(path+"\\OutputFiles"):
+    
+    if file.endswith('.csv'):
+        tests.append(file)       
+        test_name.append(os.path.splitext(file)[0])
+
+
 
 Alltests =[]
-for t in tests[:]:   
+for t in tests[:]:  
    
-    testframe = pd.read_csv(path + "\\OutputFiles\\"+t+".csv",index_col=0,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')    
-
+    testframe = pd.read_csv(path + "\\OutputFiles\\"+t,index_col=0,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')  
+    
     Alltests.append(testframe)   
 
-AllData = pd.concat(Alltests,axis=1,keys=tests)
+AllData = pd.concat(Alltests,axis=1,keys=test_name)
 
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
@@ -57,6 +68,8 @@ def make_observed(observed):
         
 Graph = plt.figure(figsize=(10,10))
 pos = 1
+row_num=len(tests)
+
 for t in tests:
     start = dt.datetime.date(AllData[t].dropna().index.min())
     end = dt.datetime.date(AllData[t].dropna().index.max())
@@ -65,10 +78,11 @@ for t in tests:
         ret = False
         if ((d >= pd.Timestamp(start)) and (d<=pd.Timestamp(end))):
             ret = True
+            # if site id matching the observed id make it true only then 
         datefilter.append(ret)
         
     color = 'b'
-    Graph.add_subplot(3,2,pos)
+    Graph.add_subplot(row_num,2,pos)
     Data = AllData.loc[:,(t,'SoilMineralN')].sort_index()
     plt.xticks(rotation = 45)    
     plt.title("SoilMineralN")
@@ -77,7 +91,7 @@ for t in tests:
     Graph.tight_layout(pad=1.5)
     pos+=1
     
-    Graph.add_subplot(3,2,pos)
+    Graph.add_subplot(row_num,2,pos)
     plt.xticks(rotation = 45)  
     plt.title("CropN")
     Data = AllData.loc[:,(t,'CropN')].sort_index()
@@ -93,3 +107,6 @@ builder.insert_image("testplot.png")
 doc.save("index.html")
 
 plt.show()
+
+#shutil.rmtree(path+"\\OutputFiles")
+#shutil.rmtree(path+"\\NitrogenApplied")
