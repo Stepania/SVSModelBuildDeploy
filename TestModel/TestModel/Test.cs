@@ -113,10 +113,10 @@ namespace TestModel
 
                 string folderName = "OutputFiles";
 
-                if (!Directory.Exists(folderName))
+/*                if (!Directory.Exists(folderName))
                 {
                     System.IO.Directory.CreateDirectory("OutputFiles");
-                }
+                }*/
 
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
 

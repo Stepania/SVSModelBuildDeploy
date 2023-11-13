@@ -38,8 +38,6 @@ for file in os.listdir(path+given_data):
         tests.append(file)       
         test_name.append(os.path.splitext(file)[0])
 
-
-
 Alltests =[]
 for t in tests[:]:  
    
