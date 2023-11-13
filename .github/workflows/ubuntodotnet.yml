@@ -73,6 +73,9 @@ jobs:
     - name: run
       run: dotnet run --project ConsoleApp1/ConsoleApp1.csproj
       
+    - name: find CSV file
+      run: find . -type f -name "*.csv"  
+      
     - name: run python 
       run: python TestModel/testGraph/testGraph/testGraph.py     
           
