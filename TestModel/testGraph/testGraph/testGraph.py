@@ -70,6 +70,8 @@ Graph = plt.figure(figsize=(10,10))
 pos = 1
 row_num=len(tests)
 
+
+
 for t in tests:
     start = dt.datetime.date(AllData[t].dropna().index.min())
     end = dt.datetime.date(AllData[t].dropna().index.max())
