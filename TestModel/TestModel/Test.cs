@@ -118,8 +118,9 @@ namespace TestModel
                     System.IO.Directory.CreateDirectory("OutputFiles");
                 }
 
-                DataFrame.SaveCsv(newDataframe, "OutputFiles\\" + test + ".csv");
-                
+                //DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
+                DataFrame.SaveCsv(newDataframe, test + ".csv");
+
 
 
             }
