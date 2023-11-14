@@ -14,7 +14,11 @@ jobs:
   build:
        
     runs-on: ubuntu-latest
-                 
+    
+    permissions:
+      pages: write      
+      id-token: write   
+            
     concurrency:
       group: "pages"
       cancel-in-progress: true      
