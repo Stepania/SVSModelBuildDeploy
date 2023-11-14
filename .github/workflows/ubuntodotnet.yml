@@ -14,11 +14,7 @@ jobs:
   build:
        
     runs-on: ubuntu-latest
-    
-    permissions:
-      pages: write      
-      id-token: write   
-            
+                 
     concurrency:
       group: "pages"
       cancel-in-progress: true      
@@ -33,15 +29,7 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-        
-    - name: Set current date as env variable
-      run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
-    - name: Echo current date
-      run: echo $NOW # Gives "2022-12-11T01:42:20"  
-        
-     
-        
-        
+                     
     - name: Install Python 3
       uses: actions/setup-python@v1
       with:
@@ -78,17 +66,10 @@ jobs:
       
     - name: ls
       run: ls ConsoleApp1/bin/Debug/net6.0
-
-      
-    - name: ls
-      run: ls -a ConsoleApp1/bin/Debug/net6.0
-      
+            
     - name: ls
       run: ls OutputFiles
-      
-    - name: ls
-      run: ls OutputFiles
-      
+            
     - name: find CSV file
       run: find . -type f -name "*.csv"  
       
