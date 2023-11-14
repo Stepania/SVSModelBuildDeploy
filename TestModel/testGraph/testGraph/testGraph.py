@@ -41,7 +41,7 @@ for file in os.listdir(path):
 Alltests =[]
 for t in tests[:]:  
    
-    testframe = pd.read_csv(path +t,index_col=0,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')  
+    testframe = pd.read_csv(t,index_col=0,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')  
     
     Alltests.append(testframe)   
 
