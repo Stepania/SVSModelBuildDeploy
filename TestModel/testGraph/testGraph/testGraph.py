@@ -19,7 +19,7 @@ path = os.getcwd()
 #run this code for an action
 observed_path = "TestModel/Observed/observed.csv"
 
-
+print("SDgsfg")
 
 observed_data = pd.read_csv(observed_path,index_col=0)
 
