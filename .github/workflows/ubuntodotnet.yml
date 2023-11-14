@@ -18,11 +18,6 @@ jobs:
     permissions:
       pages: write      
       id-token: write   
-
-
-
-
-
             
     concurrency:
       group: "pages"
@@ -103,7 +98,9 @@ jobs:
                 
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v2       
+      uses: actions/deploy-pages@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}          
         
     - name: Override page_url
       id: change-page-url
