@@ -16,8 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     
     permissions:
+      actions: write
       pages: 'write'      
-      id-token: 'write'   
+      id-token: 'write'
+      contents: write
+      pull-requests: write
+      deployments: write     
             
     concurrency:
       group: "pages"
