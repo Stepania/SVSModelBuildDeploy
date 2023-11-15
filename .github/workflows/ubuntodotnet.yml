@@ -7,17 +7,19 @@ name: .NET
 on:
   push:
     branches: [ "master" ]
-  pull_request:
+  pull_request_target:
     branches: [ "master" ]
-
+ 
 jobs:
   build:
-       
     runs-on: ubuntu-latest
-    
     permissions:
-      pages: 'write'      
-      id-token: 'write'   
+      actions: write
+      pages: write      
+      id-token: write
+      contents: write
+      pull-requests: write
+      deployments: write   
             
     concurrency:
       group: "pages"
