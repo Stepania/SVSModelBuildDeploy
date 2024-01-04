@@ -47,7 +47,7 @@ namespace TestModel
             proc.WaitForExit();
             Console.ReadLine();
         }*/
-        public static void RunTests(Dictionary<string, object> _configDict)
+        public static void RunAllTests(Dictionary<string, object> _configDict)
 
         {
 

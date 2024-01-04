@@ -1,7 +1,7 @@
-﻿using TestModel;
+﻿//using TestModel;
 using CommandLine;
 
-namespace ConsoleApp1
+namespace TestModel
 {
     internal sealed class CommandLineOptions
     {
@@ -41,7 +41,7 @@ namespace ConsoleApp1
             .WithParsed(opts => RunSimulation(opts))
             .WithNotParsed(errs => HandleParseError(errs));
 
-            Test.RunTests(TestConfigData.configDict);
+            Test.RunAllTests(TestConfigData.configDict);
         }
     }
 }
