@@ -10,7 +10,7 @@ namespace ConsoleApp1
 
     }
 
-    internal  class Program
+    internal  class RunTests
     {
         /// <summary>
         ///  The main entry point for the application.

@@ -12,7 +12,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVSModel.Excel", "SVSModel.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestModel", "TestModel\TestModel\TestModel.csproj", "{B98654E6-CEB9-4418-ACC8-DFC06055081B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{30AD89DE-A8EA-4592-805C-B34F4A17B93E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RunTestsConsole", "ConsoleApp1\RunTestsConsole.csproj", "{30AD89DE-A8EA-4592-805C-B34F4A17B93E}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "testGraph", "TestModel\testGraph\testGraph\testGraph.pyproj", "{4311625B-8B0C-45C1-B2C3-C7CFC084E381}"
 EndProject
