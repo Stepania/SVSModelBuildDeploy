@@ -10,7 +10,7 @@
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>testGraph</Name>
+    <Name>GraphTestResults</Name>
     <RootNamespace>PythonApplication1</RootNamespace>
     <InterpreterId>MSBuild|testEnvironment|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
