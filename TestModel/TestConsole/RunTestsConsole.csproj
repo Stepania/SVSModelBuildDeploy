@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SVSModel\SVSModel.csproj" />
-    <ProjectReference Include="..\TestModel\TestModel\TestModel.csproj" />
+    <ProjectReference Include="..\..\SVSModel\SVSModel.csproj" />
+    <ProjectReference Include="..\TestModel\TestModel.csproj" />
   </ItemGroup>
 
 </Project>
