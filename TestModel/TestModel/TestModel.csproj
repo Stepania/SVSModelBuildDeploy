@@ -11,11 +11,13 @@
     <None Remove="actualConfigData - Copy.csv" />
     <None Remove="actualConfigData.csv" />
     <None Remove="actualDataConfig.csv" />
+    <None Remove="SensibilityDataConfig.csv" />
     <None Remove="TestConfig.csv" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="actualDataConfig.csv" />
+    <EmbeddedResource Include="SensibilityDataConfig.csv" />
     <EmbeddedResource Include="TestConfig.csv" />
   </ItemGroup>
 

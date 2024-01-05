@@ -52,10 +52,10 @@ namespace TestModel
         {
 
             string dir = Directory.GetCurrentDirectory();
+
             //string resourceName = "TestModel.TestConfig.csv";
-
-            string resourceName = "TestModel.actualDataConfig.csv";
-
+            //string resourceName = "TestModel.actualDataConfig.csv";
+            string resourceName = "TestModel.SensibilityDataConfig.csv";
 
             var assembly = Assembly.GetExecutingAssembly();
             Stream csv = assembly.GetManifestResourceStream(resourceName);

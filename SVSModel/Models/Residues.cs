@@ -29,12 +29,12 @@ namespace SVSModel.Models
             CropParams priorCropParams = Crop.ExtractCropParams(config.Prior.CropNameFull, allCropParams);
             residue PresRoot = new residue(config.Prior.ResRoot, priorCropParams.RootN, config.Prior.HarvestDate, simDates, rswc, meanT);
             residue PresStover = new residue(config.Prior.ResStover, priorCropParams.StoverN, config.Prior.HarvestDate, simDates, rswc, meanT);
-            residue PresFieldLoss = new residue(config.Prior.ResRoot, priorCropParams.StoverN, config.Prior.HarvestDate, simDates, rswc, meanT);
+            residue PresFieldLoss = new residue(config.Prior.ResFieldLoss, priorCropParams.StoverN, config.Prior.HarvestDate, simDates, rswc, meanT);
             
-            CropParams currentCropParams = Crop.ExtractCropParams(config.Prior.CropNameFull, allCropParams);
+            CropParams currentCropParams = Crop.ExtractCropParams(config.Current.CropNameFull, allCropParams);
             residue CresRoot = new residue(config.Current.ResRoot, currentCropParams.RootN, config.Current.HarvestDate, simDates, rswc, meanT);
             residue CresStover = new residue(config.Current.ResStover, currentCropParams.StoverN, config.Current.HarvestDate, simDates, rswc, meanT);
-            residue CresFieldLoss = new residue(config.Current.ResRoot, currentCropParams.StoverN, config.Current.HarvestDate, simDates, rswc, meanT);
+            residue CresFieldLoss = new residue(config.Current.ResFieldLoss, currentCropParams.StoverN, config.Current.HarvestDate, simDates, rswc, meanT);
 
             List<residue> Residues = new List<residue> { PresRoot, PresStover, PresFieldLoss, CresRoot, CresStover, CresFieldLoss };
             double[] TotalNetYesterday = new double[] {0,0,0,0,0,0};
