@@ -26,31 +26,6 @@ namespace TestModel
 {
     public class Test
     {
-        private static void runPythonScript()
-        {
-            string dir = Directory.GetCurrentDirectory();
-            //legacy below
-            string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\..\"));
-            string progToRun = newPath + @"PythonGraphing\ResidueSensibilityGraphs.py";
-            //string progToRun = newPath + @"PythonGraphing\WS2Tests.py";
-
-            // run this code for an action
-            //string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
-
-            Process proc = new Process();
-
-            // original  file 
-            proc.StartInfo.FileName = "C:\\Users\\Cflhxb\\AppData\\Local\\anaconda3\\python.exe";
-
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.Arguments = progToRun;
-            proc.Start();
-            StreamReader sReader = proc.StandardOutput;
-            proc.WaitForExit();
-            Console.ReadLine();
-        }
-
         public static void RunAllTests(Dictionary<string, object> _configDict)
         {
             string dir = Directory.GetCurrentDirectory();
@@ -58,16 +33,18 @@ namespace TestModel
             foreach (string filePath in filePaths)
                 File.Delete(filePath);
 
-            List<string> testConfigs = new List<string>() { "TestComponents.TestSets.actualWS2DataConfig.csv",
-                                                            "TestComponents.TestSets.SensibilityResidueCompConfig.csv"};
+            List<string[]> testConfigs = new List<string[]>();
+            testConfigs.Add(new string[2] { "TestComponents.TestSets.actualWS2DataConfig.csv", @"TestGraphs\WS2Tests.py" });
+            testConfigs.Add(new string[2] { "TestComponents.TestSets.SensibilityResidueCompConfig.csv", @"TestGraphs\ResidueSensibilityGraphs.py" });
+                
             //string resourceName = "TestModel.SensibilityDataConfig.csv";
-            foreach (string tC in testConfigs)
+            foreach (string[] tC in testConfigs)
             {
-                 RunTestSet(dir,tC);
+                 RunTestSet(dir, tC[0]);
+                 runPythonScript(dir, tC[1]);
             }
-            //runPythonScript();
+           
         }
-
 
         public static void RunTestSet(string dir, string testLocation)
         {
@@ -134,6 +111,22 @@ namespace TestModel
 
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
             }
+        }
+        private static void runPythonScript(string dir, string pyProg)
+        {
+            string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\..\"));
+            string progToRun = newPath + pyProg;
+
+            Process proc = new Process();
+            proc.StartInfo.FileName = "C:\\Users\\Cflhxb\\AppData\\Local\\anaconda3\\python.exe";
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.Arguments = progToRun;
+            proc.Start();
+
+            StreamReader sReader = proc.StandardOutput;
+            proc.WaitForExit();
+            Console.ReadLine();
         }
 
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)
