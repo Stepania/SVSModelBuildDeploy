@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SVSModel\SVSModel.csproj" />
-    <ProjectReference Include="..\TestModel\TestModel.csproj" />
+    <ProjectReference Include="..\TestModel\TestComponents.csproj" />
   </ItemGroup>
 
 </Project>

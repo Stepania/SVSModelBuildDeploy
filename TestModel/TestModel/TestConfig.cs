@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TestModel
 {
-    public class TestConfigData
+    public class TestConfig
     {
 
         public static  Dictionary<string, object> configDict = new Dictionary<string, object>

@@ -10,15 +10,16 @@
   <ItemGroup>
     <None Remove="actualConfigData - Copy.csv" />
     <None Remove="actualConfigData.csv" />
-    <None Remove="actualDataConfig.csv" />
-    <None Remove="SensibilityDataConfig.csv" />
-    <None Remove="TestConfig.csv" />
+    <None Remove="observed.csv" />
+    <None Remove="Observed\observed.csv" />
+    <None Remove="TestSets\actualWS2DataConfig.csv" />
+    <None Remove="TestSets\SensibilityResidueCompConfig.csv" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="actualDataConfig.csv" />
-    <EmbeddedResource Include="SensibilityDataConfig.csv" />
-    <EmbeddedResource Include="TestConfig.csv" />
+    <EmbeddedResource Include="Observed\observed.csv" />
+    <EmbeddedResource Include="TestSets\actualWS2DataConfig.csv" />
+    <EmbeddedResource Include="TestSets\SensibilityResidueCompConfig.csv" />
   </ItemGroup>
 
 

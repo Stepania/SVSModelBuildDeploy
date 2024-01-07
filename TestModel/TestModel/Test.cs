@@ -19,17 +19,20 @@ using Microsoft.Scripting;
 using static IronPython.Modules._ast;
 using System.IO;
 using CommandLine;
+using static Community.CsharpSqlite.Sqlite3;
+using static IronPython.Modules.PythonThread;
 
 namespace TestModel
 {
     public class Test
     {
-/*        private static void runPythonScript()
+        private static void runPythonScript()
         {
             string dir = Directory.GetCurrentDirectory();
             //legacy below
-            string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
-            string progToRun = newPath + @"TestModel\testGraph\testGraph\testGraph.py";
+            string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\..\"));
+            string progToRun = newPath + @"PythonGraphing\ResidueSensibilityGraphs.py";
+            //string progToRun = newPath + @"PythonGraphing\WS2Tests.py";
 
             // run this code for an action
             //string progToRun = @"TestModel/testGraph/testGraph/testGraph.py";
@@ -37,7 +40,7 @@ namespace TestModel
             Process proc = new Process();
 
             // original  file 
-            proc.StartInfo.FileName = "python.exe";
+            proc.StartInfo.FileName = "C:\\Users\\Cflhxb\\AppData\\Local\\anaconda3\\python.exe";
 
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.UseShellExecute = false;
@@ -46,19 +49,30 @@ namespace TestModel
             StreamReader sReader = proc.StandardOutput;
             proc.WaitForExit();
             Console.ReadLine();
-        }*/
+        }
+
         public static void RunAllTests(Dictionary<string, object> _configDict)
-
         {
-
             string dir = Directory.GetCurrentDirectory();
+            string[] filePaths = Directory.GetFiles(dir+"\\OutputFiles");
+            foreach (string filePath in filePaths)
+                File.Delete(filePath);
 
-            //string resourceName = "TestModel.TestConfig.csv";
-            //string resourceName = "TestModel.actualDataConfig.csv";
-            string resourceName = "TestModel.SensibilityDataConfig.csv";
+            List<string> testConfigs = new List<string>() { "TestComponents.TestSets.actualWS2DataConfig.csv",
+                                                            "TestComponents.TestSets.SensibilityResidueCompConfig.csv"};
+            //string resourceName = "TestModel.SensibilityDataConfig.csv";
+            foreach (string tC in testConfigs)
+            {
+                 RunTestSet(dir,tC);
+            }
+            //runPythonScript();
+        }
 
+
+        public static void RunTestSet(string dir, string testLocation)
+        {
             var assembly = Assembly.GetExecutingAssembly();
-            Stream csv = assembly.GetManifestResourceStream(resourceName);
+            Stream csv = assembly.GetManifestResourceStream(testLocation);
 
             DataFrame allTests = DataFrame.LoadCsv(csv);
 
@@ -75,31 +89,31 @@ namespace TestModel
 
                 SVSModel.Configuration.Config _config = SetConfigFromDataFrame(test, allTests);
 
-                Dictionary<DateTime, double> testResults = new Dictionary<DateTime, double>();
-                Dictionary<DateTime, double> nApplied = new Dictionary<DateTime, double>();
+                Dictionary<System.DateTime, double> testResults = new Dictionary<System.DateTime, double>();
+                Dictionary<System.DateTime, double> nApplied = new Dictionary<System.DateTime, double>();
 
                 string weatherStation = allTests["WeatherStation"][testRow].ToString();
-             
+
                 MetDataDictionaries metData = ModelInterface.BuildMetDataDictionaries(_config.Prior.EstablishDate, _config.Following.HarvestDate.AddDays(1), weatherStation);
 
                 object[,] output = Simulation.SimulateField(metData.MeanT, metData.Rain, metData.MeanPET, testResults, nApplied, _config);
 
                 DataFrameColumn[] columns = new DataFrameColumn[13];
                 List<string> OutPutHeaders = new List<string>();
-                for (int i = 0; i< output.GetLength(1); i +=1)
+                for (int i = 0; i < output.GetLength(1); i += 1)
                 {
                     OutPutHeaders.Add(output[0, i].ToString());
                     if (i == 0)
                     {
-                        columns[i] = new PrimitiveDataFrameColumn<DateTime>(output[0, i].ToString());
+                        columns[i] = new PrimitiveDataFrameColumn<System.DateTime>(output[0, i].ToString());
                     }
                     else
                     {
                         columns[i] = new PrimitiveDataFrameColumn<double>(output[0, i].ToString());
                     }
-                }                             
+                }
 
-                var newDataframe= new DataFrame(columns);
+                var newDataframe = new DataFrame(columns);
 
                 for (int r = 1; r < output.GetLength(0); r += 1)
                 {
@@ -119,13 +133,8 @@ namespace TestModel
                 }
 
                 DataFrame.SaveCsv(newDataframe, dir + "\\OutputFiles\\" + test + ".csv");
-                //DataFrame.SaveCsv(newDataframe, test + ".csv");
-
-
-
             }
-            //runPythonScript();
-        }      
+        }
 
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)
         {
@@ -194,7 +203,7 @@ namespace TestModel
                 float month = (float)allTests[dN.Replace("Date", "") + "Month"][testRow];
                 float day = (float)allTests[dN.Replace("Date", "") + "Day"][testRow];
 
-                testConfigDict[dN] = new DateTime((int)year, (int)month, (int)day);
+                testConfigDict[dN] = new System.DateTime((int)year, (int)month, (int)day);
             }
 
             SVSModel.Configuration.Config ret = new SVSModel.Configuration.Config(testConfigDict);

@@ -78,19 +78,19 @@ namespace SVSModel.Models
             this.Km = 0.97 * Math.Exp(-0.12*CNR)+0.03;
             this.Ki = 0.9 * Math.Exp(-0.12 * CNR) + 0.1; ;
             this.NetMineralisation = Functions.dictMaker(simDates, new double[simDates.Length]);
-            int daysSinceAddition = 0;
+            double sigmaFtm = 0;
             foreach (DateTime d in simDates)
             {
                 if (d >= additionDate)
                 {
+                    
                     double Ft = SoilOrganic.LloydTaylorTemp(meanT[d]);
                     double Fm = SoilOrganic.QiuBeareCurtinWater(rswc[d]);
-                    daysSinceAddition += 1;
-                    double mineralisation = ANm * (1 - Math.Exp(-Km * Ft * Fm * daysSinceAddition));
-                    double imobilisation = ANi * (1 - Math.Exp(-Ki * Ft * Fm * daysSinceAddition));
+                    sigmaFtm += (Ft * Fm);
+                    double mineralisation = ANm * (1 - Math.Exp(-Km * sigmaFtm));
+                    double imobilisation = ANi * (1 - Math.Exp(-Ki * sigmaFtm));
                     NetMineralisation[d] = mineralisation - imobilisation;
 
-                    daysSinceAddition += 1;
                 }
             }
         }
