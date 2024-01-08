@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /TestModel/.ipynb_checkpoints/SensibilityTests-checkpoint.ipynb
+/TestGraphs/.ipynb_checkpoints/WS2Tests-checkpoint.py
+*.png
+/TestGraphs/.ipynb_checkpoints/ResidueSensibilityGraphs-checkpoint.ipynb
