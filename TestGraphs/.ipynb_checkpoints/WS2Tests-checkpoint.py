@@ -1,8 +1,12 @@
+#from io import BytesIO
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime as dt
+#import numpy as np
+#import pathlib
 #import aspose.words as aw
+#import glob
 
 path = os.getcwd()
 
