@@ -34,28 +34,29 @@ CBcolors = {
 } 
 # -
 
-path = os.getcwd().split("\\SVSModelBuildDeploy\\")[0]+"\\SVSModelBuildDeploy\\TestComponents\\TestSets\\WS2"
+inPath = os.getcwd().split("\\SVSModelBuildDeploy\\")[0]+"\\SVSModelBuildDeploy\\TestComponents\\TestSets\\WS2"
+outPath = os.getcwd().split("\\SVSModelBuildDeploy\\")[0]+"\\SVSModelBuildDeploy\\TestGraphs\\Outputs\\"
 
-Configs = pd.read_pickle(path+"\\FieldConfigs.pkl")
+Configs = pd.read_pickle(inPath+"\\FieldConfigs.pkl")
 
-observed_data = pd.read_csv(path + "\\observed.csv",index_col=0)
+observed_data = pd.read_csv(inPath + "\\observed.csv",index_col=0)
 observed_data.sort_index(axis=0,inplace=True)
 observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
 
+testFiles = []
 tests = []
-test_names = []
-for file in os.listdir(path+"\\Outputs"):
+for file in os.listdir(inPath+"\\Outputs"):
     if file.endswith('.csv'):
-        tests.append(file)       
-        test_names.append(os.path.splitext(file)[0])
+        testFiles.append(file)
+        tests.append(file.replace(".csv",""))
 
 # +
 Alltests =[]
-for t in tests[:]:  
-    testframe = pd.read_csv(path+"\\Outputs\\"+t,index_col=0,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')  
+for t in testFiles[:]:  
+    testframe = pd.read_csv(inPath+"\\Outputs\\"+t,index_col=0,dayfirst=True,date_format='%d/%m/%Y %H:%M:%S %p')  
     Alltests.append(testframe)   
 
-AllData = pd.concat(Alltests,axis=1,keys=test_names)
+AllData = pd.concat(Alltests,axis=1,keys=tests)
 AllData.sort_index(axis=0,inplace=True)
 AllData.index = pd.to_datetime(AllData.index)
 
@@ -63,9 +64,9 @@ AllData.index = pd.to_datetime(AllData.index)
 colors = ['orange','green']
 Graph = plt.figure(figsize=(10,10))
 pos = 1
-row_num=len(test_names)
+row_num=len(tests)
 
-for t in test_names:
+for t in tests:
     dates = AllData.loc[Configs.loc["PriorHarvestDate",t]:Configs.loc["CurrentHarvestDate",t],(t,'CropN')].index
     c = 0    
     for v in ['SoilMineralN','CropN']:
@@ -82,7 +83,7 @@ for t in test_names:
         pos+=1
         c+=1
 
-plt.savefig(path+'\\TimeCourse.png')
+plt.savefig(outPath+'\\TimeCourse.png')
 # +
 # colors = ['orange','green']
 # Graph = plt.figure(figsize=(10,10))

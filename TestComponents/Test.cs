@@ -3,7 +3,7 @@ using Microsoft.Data.Analysis;
 using SVSModel;
 using SVSModel.Models;
 using System.Diagnostics;
-
+using System.CodeDom.Compiler;
 
 namespace TestModel
 {
@@ -11,27 +11,27 @@ namespace TestModel
     {
         public static void RunAllTests(Dictionary<string, object> _configDict)
         {
-            //string path = Directory.GetCurrentDirectory() + "..\\..\\..\\..\\..\\TestComponents\\TestSets\\" ;
             string path = Directory.GetCurrentDirectory().Split("\\SVSModelBuildDeploy\\")[0] + "\\SVSModelBuildDeploy\\TestComponents\\TestSets\\";
-            List<string[]> testConfigs = new List<string[]>();
-            testConfigs.Add(new string[3] {"WS2", "TestComponents.TestSets.WS2.FieldConfigs.csv", @"TestGraphs\MakeGraphs\WS2.py" });
-            testConfigs.Add(new string[3] { "Residues", "TestComponents.TestSets.Residues.FieldConfigs.csv", @"TestGraphs\MakeGraphs\Residues.py" });
-            //testConfigs.Add(new string[3] { "Residues", "TestComponents.TestSets.Residues.FieldConfigs.csv", @"TestGraphs\MakeGraphs\test1.py" });
-
-            foreach (string[] tC in testConfigs)
+            List<string> sets = new List<string> { "WS2", "Residues" };
+            foreach (string s in sets)
             {
-                runTestSet(path, tC[0], tC[1]);
-                runPythonScript(path, tC[2]);
+                //Make config file in format that .NET DataTable is able to import
+                runPythonScript(path, @"TestGraphs\MakeConfigs\"+s+".py");
+                //Run each test
+                runTestSet(path, s);
+                //Make graphs associated with each test
+                runPythonScript(path, @"TestGraphs\MakeGraphs\"+ s+".py");
             }
         }
 
-        public static void runTestSet(string path, string folder, string testConfig)
+        public static void runTestSet(string path, string set)
         {
-            string[] filePaths = Directory.GetFiles(path+"\\"+folder+"\\Outputs");
+            string[] filePaths = Directory.GetFiles(path+"\\"+set+"\\Outputs");
             foreach (string filePath in filePaths)
                 File.Delete(filePath);
 
             var assembly = Assembly.GetExecutingAssembly();
+            string testConfig = "TestComponents.TestSets." + set + ".FieldConfigs.csv";
             Stream csv = assembly.GetManifestResourceStream(testConfig);
 
             DataFrame allTests = DataFrame.LoadCsv(csv);
@@ -92,7 +92,7 @@ namespace TestModel
                     System.IO.Directory.CreateDirectory("OutputFiles");
                 }
 
-                DataFrame.SaveCsv(newDataframe, path + "\\" + folder + "\\Outputs\\" + test + ".csv");
+                DataFrame.SaveCsv(newDataframe, path + "\\" + set + "\\Outputs\\" + test + ".csv");
             }
         }
 
@@ -107,10 +107,6 @@ namespace TestModel
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.Arguments = progToRun;
             proc.Start();
-
-            //StreamReader sReader = proc.StandardOutput;
-            //proc.WaitForExit();
-            //Console.ReadLine();
         }
 
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)
