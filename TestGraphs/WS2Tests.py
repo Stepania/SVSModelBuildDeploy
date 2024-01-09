@@ -13,11 +13,26 @@
 #     name: python3
 # ---
 
+# +
 #from io import BytesIO
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime as dt
+import matplotlib.dates as mdates
+
+CBcolors = {
+    'blue':    '#377eb8', 
+    'orange':  '#ff7f00',
+    'green':   '#4daf4a',
+    'pink':    '#f781bf',
+    'brown':   '#a65628',
+    'purple':  '#984ea3',
+    'gray':    '#999999',
+    'red':     '#e41a1c',
+    'yellow':  '#dede00'
+} 
+# -
 
 path = os.getcwd()[:-11] +"\\TestComponents\\TestSets\\WS2"
 
@@ -43,8 +58,42 @@ AllData.sort_index(axis=0,inplace=True)
 AllData.index = pd.to_datetime(AllData.index)
 
 # +
-colors = pd.Series(['r','b','g'])
-        
+colors = ['orange','green']
+Graph = plt.figure(figsize=(10,10))
+pos = 1
+row_num=len(test_names)
+
+for t in test_names:
+    start = dt.datetime.date(AllData[t].dropna().index.min())
+    end = dt.datetime.date(AllData[t].dropna().index.max())
+    datefilter = []
+    for d in observed_data.index:
+        ret = False
+        if ((d >= pd.Timestamp(start)) and (d<=pd.Timestamp(end))):
+            ret = True
+            # if site id matching the observed id make it true only then 
+        datefilter.append(ret)
+    c = 0    
+    for v in ['SoilMineralN','CropN']:
+        color = 'b'
+        ax = Graph.add_subplot(row_num,2,pos)
+        Data = AllData.loc[:,(t,v)].sort_index()
+        plt.xticks(rotation = 45)    
+        plt.title(t)
+        plt.plot(Data,color=CBcolors[colors[c]],label=v)
+        #make_observed(observed_data[datefilter])
+        Graph.tight_layout(pad=1.5)
+        plt.xticks(rotation=60)
+        ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
+        plt.legend()
+        pos+=1
+        c+=1
+
+plt.savefig(path+'\\TimeCourse.png')
+# -
+AllData.columns.get
+
+# +
 Graph = plt.figure(figsize=(10,10))
 pos = 1
 row_num=len(test_names)
@@ -60,26 +109,20 @@ for t in test_names:
             # if site id matching the observed id make it true only then 
         datefilter.append(ret)
         
-    color = 'b'
-    Graph.add_subplot(row_num,2,pos)
-    Data = AllData.loc[:,(t,'SoilMineralN')].sort_index()
-    plt.xticks(rotation = 45)    
-    plt.title("SoilMineralN")
-    plt.plot(Data,color=color)
-    #make_observed(observed_data[datefilter])
-    Graph.tight_layout(pad=1.5)
-    pos+=1
-    
-    Graph.add_subplot(row_num,2,pos)
-    plt.xticks(rotation = 45)  
-    plt.title("CropN")
-    Data = AllData.loc[:,(t,'CropN')].sort_index()
-    plt.plot(Data,color=color)
-    #make_observed(observed_data[datefilter])
-    pos+=1
+    for v in ['ResidueN','SoilOMN']:
+        color = 'b'
+        ax = Graph.add_subplot(row_num,2,pos)
+        Data = AllData.loc[:,(t,v)].sort_index()
+        plt.xticks(rotation = 45)    
+        plt.title(v)
+        plt.plot(Data.cumsum(),color=color)
+        #make_observed(observed_data[datefilter])
+        Graph.tight_layout(pad=1.5)
+        plt.xticks(rotation=60)
+        ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
+        pos+=1
 
 plt.savefig(path+'\\TimeCourse.png')
-
 # -
 
 
