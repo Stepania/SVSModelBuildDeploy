@@ -1,27 +1,9 @@
-﻿using System.Linq;
-using System.Diagnostics;
-using SVSModel.Configuration;
-using SVSModel;
-using System.ComponentModel;
-using SVSModel.Models;
-using System.Text.Json;
+﻿using System.Reflection;
 using Microsoft.Data.Analysis;
-using System.Xml.Linq;
-using System.Reflection;
-using System.Data;
-using System;
-using static System.Net.Mime.MediaTypeNames;
-using System.Text.Json.Serialization;
-using System.Collections.Generic;
-using IronPython.Hosting;
-using Microsoft.Scripting.Hosting;
-using Microsoft.Scripting;
-using static IronPython.Modules._ast;
-using System.IO;
-using CommandLine;
-using static Community.CsharpSqlite.Sqlite3;
-using static IronPython.Modules.PythonThread;
-using IronPython.Runtime;
+using SVSModel;
+using SVSModel.Models;
+using System.Diagnostics;
+
 
 namespace TestModel
 {
@@ -29,20 +11,21 @@ namespace TestModel
     {
         public static void RunAllTests(Dictionary<string, object> _configDict)
         {
-            string path = Directory.GetCurrentDirectory() + "..\\..\\..\\..\\..\\TestComponents\\TestSets\\" ;
-            
+            //string path = Directory.GetCurrentDirectory() + "..\\..\\..\\..\\..\\TestComponents\\TestSets\\" ;
+            string path = Directory.GetCurrentDirectory().Split("\\SVSModelBuildDeploy\\")[0] + "\\SVSModelBuildDeploy\\TestComponents\\TestSets\\";
             List<string[]> testConfigs = new List<string[]>();
-            testConfigs.Add(new string[3] {"WS2", "TestComponents.TestSets.WS2.FieldConfigs.csv", @"TestGraphs\WS2Tests.py" });
-            testConfigs.Add(new string[3] {"Residues", "TestComponents.TestSets.Residues.FieldConfigs.csv", @"TestGraphs\ResidueSensibilityGraphs.py" });
-                
+            testConfigs.Add(new string[3] {"WS2", "TestComponents.TestSets.WS2.FieldConfigs.csv", @"TestGraphs\MakeGraphs\WS2.py" });
+            testConfigs.Add(new string[3] { "Residues", "TestComponents.TestSets.Residues.FieldConfigs.csv", @"TestGraphs\MakeGraphs\Residues.py" });
+            //testConfigs.Add(new string[3] { "Residues", "TestComponents.TestSets.Residues.FieldConfigs.csv", @"TestGraphs\MakeGraphs\test1.py" });
+
             foreach (string[] tC in testConfigs)
             {
-                RunTestSet(path, tC[0], tC[1]);
-                //runPythonScript(dir, tC[2]);
+                runTestSet(path, tC[0], tC[1]);
+                runPythonScript(path, tC[2]);
             }
         }
 
-        public static void RunTestSet(string path, string folder, string testConfig)
+        public static void runTestSet(string path, string folder, string testConfig)
         {
             string[] filePaths = Directory.GetFiles(path+"\\"+folder+"\\Outputs");
             foreach (string filePath in filePaths)
@@ -113,22 +96,21 @@ namespace TestModel
             }
         }
 
-        private static void runPythonScript(string dir, string pyProg)
+        private static void runPythonScript(string path, string pyProg)
         {
-            string newPath = Path.GetFullPath(Path.Combine(dir, @"..\..\..\..\"));
+            string newPath = Path.GetFullPath(Path.Combine(path, @"..\..\"));
             string progToRun = newPath + pyProg;
 
             Process proc = new Process();
-            //proc.StartInfo.FileName = "C:\\Users\\Cflhxb\\AppData\\Local\\anaconda3\\python.exe";
             proc.StartInfo.FileName = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\Python39_64\\python.exe";
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.Arguments = progToRun;
             proc.Start();
 
-            StreamReader sReader = proc.StandardOutput;
-            proc.WaitForExit();
-            Console.ReadLine();
+            //StreamReader sReader = proc.StandardOutput;
+            //proc.WaitForExit();
+            //Console.ReadLine();
         }
 
         public static SVSModel.Configuration.Config SetConfigFromDataFrame(string test, DataFrame allTests)

@@ -22,7 +22,7 @@ import matplotlib.dates as mdates
 
 # Path for current Tests
 
-path = os.getcwd()[:-22] +"\\TestComponents\\TestSets\\Residues"
+path = os.getcwd().split("\\SVSModelBuildDeploy\\")[0]+"\\SVSModelBuildDeploy\\TestComponents\\TestSets\\Residues"
 
 # Get names and results from each test
 
@@ -45,6 +45,8 @@ AllData = pd.concat(Alltests,axis=1,keys=test_name)
 AllData.sort_index(axis=0,inplace=True)
 AllData.index = pd.to_datetime(AllData.index)
 # -
+
+test_name
 
 # Make graph
 

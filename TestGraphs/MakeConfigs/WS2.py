@@ -16,7 +16,7 @@
 import os
 import pandas as pd
 
-path = os.getcwd()[:-23] +"\\TestComponents\\TestSets\\WS2"
+path = os.getcwd().split("\\SVSModelBuildDeploy\\")[0]+"\\SVSModelBuildDeploy\\TestComponents\\TestSets\\WS2"
 
 Configs = pd.read_excel(path+"\\FieldConfigs.xlsx",nrows=48,usecols=lambda x: 'Unnamed' not in x)
 

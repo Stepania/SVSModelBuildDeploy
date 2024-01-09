@@ -34,7 +34,9 @@ CBcolors = {
 } 
 # -
 
-path = os.getcwd()[:-11] +"\\TestComponents\\TestSets\\WS2"
+path = os.getcwd().split("\\SVSModelBuildDeploy\\")[0]+"\\SVSModelBuildDeploy\\TestComponents\\TestSets\\WS2"
+
+Configs = pd.read_pickle(path+"\\FieldConfigs.pkl")
 
 observed_data = pd.read_csv(path + "\\observed.csv",index_col=0)
 observed_data.sort_index(axis=0,inplace=True)
@@ -64,65 +66,83 @@ pos = 1
 row_num=len(test_names)
 
 for t in test_names:
-    start = dt.datetime.date(AllData[t].dropna().index.min())
-    end = dt.datetime.date(AllData[t].dropna().index.max())
-    datefilter = []
-    for d in observed_data.index:
-        ret = False
-        if ((d >= pd.Timestamp(start)) and (d<=pd.Timestamp(end))):
-            ret = True
-            # if site id matching the observed id make it true only then 
-        datefilter.append(ret)
+    dates = AllData.loc[Configs.loc["PriorHarvestDate",t]:Configs.loc["CurrentHarvestDate",t],(t,'CropN')].index
     c = 0    
     for v in ['SoilMineralN','CropN']:
         color = 'b'
         ax = Graph.add_subplot(row_num,2,pos)
-        Data = AllData.loc[:,(t,v)].sort_index()
-        plt.xticks(rotation = 45)    
-        plt.title(t)
+        Data = AllData.loc[dates,(t,v)]
         plt.plot(Data,color=CBcolors[colors[c]],label=v)
         #make_observed(observed_data[datefilter])
-        Graph.tight_layout(pad=1.5)
+        plt.title(t)
         plt.xticks(rotation=60)
         ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
         plt.legend()
+        Graph.tight_layout(pad=1.5)
         pos+=1
         c+=1
 
 plt.savefig(path+'\\TimeCourse.png')
-# -
-AllData.columns.get
-
 # +
-Graph = plt.figure(figsize=(10,10))
-pos = 1
-row_num=len(test_names)
+# colors = ['orange','green']
+# Graph = plt.figure(figsize=(10,10))
+# pos = 1
+# row_num=len(test_names)
 
-for t in test_names:
-    start = dt.datetime.date(AllData[t].dropna().index.min())
-    end = dt.datetime.date(AllData[t].dropna().index.max())
-    datefilter = []
-    for d in observed_data.index:
-        ret = False
-        if ((d >= pd.Timestamp(start)) and (d<=pd.Timestamp(end))):
-            ret = True
-            # if site id matching the observed id make it true only then 
-        datefilter.append(ret)
-        
-    for v in ['ResidueN','SoilOMN']:
-        color = 'b'
-        ax = Graph.add_subplot(row_num,2,pos)
-        Data = AllData.loc[:,(t,v)].sort_index()
-        plt.xticks(rotation = 45)    
-        plt.title(v)
-        plt.plot(Data.cumsum(),color=color)
-        #make_observed(observed_data[datefilter])
-        Graph.tight_layout(pad=1.5)
-        plt.xticks(rotation=60)
-        ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
-        pos+=1
+# for t in test_names:
+#     dates = AllData.loc[Configs.loc["PriorHarvestDate",t]:Configs.loc["CurrentHarvestDate",t],(t,'CropN')].index
+#     c = 0    
+#     for v in ['ResidueN','SoilOMN']:
+#         color = 'b'
+#         ax = Graph.add_subplot(row_num,2,pos)
+#         Data = AllData.loc[dates,(t,v)].cumsum()
+#         plt.plot(Data,color=CBcolors[colors[c]],label=v)
+#         plt.title(t)
+#         plt.xticks(rotation=60)
+#         ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
+#         plt.legend()
+#         Graph.tight_layout(pad=1.5)
+#         pos+=1
+#         c+=1
+# +
+# colors = ['orange','green']
+# Graph = plt.figure(figsize=(10,10))
+# pos = 1
+# row_num=len(test_names)
 
-plt.savefig(path+'\\TimeCourse.png')
-# -
+# for t in test_names:
+#     dates = AllData.loc[Configs.loc["PriorHarvestDate",t]:Configs.loc["CurrentHarvestDate",t],(t,'CropN')].index
+#     c = 0    
+#     for v in ['Drainage', 'Irrigation']:
+#         color = 'b'
+#         ax = Graph.add_subplot(row_num,2,pos)
+#         Data = AllData.loc[dates,(t,v)].cumsum()
+#         plt.plot(Data,color=CBcolors[colors[c]],label=v)
+#         plt.title(t)
+#         plt.xticks(rotation=60)
+#         ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
+#         plt.legend()
+#         Graph.tight_layout(pad=1.5)
+#         pos+=1
+#         c+=1
+# +
+# colors = ['orange','green']
+# Graph = plt.figure(figsize=(10,10))
+# pos = 1
+# row_num=len(test_names)
 
-
+# for t in test_names:
+#     dates = AllData.loc[Configs.loc["PriorHarvestDate",t]:Configs.loc["CurrentHarvestDate",t],(t,'CropN')].index
+#     c = 0    
+#     for v in ['Green cover', 'RSWC']:
+#         color = 'b'
+#         ax = Graph.add_subplot(row_num,2,pos)
+#         Data = AllData.loc[dates,(t,v)]
+#         plt.plot(Data,color=CBcolors[colors[c]],label=v)
+#         plt.title(t)
+#         plt.xticks(rotation=60)
+#         ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
+#         plt.legend()
+#         Graph.tight_layout(pad=1.5)
+#         pos+=1
+#         c+=1
