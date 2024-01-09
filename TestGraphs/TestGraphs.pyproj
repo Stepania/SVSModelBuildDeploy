@@ -5,7 +5,8 @@
     <ProjectGuid>fd4e40a1-0044-488c-a426-f1d5feaf9df4</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>WS2Tests.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,12 +24,29 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ResidueSensibilityGraphs.py" />
-    <Compile Include="WS2Tests.py" />
-  </ItemGroup>
-  <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.10" />
     <InterpreterReference Include="Global|PythonCore|3.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MakeConfigs\" />
+    <Folder Include="MakeConfigs\.ipynb_checkpoints\" />
+    <Folder Include="MakeGraphs\" />
+    <Folder Include="MakeGraphs\.ipynb_checkpoints\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MakeConfigs\.ipynb_checkpoints\Residues-checkpoint.ipynb" />
+    <Content Include="MakeConfigs\.ipynb_checkpoints\WS2-checkpoint.ipynb" />
+    <Content Include="MakeConfigs\Residues.ipynb" />
+    <Content Include="MakeConfigs\WS2.ipynb" />
+    <Content Include="MakeGraphs\.ipynb_checkpoints\Residues-checkpoint.ipynb" />
+    <Content Include="MakeGraphs\Residues.ipynb" />
+    <Content Include="MakeGraphs\WS2.ipynb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MakeConfigs\Residues.py" />
+    <Compile Include="MakeConfigs\WS2.py" />
+    <Compile Include="MakeGraphs\Residues.py" />
+    <Compile Include="MakeGraphs\WS2.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

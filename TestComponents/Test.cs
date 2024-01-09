@@ -32,8 +32,8 @@ namespace TestModel
             string path = Directory.GetCurrentDirectory() + "..\\..\\..\\..\\..\\TestComponents\\TestSets\\" ;
             
             List<string[]> testConfigs = new List<string[]>();
-            testConfigs.Add(new string[3] {"WS2", "TestComponents.TestSets.WS2.actualWS2DataConfig.csv", @"TestGraphs\WS2Tests.py" });
-            testConfigs.Add(new string[3] {"Residues", "TestComponents.TestSets.Residues.SensibilityResidueCompConfig.csv", @"TestGraphs\ResidueSensibilityGraphs.py" });
+            testConfigs.Add(new string[3] {"WS2", "TestComponents.TestSets.WS2.FieldConfigs.csv", @"TestGraphs\WS2Tests.py" });
+            testConfigs.Add(new string[3] {"Residues", "TestComponents.TestSets.Residues.FieldConfigs.csv", @"TestGraphs\ResidueSensibilityGraphs.py" });
                 
             foreach (string[] tC in testConfigs)
             {
@@ -190,15 +190,6 @@ namespace TestModel
             }
 
             List<string> datesNames = new List<string>(){ "PriorEstablishDate", "PriorHarvestDate", "CurrentEstablishDate", "CurrentHarvestDate", "FollowingEstablishDate", "FollowingHarvestDate" };
-
-            foreach (string dN in datesNames) 
-            {
-                float year = (float)allTests[dN.Replace("Date", "") + "Year"][testRow];
-                float month = (float)allTests[dN.Replace("Date", "") + "Month"][testRow];
-                float day = (float)allTests[dN.Replace("Date", "") + "Day"][testRow];
-
-                testConfigDict[dN] = new System.DateTime((int)year, (int)month, (int)day);
-            }
 
             SVSModel.Configuration.Config ret = new SVSModel.Configuration.Config(testConfigDict);
 

@@ -22,7 +22,7 @@ import matplotlib.dates as mdates
 
 # Path for current Tests
 
-path = os.getcwd()[:-11] +"\\TestComponents\\TestSets\\Residues"
+path = os.getcwd()[:-22] +"\\TestComponents\\TestSets\\Residues"
 
 # Get names and results from each test
 
