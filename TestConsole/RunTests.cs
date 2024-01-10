@@ -35,7 +35,7 @@ namespace TestModel
             .WithParsed(opts => RunSimulation(opts))
             .WithNotParsed(errs => HandleParseError(errs));
 
-            Test.RunAllTests(TestConfig.configDict);
+            Test.RunAllTests();
         }
     }
 }

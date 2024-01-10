@@ -12,7 +12,7 @@ namespace TestModel
 {
     public class Test
     {
-        public static void RunAllTests(Dictionary<string, object> _configDict)
+        public static void RunAllTests()
         {
             string path = Directory.GetCurrentDirectory().Split("\\SVSModelBuildDeploy\\")[0] + "\\SVSModelBuildDeploy\\TestComponents\\TestSets\\";
             List<string> sets = new List<string> { "WS2", "Residues", "Location", "Moisture" };
