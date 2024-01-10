@@ -4,6 +4,9 @@ using SVSModel;
 using SVSModel.Models;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
+using System.Data;
 
 namespace TestModel
 {
@@ -39,9 +42,16 @@ namespace TestModel
 
             var assembly = Assembly.GetExecutingAssembly();
             string testConfig = "TestComponents.TestSets." + set + ".FieldConfigs.csv";
-            Stream csv = assembly.GetManifestResourceStream(testConfig);
+            Stream configcsv = assembly.GetManifestResourceStream(testConfig);
+            DataFrame allTests = DataFrame.LoadCsv(configcsv);
 
-            DataFrame allTests = DataFrame.LoadCsv(csv);
+            string fertData = "TestComponents.TestSets." + set + ".FertiliserData.csv";
+            Stream fertcsv = assembly.GetManifestResourceStream(fertData);
+            DataFrame allFert = new DataFrame();
+            if (fertcsv != null)
+            {
+               allFert = DataFrame.LoadCsv(fertcsv);
+            }
 
             List<string> Tests = new List<string>();
 
@@ -57,7 +67,7 @@ namespace TestModel
                 SVSModel.Configuration.Config _config = SetConfigFromDataFrame(test, allTests);
 
                 Dictionary<System.DateTime, double> testResults = new Dictionary<System.DateTime, double>();
-                Dictionary<System.DateTime, double> nApplied = new Dictionary<System.DateTime, double>();
+                Dictionary<System.DateTime, double> nApplied = fertDict(test, allFert);
 
                 string weatherStation = allTests["WeatherStation"][testRow].ToString();
 
@@ -193,6 +203,34 @@ namespace TestModel
                     testRow += 1;
             }
             return testRow;
+        }
+
+        private static Dictionary<System.DateTime, double> fertDict(string test, DataFrame allFert)
+        {
+            Dictionary<System.DateTime, double> fert = new Dictionary<System.DateTime, double>();
+            string site = Regex.Replace(test, "[^0-9]", "");
+
+            foreach (DataFrameRow row in allFert.Rows)
+            {
+                if (row[0].ToString() == site) //if this date row holds data for current site
+                {
+                    DateTime date = DateTime.Parse(row[1].ToString());
+                    DateTime last = new DateTime();
+                    if (fert.Keys.Count > 0)
+                    {
+                        last = fert.Keys.Last();
+                    }
+                    if (date == last) //If alread fertiliser added for that date add it to existing total
+                    {
+                        fert[last] += Double.Parse(row[2].ToString());
+                    }
+                    else //add it to a new date
+                    {
+                        fert.Add(date, Double.Parse(row[2].ToString()));
+                    }
+                }
+            }
+            return fert;
         }
 
     }

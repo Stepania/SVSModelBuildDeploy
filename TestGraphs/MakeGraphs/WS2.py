@@ -39,9 +39,14 @@ outPath = os.getcwd().split("\\SVSModelBuildDeploy\\")[0]+"\\SVSModelBuildDeploy
 
 Configs = pd.read_pickle(inPath+"\\FieldConfigs.pkl")
 
-observed_data = pd.read_csv(inPath + "\\observed.csv",index_col=0)
-observed_data.sort_index(axis=0,inplace=True)
-observed_data.index=pd.to_datetime(observed_data.index,format="%d/%m/%Y %H:%M")
+observedCrop = pd.read_csv(inPath + "\\CropData.csv",index_col=0)
+observedCrop.sort_index(axis=0,inplace=True)
+observedCrop['Date'] = pd.to_datetime(observedCrop['Date'],dayfirst=True)
+
+observedSoil = pd.read_csv(inPath + "\\SoilData.csv",index_col=0)
+observedSoil.sort_index(axis=0,inplace=True)
+observedSoil['Date'] = pd.to_datetime(observedSoil['Date'],dayfirst=True)
+observedSoil['SoilMineralN'] = observedSoil.loc[:,['SoilN0_15', 'SoilN15_30', 'SoilN30_60', 'SoilN60_90']].sum(axis=1)
 
 testFiles = []
 tests = []
@@ -67,13 +72,25 @@ pos = 1
 row_num=len(tests)
 
 for t in tests:
+    site = ''
+    for c in t:     
+        if c in ['0','1','2','3','4','5','6','7','8','9']: site += c
+    site = int(site)
+    
     dates = AllData.loc[Configs.loc["PriorHarvestDate",t]:Configs.loc["CurrentHarvestDate",t],(t,'CropN')].index
     c = 0    
     for v in ['SoilMineralN','CropN']:
         ax = Graph.add_subplot(row_num,2,pos)
         Data = AllData.loc[dates,(t,v)]
         plt.plot(Data,color=CBcolors[colors[c]],label=v)
-        #make_observed(observed_data[datefilter])
+        
+        if v == 'CropN':
+            sData = observedCrop.loc[site,:]
+        if v == 'SoilMineralN':
+            sData = observedSoil.loc[site,:]
+        dFilter = [dates.min() <= sData['Date'].iloc[x] <= dates.max() for x in range(len(sData['Date']))]
+        plt.plot(sData.loc[dFilter,'Date'],sData.loc[dFilter,v],'o',color=CBcolors[colors[c]])
+                        
         plt.title(t)
         plt.xticks(rotation=60)
         ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
