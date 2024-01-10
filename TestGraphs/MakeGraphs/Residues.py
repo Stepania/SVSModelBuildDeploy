@@ -59,8 +59,9 @@ pos = 0
 for t in tests:
     plt.plot(AllData.loc[:,(t,'ResidueN')].cumsum(),lines[pos],color=cols[pos],label = t)
     pos +=1
-plt.legend(loc=(1.1,0.2))
+plt.legend(loc=(1.01,0.01))
 plt.ylabel('Cum Net Residue mineralisation (kg/ha)')
 plt.xticks(rotation=60)
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%#d-%b'))
+Graph.tight_layout(pad=1.5)
 plt.savefig(outPath+'\\Residues.png')

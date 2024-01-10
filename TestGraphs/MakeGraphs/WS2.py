@@ -70,7 +70,6 @@ for t in tests:
     dates = AllData.loc[Configs.loc["PriorHarvestDate",t]:Configs.loc["CurrentHarvestDate",t],(t,'CropN')].index
     c = 0    
     for v in ['SoilMineralN','CropN']:
-        color = 'b'
         ax = Graph.add_subplot(row_num,2,pos)
         Data = AllData.loc[dates,(t,v)]
         plt.plot(Data,color=CBcolors[colors[c]],label=v)

@@ -12,6 +12,8 @@
     <None Remove="actualConfigData.csv" />
     <None Remove="observed.csv" />
     <None Remove="TestSets\actualWS2DataConfig.csv" />
+    <None Remove="TestSets\Location\FieldConfigs.csv" />
+    <None Remove="TestSets\Moisture\FieldConfigs.csv" />
     <None Remove="TestSets\Residues\FieldConfigs.csv" />
     <None Remove="TestSets\SensibilityResidueCompConfig.csv" />
     <None Remove="TestSets\WS2\FieldConfigs.csv" />
@@ -20,13 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="TestSets\Location\FieldConfigs.csv" />
+    <EmbeddedResource Include="TestSets\Moisture\FieldConfigs.csv" />
     <EmbeddedResource Include="TestSets\Residues\FieldConfigs.csv" />
     <EmbeddedResource Include="TestSets\WS2\FieldConfigs.csv" />
     <EmbeddedResource Include="TestSets\WS2\FieldConfigs.pkl" />
     <EmbeddedResource Include="TestSets\WS2\FieldConfigs.xlsx" />
     <EmbeddedResource Include="TestSets\WS2\observed.csv" />
-    <EmbeddedResource Include="TestSets\WS2\actualWS2DataConfig.csv" />
-    <EmbeddedResource Include="TestSets\Residues\SensibilityResidueCompConfig.csv" />
   </ItemGroup>
 
 

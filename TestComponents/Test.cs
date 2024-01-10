@@ -12,7 +12,14 @@ namespace TestModel
         public static void RunAllTests(Dictionary<string, object> _configDict)
         {
             string path = Directory.GetCurrentDirectory().Split("\\SVSModelBuildDeploy\\")[0] + "\\SVSModelBuildDeploy\\TestComponents\\TestSets\\";
-            List<string> sets = new List<string> { "WS2", "Residues" };
+            List<string> sets = new List<string> { "WS2", "Residues", "Location", "Moisture" };
+
+            //Delete graphs from previous test run
+            string graphFolder = Directory.GetCurrentDirectory().Split("\\SVSModelBuildDeploy\\")[0] + "\\SVSModelBuildDeploy\\TestGraphs\\Outputs";
+            string[] graphPaths = Directory.GetFiles(graphFolder);
+            foreach (string graphPath in graphPaths)
+                File.Delete(graphPath);
+
             foreach (string s in sets)
             {
                 //Make config file in format that .NET DataTable is able to import
