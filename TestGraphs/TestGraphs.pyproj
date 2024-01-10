@@ -28,22 +28,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MakeConfigs\" />
-    <Folder Include="MakeConfigs\.ipynb_checkpoints\" />
     <Folder Include="MakeGraphs\" />
-    <Folder Include="MakeGraphs\.ipynb_checkpoints\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MakeConfigs\.ipynb_checkpoints\Residues-checkpoint.ipynb" />
-    <Content Include="MakeConfigs\.ipynb_checkpoints\WS2-checkpoint.ipynb" />
-    <Content Include="MakeConfigs\Residues.ipynb" />
-    <Content Include="MakeConfigs\WS2.ipynb" />
-    <Content Include="MakeGraphs\.ipynb_checkpoints\Residues-checkpoint.ipynb" />
-    <Content Include="MakeGraphs\Residues.ipynb" />
-    <Content Include="MakeGraphs\WS2.ipynb" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="MakeConfigs\Location.py" />
+    <Compile Include="MakeConfigs\Moisture.py" />
     <Compile Include="MakeConfigs\Residues.py" />
     <Compile Include="MakeConfigs\WS2.py" />
+    <Compile Include="MakeGraphs\Location.py" />
+    <Compile Include="MakeGraphs\Moisture.py" />
     <Compile Include="MakeGraphs\Residues.py" />
     <Compile Include="MakeGraphs\WS2.py" />
   </ItemGroup>
