@@ -72,10 +72,10 @@ namespace SVSModel.Models
 
         public residue(double amountN, double Nconc, DateTime additionDate, DateTime[] simDates, Dictionary<DateTime, double> rswc, Dictionary<DateTime, double> meanT)
         {
-            double CNR = 40.8/Nconc;
+            double CNR = 40/Nconc;
             this.ANm = amountN * 0.8;
             this.ANi = amountN * (CNR * 2.5)/100;
-            this.Km = 0.97 * Math.Exp(-0.12*CNR)+0.03;
+            this.Km = 0.97 * Math.Exp(-0.12*CNR) + 0.03;
             this.Ki = 0.9 * Math.Exp(-0.12 * CNR) + 0.1; ;
             this.NetMineralisation = Functions.dictMaker(simDates, new double[simDates.Length]);
             double sigmaFtm = 0;
